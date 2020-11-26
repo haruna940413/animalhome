@@ -23,8 +23,9 @@ Rails.application.routes.draw do
       :sessions => 'endusers/sessions', :registrations => 'endusers/registrations', :passwords => 'endusers/passwords'
     }
     resources :genres, only: [:show]
-    resources :pets, only: [:index, :show]
-    resources :reservations, only: [:new, :create, :edit, :update, :destroy]
+    resources :pets, only: [:index, :show] do
+      resources :reservations, only: [:new, :create, :edit, :update, :destroy]
+    end  
   end
   
   #管理者側のルート
