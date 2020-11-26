@@ -1,0 +1,29 @@
+<!--投稿数とフォロワー数の表示-->
+<div class="enduser-count row">
+  <div class="post-count col-xl-4">
+    <p><%= enduser.posts.count %></p>
+    <p>投稿数</p>
+  </div>
+  <!--フォロー-->
+  <div class="following-count col-xl-4">
+    <p><%= link_to enduser.following_user.count, following_user_path(enduser) %></p>
+    <p>follow</p>
+  </div>
+  <!--フォロワー-->
+  <div class="follower-count col-xl-4">
+    <p><%= link_to enduser.follower_user.count, follower_user_path(enduser) %></p>
+    <p>follower</p>
+  </div>  
+</div >
+
+<!--フォローするor外すボタン-->
+<% if enduser_enduser_signed_in? %>
+  <% if current_enduser_enduser != enduser %>
+    <% if current_enduser_enduser.following?(enduser) %>
+      <%= link_to 'フォロー外す', enduser_relationship_path(enduser.id), method: :delete, class: "btn btn-secondary" %>
+    <% else %>
+      <%= link_to 'フォローする', enduser_relationships_path(enduser.id), method: :POST, class: ".btn btn-secondary" %>
+    <% end %>
+  <% end %>
+<% end %>
+

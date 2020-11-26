@@ -1,0 +1,44 @@
+<div class="top-border"><%= image_tag('border.png', :size =>'1100x5') %></div>
+<div class="top-img"><%= image_tag('concept.png', :size =>'1100x150') %></div>
+
+<div class="link_bar">
+  <%= link_to "top", hostuser_homes_top_path %>
+  <span>>></span>
+  <%= link_to "ペット一覧", hostuser_pets_path %>
+</div>
+
+
+<div class="hostuser-pet-index">
+  <h2>登録ペット一覧</h2>
+  <table class="table table-borderless">
+    <div> <%= link_to "" , new_hostuser_pet_path, data: {"turbolinks" => false}, class: "post-new fa fa-plus-square-o" %></div>
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>genre</th>
+        <th>kind</th>
+        <th>name</th>
+        <th>image</th>
+        <td>sex</td>
+        <th>pet_status</th>
+        <th><i class="fas fa-paw"></i></th>
+        <th><i class="fas fa-wrench"></i></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @pets.each do |pet| %>
+        <tr>
+          <td><%= pet.id %></td>
+          <td><%= pet.genre.name %></td>
+          <td><%= pet.kind %></td>
+          <td><%= pet.name %></td>
+          <td><%= attachment_image_tag pet, :animal_image, fallback: 'no-image.jpg', format: 'jpeg', size:'40x40'%></td>
+          <td><%= pet.sex_i18n %></td>
+          <td><%= pet.pet_status_i18n %></td>
+          <td><%= link_to "詳細", hostuser_pet_path(pet) %></td>
+          <td><%= link_to "編集", edit_hostuser_pet_path(pet) ,data: {"turbolinks" => false}%></td>
+        </tr>
+      <% end %>  
+    </tbody>
+  </table>
+</div>

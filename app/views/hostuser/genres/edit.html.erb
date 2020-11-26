@@ -1,0 +1,23 @@
+<div class="top-border"><%= image_tag('border.png', :size =>'1100x5') %></div>
+<div class="top-img"><%= image_tag('concept.png', :size =>'1100x150') %></div>
+<div class="link_bar">
+  <%= link_to "top", hostuser_homes_top_path %>
+  <span>>></span>
+  <%= link_to "ジャンル一覧", hostuser_genres_path %>
+  <span>>></span>
+  <%= link_to "ジャンル編集",edit_hostuser_genre_path %>
+</div>
+
+<div class="hostuser-genre-edit">
+  <h2>ジャンル編集</h2>
+  <%= form_for @genre, :url => {:action => :update} do |f| %>
+    <div>
+      <%= f.text_field :name  %>　　
+      <%= f.radio_button :valid_flag, false %>
+      <%= f.label :valid_flag, "有効", {value: :false, style: "display: inline-block;"} %>
+      <%= f.radio_button :valid_flag, true %>
+      <%= f.label :valid_flag, "無効", {value: :true, style: "display: inline-block;"} %>
+      <%= f.submit "変更を保存する", class: "btn btn-light" %>
+    </div>
+  <% end %>
+</div>

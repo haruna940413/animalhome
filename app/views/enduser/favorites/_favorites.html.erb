@@ -1,0 +1,11 @@
+<!--いいね済みの時-->
+<% if post.favorited_by?(current_enduser_enduser) %>
+  <%= link_to  post_favorites_path(post.id), method: :delete, remote: true do %>
+    <i class="fa fa-heart" aria-hidden="true" style="color: #da70d6;"></i>
+  <% end %>
+<% else %>
+<!--いいねがまだの時-->
+  <%= link_to  post_favorites_path(post.id), method: :post, remote: true do %>
+    <i class="fa fa-heart-o" aria-hidden="true" style="color: #656565;"></i>
+  <% end %>
+<% end %>

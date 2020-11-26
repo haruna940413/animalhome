@@ -1,0 +1,54 @@
+<div class="top-border"><%= image_tag('border.png', :size =>'1100x5') %></div>
+<div class="top-img"><%= image_tag('concept.png', :size =>'1100x150') %></div>
+
+<div class="link_bar">
+  <%= link_to "top", hostuser_homes_top_path %>
+  <span>>></span>
+  <%= link_to "ペット一覧", hostuser_pets_path %>
+  <span>>></span>
+  <%= link_to "ペット詳細", hostuser_pet_path %>
+</div>
+
+<div class="hostuser-pet-show">
+  <h2><%= @pet.name %></h2>
+  <div class="row">
+    <div class="col-xl-7 col-xl-offset-1">
+      <%= attachment_image_tag @pet, :animal_image, fallback: 'no-image.jpg', format: 'jpeg', size:'600x400' %>
+    </div>
+    <div class="col-xl-2">
+        <ul>
+          <li>ジャンル：</li>
+          <li>名前：</li>
+          <li>性別：</li>
+          <li>年齢</li>
+          <li>種類：</li>
+          <li>サイズ：</li>
+          <li>都道府県</li>
+          <li>去勢・避妊</li>
+          <li>単身者応募：</li>
+          <li>高齢者応募：</li>
+          <li>備考:</li>
+          <li>現在の募集状況：</li>
+        </ul>
+      </div>
+      <div class="col-xl-2">
+        <ul>
+          <li><%= @pet.genre.name %></li>
+          <li><%= @pet.name %></li>
+          <li><%= @pet.sex_i18n %></li>
+          <li><%= @pet.age_i18n%></li>
+          <li><%= @pet.kind %></li>
+          <li><%= @pet.size_i18n %></li>
+          <li><%= @pet.prefectures_i18n %></li>
+          <li><%= @pet.castration_status_i18n %></li>
+          <li><%= @pet.single_status_i18n %></li>
+          <li><%= @pet.older_status_i18n %></li>
+          <li><%= @pet.detail %></li>
+          <li><%= @pet.pet_status_i18n %></li>
+        </ul>
+      </div>
+    <div class="pet-show-btn">
+      <%= link_to "編集", edit_hostuser_pet_path(@pet) ,data: {"turbolinks" => false}, class: "btn btn-dark"%>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,49 @@
+// Place all the styles related to the endusers controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.row {
+  margin: 0;
+}
+
+// マイページ
+.enduser-profile {
+  margin-top: 20px;
+}
+.enduser-top-profile-img {
+  border: 1px solid #656565;  /* 枠線(=円形でも記述は同じ) */
+  border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
+  width: 200px;  /* 縦横を同じ値にする */
+  height: 200px;  /* 縦横を同じ値にする */
+  object-fit: cover; /* 縦横比固定したまま上2つの縦横の範囲内に収まるように配置する */
+  display: inline-block;
+  margin-bottom: 10px;
+}
+.introduction {
+  text-align: center;
+}
+.enduser-show-post {
+  text-align: center;
+}
+
+.kari {
+  margin-right: 0;
+}
+// edit
+.enduser-profile input {
+  height: 40px;
+}
+
+.enduser-profile .field {
+  margin-bottom: 10px;
+}
+
+.enduser-post {
+  margin-bottom: 20px;
+}
+
+// 投稿数・フォロー数表示部分
+.enduser-count p {
+  font-size: 30px;
+  text-align: center;
+}

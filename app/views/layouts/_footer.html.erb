@@ -1,0 +1,52 @@
+<footer>
+  <div class="footer-top">
+    <!--listボタン-->
+    <nav class="footer-list">
+      <ul class="footer-list-btn">
+        <li>
+          <%= link_to "当団体について", homes_about_path %>
+        </li>
+        <li>
+          <%= link_to "里親希望の方", enduser_pets_path %>
+        </li>
+        <li>
+          <%= link_to "施設案内", homes_guide_path %>
+        </li>
+        <li>
+          <%= link_to "卒業犬・猫", posts_path %>
+        </li>
+        <li>
+          <%= link_to "譲渡会ご予約", destroy_enduser_enduser_session_path , method: :delete, "data-confirm" => "ログアウトしますか？" %>
+        </li>
+        <li>
+          <%= link_to "問い合わせ", destroy_enduser_enduser_session_path , method: :delete, "data-confirm" => "ログアウトしますか？" %>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <div class="footer-middle">
+    <p>〒103-0028 東京都〇〇区XXX町3町目２−１△△△△△ビル１階　　　　☎︎番06-1234-5678</p>
+  </div>
+  <div class="footer-bottom">
+      <!--snsボタン-->
+      <nav class="footer-sns">
+        <ul class="footer-sns-btn">
+          <li>
+            <%= link_to "" , "#" , class: "fa fa-facebook" %>
+          </li>
+          <li>
+            <%= link_to "" , "#" , class: "fa fa-twitter" %>
+          </li>
+          <li>
+            <%= link_to "" , "#" , class: "fa fa-instagram" %>
+          </li>
+      </nav>
+    </div><br>
+    <div class="hostuser-login-btn">
+    　<% if hostuser_hostuser_signed_in? %>
+       <%= link_to "-ログアウト(管理者)-", destroy_hostuser_hostuser_session_path , method: :delete %>
+      <% else%>
+       <%= link_to "-ログイン(管理者)-", new_hostuser_hostuser_session_path , class: "" %>
+      <% end %>
+    </div>  
+</footer>

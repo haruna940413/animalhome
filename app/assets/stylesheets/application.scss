@@ -1,0 +1,220 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ 
+ 
+@import "bootstrap";
+// color: #656565;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #fbfaf5;
+  max-width: 1200px;
+  font-family: 'Hannotate TC', 'Avenir', YuGothic, "Bradley Hand", Courier, "Segoe Print", sans-serif;
+}
+
+* a {
+  text-decoration: none;
+  cursor: pointer;
+ }
+ 
+* a:hover {
+  text-decoration: none;
+ }
+ 
+* ul {
+  list-style: none;
+ }
+ 
+.container-fluid {
+  padding: 10px 50px;
+}
+
+.link_bar a {
+ color: #656565;
+}
+
+.link_bar a:hover {
+ opacity: 0.7;
+}
+
+.link_bar span {
+ color: #BB925A;
+}
+
+
+// signup画面
+
+.img-input  input{
+  height: 50px;
+}
+.img-input img {
+ margin-bottom: 10px;
+}
+
+.new-profile-img {
+  border: 2px solid #656565;  /* 枠線(=円形でも記述は) */
+  border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
+  width: 200px;  /* 縦横を同じ値にする */
+  height: 200px;  /* 縦横を同じ値にする */
+  object-fit: cover; /* 縦横比固定したまま上2つの縦横の範囲内に収まるように配置する */
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+// 
+
+header {
+  width: 100%;
+  height: 180px;
+  
+}
+
+
+header a {
+ color: #BB925A;
+}
+
+header a:hover {
+  color: #BB925A;
+  opacity: 0.7;
+}
+
+.header-top {
+ display: flex; 
+}
+
+.site-title {
+  display: inline-block;
+}
+
+// sns ボタン
+.sns-btn {
+ display: flex;
+ position: absolute;
+ right: 100px;
+ padding-top: 10px;
+ margin: 0;
+}
+.sns-btn  li {
+font-size: 18px;
+padding: 0 20px;
+}
+// listボタン
+.list-btn {
+ margin: 0;
+ display: flex;
+}
+.list-btn  li {
+text-align: center;
+width: 100%;
+font-size: 20px;
+}
+
+.list-btn a {
+ display: inline-block;
+ margin-top: 50px;
+ padding-bottom: 20px;
+}
+
+.list-btn a:hover {
+ border-bottom: solid 5px #8fbc8f;
+}
+
+// 各ページのトップにある
+.top-img {
+  display: block;
+  margin-bottom: 0;
+}
+.link_bar {
+margin-bottom: 15px;
+}
+
+// フッター
+footer {
+ background-color: #9d896c;
+ height: 150px;
+ width: 1100px;
+ margin: 0 auto;
+ text-align: center;
+}
+
+footer a {
+ color: #fff;
+ opacity: 0.8;
+}
+footer a:hover {
+ color: #fff;
+ opacity: 0.5;
+}
+// listボタン
+.footer-list-btn {
+ margin: 0;
+ display: flex;
+}
+.footer-list-btn  li {
+background-color: #9d896c;
+text-align: center;
+width: 100%;
+font-size: 10px;
+}
+
+.footer-list-btn a {
+ display: inline-block;
+ padding: 0 10px;
+ margin-top: 20px;
+ border-right: solid 1px #FFF;
+ border-left: solid 1px #FFF;
+}
+
+
+
+
+// sns ボタン
+.footer-sns-btn {
+ background-color: #9d896c;
+ display: flex;
+ position: absolute;
+ right: 555px;
+ margin: 0;
+}
+.footer-sns-btn  li {
+ background-color: #9d896c;
+ font-size: 18px;
+ padding: 0 20px;
+}
+
+.footer-middle p{
+ margin-top: 15px;
+ background-color: #9d896c;
+ color: #fff;
+}
+.footer-middle {
+ marign: 0;
+}
+
+
+.hostuser-login-btn {
+ background-color: #9d896c;
+ position: absolute;
+ right: 560px;
+ margin: 0 ;
+}
+
+
+
+

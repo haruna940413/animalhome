@@ -1,0 +1,96 @@
+<header>
+  <% if enduser_enduser_signed_in? %>
+    <!--エンドユーザーがログインしている時 -->
+    <div class="header-top">
+      <%= link_to enduser_path(current_enduser_enduser.id) do %>
+       <%= image_tag('logo.png', :size =>'200x50') %>
+      <% end %>
+      <!--snsボタン-->
+      <nav class="sns">
+        <ul class="sns-btn">
+          <li>
+            <%= link_to "" , "#" , class: "fa fa-facebook" %>
+          </li>
+          <li>
+            <%= link_to "" , "#" , class: "fa fa-twitter" %>
+          </li>
+          <li>
+            <%= link_to "" , "#" , class: "fa fa-instagram" %>
+          </li>
+          <li>
+            <%= link_to "" , "#" , class: "far fa-calendar-alt" %>
+          </li>
+          <li>
+            <%= link_to "" , "#" , class: "fa fa-envelope-o" %>
+          </li>
+        </ul>
+      </nav>
+    </div>  
+    <!--listボタン-->
+    <nav class="list">
+      <ul class="list-btn">
+        <li>
+          <%= link_to "当団体について", homes_about_path %>
+        </li>
+        <li>
+          <%= link_to "里親希望の方", enduser_pets_path %>
+        </li>
+        <li>
+          <%= link_to "施設案内", homes_guide_path %>
+        </li>
+        <li>
+          <%= link_to "卒業犬・猫", posts_path %>
+        </li>
+        <li>
+          <%= link_to "ログアウト", destroy_enduser_enduser_session_path , method: :delete, "data-confirm" => "ログアウトしますか？" %>
+        </li>
+      </ul>
+    </nav>
+  <% else %>
+    <!--ログインしていない時-->
+    <div class="header-top">
+      <%= link_to "/" do %>
+       <%= image_tag('logo.png', :size =>'200x50') %>
+      <% end %>
+      <!--snsボタン-->
+      <nav class="sns">
+        <ul class="sns-btn">
+          <li>
+            <%= link_to "" , "#" , class: "fa fa-facebook" %>
+          </li>
+          <li>
+            <%= link_to "" , "#" , class: "fa fa-twitter" %>
+          </li>
+          <li>
+            <%= link_to "" , "#" , class: "fa fa-instagram" %>
+          </li>
+          <li>
+            <%= link_to "" , "#" , class: "far fa-calendar-alt" %>
+          </li>
+          <li>
+            <%= link_to "" , "#" , class: "fa fa-envelope-o" %>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <nav>
+      <ul class="list-btn">   
+        <li>
+          <%= link_to "当団体について", homes_about_path %>
+        </li>
+        <li>
+          <%= link_to "里親希望の方", enduser_pets_path %>
+        </li>
+        <li>
+          <%= link_to "施設案内", homes_guide_path %>
+        </li>
+        <li>
+          <%= link_to "卒業犬・猫", posts_path %>
+        </li>
+        <li>
+          <%= link_to "ログイン", new_enduser_enduser_session_path %>
+        </li>
+      </ul>
+    </nav>  
+  <% end %>
+</header>

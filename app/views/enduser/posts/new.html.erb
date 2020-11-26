@@ -1,0 +1,39 @@
+<div class="top-border"><%= image_tag('border.png', :size =>'1100x5') %></div>
+<div class="top-img"><%= image_tag('concept.png', :size =>'1100x150') %></div>
+
+<div class="link_bar">
+  <%= link_to "top", root_path %>
+  <span>>></span>
+  <%= link_to "user", enduser_path(current_enduser_enduser) %>
+  <span>>></span>
+  <%= link_to "newpost", new_post_path %> 
+</div>
+
+<div class="wrapper">
+  <%= form_with model: @post, url: posts_path, local: true do |f| %>
+    <!--エラー文-->
+    <% if @post.errors.any? %>
+      <div>
+        <h5><%= @post.errors.count %>件のerrorが発生しました。</h5>
+        <ul>
+          <% @post.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <!--投稿のフォーム-->
+  <div class="row">
+    <div class="field col-xl-4">
+      <%= attachment_image_tag @post, :post_image, fallback: 'no-image.jpg', format: 'jpeg', size:'300x200', onChange: "$('.img_field').change()", class: 'center-block img_prev'%>
+      <%= f.attachment_field :post_image, class: 'img_field' %>
+    </div>
+    <div class="field col-xl-4">
+      <%= f.text_field :content, value: "text：", class: "content" %>
+    </div>
+    <div class="actions col-xl-4">
+      <%= f.submit "Create" %>
+    </div>
+  </div>
+  <% end %>
+</div>

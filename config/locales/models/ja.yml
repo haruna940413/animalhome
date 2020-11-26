@@ -1,0 +1,107 @@
+# enum日本語化の為に追加
+ja:
+  enums:
+    pet:
+      age:
+        blank: --入力してください--
+        one: １歳
+        two: ２歳
+        three: ３歳
+        four: ４歳
+        five: ５歳
+        six: ６歳
+        seven: ７歳
+        eight: ８歳
+        nine: ９歳
+        ten: １０歳
+        eleven: １１歳
+        twelve: １２歳
+        thirteen: １３歳
+        fourteen: １４歳
+        fifteen: １５歳
+        sixteen: １６歳
+        seventeen: １７歳
+        eighteen: １８歳
+        nineteen: １９歳
+        twenty: ２０歳
+      sex:
+        blank: --入力してください--
+        male: ♂
+        female: ♀
+      size:
+        blank: --入力してください--
+        small: 小型
+        medium: 中型
+        large: 大型
+        cat: 猫
+      vaccine_status:
+        blank: --入力してください--
+        before: 未
+        after:  済
+      castration_status:
+        blank: --入力してください--
+        before: 未
+        after:  済  
+      single_status:
+        blank: --入力してください--
+        ok: 可
+        ng:  不可
+      older_status:
+        blank: --入力してください--
+        ok: 可
+        ng:  不可  
+      pet_status:
+        blank: --入力してください--
+        invite: 募集中
+        stop: 募集停止中
+        decide: 里親決定
+      prefectures:
+        blank: --入力してください--
+        hokkaido: 北海道
+        aomori: 青森
+        iwate: 岩手
+        miyagi: 宮城
+        akita: 秋田
+        yamagata: 山形
+        fukushima: 福島
+        ibaraki: 茨城
+        tochigi: 栃木
+        gunnma: 群馬
+        saitama: 埼玉
+        chiba: 千葉
+        tokyo: 東京
+        kanagawa: 神奈川
+        niigata: 新潟
+        toyama: 富山
+        ishikawa: 石川
+        fukui: 福井
+        yamanashi: 山梨
+        nagano: 長野
+        gifu: 岐阜
+        shizuoka: 静岡
+        aichi: 愛知
+        mie: 三重
+        shiga: 滋賀
+        kyoto: 京都
+        osaka: 大阪
+        hyogo: 兵庫
+        nara: 奈良
+        wakayama: 和歌山
+        tottori: 鳥取
+        shimane: 島根
+        okayama: 岡山
+        hiroshima: 広島
+        yamaguchi: 山口
+        tokushima: 徳島
+        kagawa: 香川
+        ehime: 愛媛
+        kochi: 高知
+        fukuoka: 福岡
+        saga: 佐賀
+        nagasaki: 長崎
+        kumamoto: 熊本
+        oita: 大分
+        miyazaki: 宮崎
+        kagoshima: 鹿児島
+        okinawa: 沖縄
+      

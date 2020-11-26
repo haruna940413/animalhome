@@ -1,0 +1,98 @@
+<header>
+  <% if hostuser_hostuser_signed_in? %>
+    <!--ホストユーザーがログインしている時 -->
+    <div class="header-top">
+      <%= link_to hostuser_homes_top_path do %>
+       <%= image_tag('logo.png', :size =>'200x50') %>
+      <% end %>
+      <!--snsボタン-->
+      <nav class="sns">
+        <ul class="sns-btn">
+          <li>
+            <%= link_to "" , "#" , class: "fa fa-facebook" %>
+          </li>
+          <li>
+            <%= link_to "" , "#" , class: "fa fa-twitter" %>
+          </li>
+          <li>
+            <%= link_to "" , "#" , class: "fa fa-instagram" %>
+          </li>
+          <li>
+            <%= link_to "" , "#" , class: "far fa-calendar-alt" %>
+          </li>
+          <li>
+            <%= link_to "" , "#" , class: "fa fa-envelope-o" %>
+          </li>
+        </ul>
+      </nav>
+    </div>  
+    <!--listボタン-->
+    <div class="header-bottom">
+      <nav class="list">
+        <ul class="list-btn">
+          <li>
+            <%= link_to "会員一覧", hostusers_path %>
+          </li>
+          <li>
+            <%= link_to "ジャンルの一覧", hostuser_genres_path %>
+          </li>
+          <li>
+            <%= link_to "ペットの一覧", hostuser_pets_path,data: {"turbolinks" => false} %>
+          </li>
+          <li>
+            <%= link_to "予約状況の確認", "#" %>
+          </li>
+          <li>
+            <%= link_to "問い合せ確認", "#" %>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  <% else %>
+    <!--ログインしていない時-->
+    <div class="header-top">
+      <%= link_to "/" do %>
+       <%= image_tag('logo.png', :size =>'200x50') %>
+      <% end %>
+      <!--snsボタン-->
+      <nav class="sns">
+        <ul class="sns-btn">
+          <li>
+            <%= link_to "" , "#" , class: "fa fa-facebook" %>
+          </li>
+          <li>
+            <%= link_to "" , "#" , class: "fa fa-twitter" %>
+          </li>
+          <li>
+            <%= link_to "" , "#" , class: "fa fa-instagram" %>
+          </li>
+          <li>
+            <%= link_to "" , "#" , class: "far fa-calendar-alt" %>
+          </li>
+          <li>
+            <%= link_to "" , "#" , class: "fa fa-envelope-o" %>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="header-bottom">
+      <!--listボタン-->
+      <nav class="list">
+        <ul class="list-btn">   
+          <li>
+            <%= link_to "当団体について", homes_about_path %>
+          </li>
+          <li>
+            <%= link_to "里親希望の方", hostuser_pets_path %>
+          </li>
+          <li>
+            <%= link_to "施設案内", homes_guide_path %>
+          </li>
+          <li>
+            <%= link_to "卒業犬・猫", posts_path %>
+          </li>
+        </ul>
+      </nav>
+    </div>  
+  <% end %>
+</header>

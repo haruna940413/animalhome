@@ -1,0 +1,17 @@
+<%= form_with(model:[post, newcomment], remote: true) do |f| %>
+　<!--エラー文-->
+  <% if newcomment.errors.any? %>
+    <div>
+      <h5><%= newcomment.errors.count %>件のerrorが発生しました。</h5>
+      <ul>
+        <% newcomment.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <!--投稿フォーム-->
+  <%= f.text_area :comment, rows: '5', class: "form-control",placeholder: "コメントをここに" %>
+  <%= f.submit "送信する", class: "btn btn-light" %>
+<% end %>

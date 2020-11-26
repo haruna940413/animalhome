@@ -1,0 +1,52 @@
+<div class="top-border"><%= image_tag('border.png', :size =>'1100x5') %></div>
+<div class="top-img"><%= image_tag('concept.png', :size =>'1100x150') %></div>
+
+<div class="link_bar">
+  <%= link_to "top", root_path %>
+  <span>>></span>
+  <%= link_to "投稿一覧", posts_path %>
+</div>
+
+
+<div class="post-index-top">
+  <h2>卒業犬・猫</h2>
+  <p>
+    animalhomeのシェルターにいた時からの成長を是非ご覧ください<br><br>
+  </p>
+</div>
+
+<div class="posts-index">
+  <% @posts.each do |post| %>
+    <div class="post">
+      <div><%= image_tag('border.png', :size =>'1100x5') %></div>
+      <%= link_to enduser_path(post.enduser_id) do %>
+        <%= attachment_image_tag post.enduser, :profile_image, :fill, 60, 60, format: 'jpeg', size:'60x60',class: "profile-img" %>
+      <% end %> 
+      <span>現在の里親の</span><%= post.enduser.nick_name %><br>
+      <div class="flex-box">
+        <%= attachment_image_tag post, :post_image, :fill, 600, 400, format: 'jpeg', size:'600x400', class: "post-image" %>
+          <div class="flex-content"><%= post.content %></div>
+        <% if enduser_enduser_signed_in? %>
+          <div class="kari">
+          <%# コメントフォーム %>
+      　   <%= render "enduser/comments/comments-form", post: post, newcomment: @newcomment %>
+        　<div class="flex-comment comment_<%= post.id %>">
+        　   <%# コメント一覧を表示 %>
+            <%= render "enduser/comments/comments", post: post, comments: post.comments.first(3), newcomment: @newcomment %>
+            <%# コメントが4件未満の場合はここから表示しない %>
+            <% comments_offset3 = post.comments.offset(3) %>
+            <% if comments_offset3.any? %>
+              <details>
+                <summary>全てのコメントを表示</summary>
+                <%= render "enduser/comments/comments", post: post, comments: comments_offset3, newcomment: @newcomment %>
+              </details>
+            <% end %>
+        　  </div>
+        　  </div>
+          <div class="flex-favorite favorite_button_<%= post.id %>"><%= render "enduser/favorites/favorites", post: post %></div>
+        <% end %>
+      </div> 
+      <div><%= image_tag('border.png', :size =>'1100x5') %></div><br><br><br>
+    </div>  
+  <% end %>
+</div>

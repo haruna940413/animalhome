@@ -1,0 +1,23 @@
+<div class="col-lg-12">
+  <h2>Follower Users</h2>
+  <table class="table table-borderless">
+    <thead>
+      <tr>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @endusers.each do |enduser| %>
+      <tr>
+        <td>
+          <%= link_to enduser_path(enduser) do %>
+           <%= attachment_image_tag enduser, :profile_image, :fill, 40, 40, fallback: "no-image.jpg", class: "relationship-profole-img"%>
+          <% end %>
+        </td>
+        <td><%= enduser.nick_name %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

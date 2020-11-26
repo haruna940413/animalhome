@@ -1,0 +1,92 @@
+<div class="top-border"><%= image_tag('border.png', :size =>'1100x5') %></div>
+<div class="top-img"><%= image_tag('concept.png', :size =>'1100x150') %></div>
+
+<div class="link_bar">
+  <%= link_to "top", hostuser_homes_top_path %>
+  <span>>></span>
+  <%= link_to "ペット編集", hostuser_pets_path %>
+</div>
+
+<div class="hostuser-pet-edit">
+  <h2>Pet edit</h2>
+   <%= form_with model: @pet, url: hostuser_pet_path, method: :PATCH, local: true do |f| %>
+    <!--エラー文-->
+    <% if @pet.errors.any? %>
+     <div class=“error_explanation”>
+     <h5 class="text-danger"><%= @pet.errors.count %>件のerrorが発生しました。</h5>
+     <ul>
+      <% @pet.errors.full_messages.each do |message| %>
+        <li class="text-danger">●<%= message %></li>
+      <% end %>
+        </ul>
+      </div>
+    <% end %>
+    
+  　<div class="row">
+      <div class="field col-xl-4">
+        <%= attachment_image_tag @pet, :animal_image, fallback: 'no-image.jpg', format: 'jpeg', size:'300x200', onChange: "$('.img_field').change()", class: 'center-block img_prev'%>
+        <%= f.attachment_field :animal_image, class: 'img_field' %><br>
+      </div>
+      <div class="col-xl-5">
+        <div class="field col-xl-12">
+          <%= f.label :ジャンル, class:"col-xl-4" %>
+          <%= f.collection_select(:genre_id, @genres, :id, :name, {prompt: "-- 入力してください --"}, {class: "col-xl-7"}) %>
+        </div>
+        <div class="field col-xl-12">
+          <%= f.label :名前, class:"col-xl-4" %>
+          <%= f.text_field :name, class: "col-xl-7" %>
+        </div>
+        <div class="field col-xl-12 item">
+          <%= f.label :種類, class:"col-xl-4" %>
+          <%= f.text_area :kind, rows: 1, class: "col-xl-7" %>
+        </div>
+        <div class="field col-xl-12">
+          <%= f.label :年齢, class:"col-xl-4" %>
+          <%= f.select :age, Pet.ages_i18n.invert, {}, class: "col-xl-7" %>
+        </div>
+        <div class="field col-xl-12">
+          <%= f.label :性別, class:"col-xl-4" %>
+          <%= f.select :sex, Pet.sexes_i18n.invert, {}, class: "col-xl-7" %>
+        </div>
+        <div class="field col-xl-12">
+          <%= f.label :サイズ, class:"col-xl-4" %>
+          <%= f.select :size, Pet.sizes_i18n.invert, {}, class: "col-xl-7" %>
+        </div>
+        <div class="field col-xl-12">
+          <%= f.label :ワクチン, class:"col-xl-4" %>
+          <%= f.select :vaccine_status, Pet.vaccine_statuses_i18n.invert, {}, class: "col-xl-7" %>
+        </div>
+        <div class="field col-xl-12">
+          <%= f.label :去勢・避妊, class:"col-xl-4" %>
+          <%= f.select :castration_status, Pet.castration_statuses_i18n.invert, {}, class: "col-xl-7" %>
+        </div>
+        <div class="field col-xl-12">
+          <%= f.label :単身者の応募, class:"col-xl-4" %>
+          <%= f.select :single_status, Pet.single_statuses_i18n.invert, {}, class: "col-xl-7" %>
+        </div>
+        <div class="field col-xl-12">
+          <%= f.label :高齢者の応募, class:"col-xl-4" %>
+          <%= f.select :older_status, Pet.single_statuses_i18n.invert, {}, class: "col-xl-7" %>
+        </div>
+        <div class="field col-xl-12">
+          <%= f.label :都道府県, class:"col-xl-4" %>
+          <%= f.select :pet_status, Pet.pet_statuses_i18n.invert, {}, class: "col-xl-7" %>
+        </div>
+        <div class="field col-xl-12">
+          <%= f.label :募集状況, class:"col-xl-4" %>
+          <%= f.select :prefectures, Pet.prefectures_i18n.invert, {}, class: "col-xl-7" %>
+        </div>
+        <div class="field col-xl-12">
+          <%= f.label :備考欄, class: "col-xl-4" %>
+          <%= f.text_field :detail , class: "col-xl-7" %>
+        </div>
+      </div>
+      <div class="col-xl-2">
+        <div class="actions col-xs-12">
+          <%= f.submit "新規登録", class:"btn btn-dark" %>
+        </div>  
+      </div>
+    </div>  
+  <% end %>
+  </div>
+</div>

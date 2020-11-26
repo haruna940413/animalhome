@@ -1,0 +1,90 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// 共通ページ
+* {
+  color: #656565;
+}
+.top-img {
+ margin-bottom: 30px;    
+}
+
+//indexページ 
+.profile-img {
+  border: 1px solid #656565;  /* 枠線(=円形でも記述は) */
+  border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
+  width: 60px;  /* 縦横を同じ値にする */
+  height: 60px;  /* 縦横を同じ値にする */
+  object-fit: cover; /* 縦横比固定したまま上2つの縦横の範囲内に収まるように配置する */
+  display: inline-block;
+  margin-bottom: 10px;
+}
+.comment-profile-img {
+  border: 1px solid #656565;  /* 枠線(=円形でも記述は) */
+  border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
+  width: 30px;  /* 縦横を同じ値にする */
+  height: 30px;  /* 縦横を同じ値にする */
+  object-fit: cover; /* 縦横比固定したまま上2つの縦横の範囲内に収まるように配置する */
+  display: inline-block;
+  margin-bottom: 10px;
+}
+// indexページ
+
+h2 {
+  padding-left: 10px;
+  margin-top: 30px;
+  border-left : solid 3px #656565;
+}
+
+.flex-box {
+  display: flex;
+  margin: 0;
+}
+.flex-content {
+  width: 200px;
+  margin-left: 20px;
+}
+.flex-comment {
+ width: 250px;
+}
+.flex-facorite {
+ width: 100px;
+ display: block;
+ margin-top: 500px;
+}
+.post i {
+ font-size: 40px;
+ width: 45px;
+}
+.kari form {
+  margin-top: 0;
+}
+
+// newとeditページ
+
+.content {
+ height: 200px;
+}
+.post-edit-wrapper {
+  height: 350px;
+}
+
+.prev input {
+  height: 50px;
+}
+
+//画像プレビュー 
+.img_prev {
+  height: 200px;
+  // width: 300px;
+}
+.img_field {
+  height: 200px;
+  width: 300px;
+}
+.prev {
+ height: 150px;
+}
+
+

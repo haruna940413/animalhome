@@ -1,0 +1,31 @@
+<div class="top-border"><%= image_tag('border.png', :size =>'1100x5') %></div>
+<div class="top-img"><%= image_tag('concept.png', :size =>'1100x150') %></div>
+<div class="link_bar">
+  <%= link_to "top", hostuser_homes_top_path %>
+  <span>>></span>
+  <%= link_to "会員一覧", hostusers_path %>
+</div>
+
+<div class="hostuser-index">
+  <h2>会員様一覧</h2>
+  <table class="table table-borderless">
+    <thead>
+      <tr>
+        <th>会員id</th>
+        <th>プロフィール画像</th>
+        <th>氏名</th>
+        <th>連絡先</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @endusers.each do |enduser| %>
+        <tr>
+          <td><%= enduser.id %></td>
+          <td><%= attachment_image_tag enduser, :profile_image, fallback: 'no-image.jpg', format: 'jpeg', size:'40x40', class: "enduser-profile-img" %></td>
+          <td><%= enduser.name %></td>
+          <td><%= mail_to enduser.email %></td>
+        </tr>
+      <% end %>  
+    </tbody>
+  </table>
+</div>

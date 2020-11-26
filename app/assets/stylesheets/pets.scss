@@ -1,0 +1,38 @@
+// Place all the styles related to the pets controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com
+
+
+// enduser
+.enduser-pet-index-now > .col-xl-2{
+  margin-top: 30px;
+}
+.enduser-pet-index-now li {
+ padding: 5px 0;
+}
+// hostuser
+.post i{
+  margin-left: 65px;
+}
+
+.hostuser-pet-show {
+  margin: 30px 0;
+  height: 450px;
+  width: 1100px;
+}
+.hostuser-pet-edit {
+  margin: 30px 0;
+  height: 450px;
+  width: 1100px;
+}
+
+.pet-show-btn {
+  margin-top: 358px;
+}
+.pet-edit-btn {
+  margin-top: 330px;
+}
+
+.col-xl-2 li {
+  margin: 8px 0;
+}

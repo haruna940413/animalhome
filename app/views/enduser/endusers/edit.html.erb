@@ -1,0 +1,51 @@
+<div class="top-border"><%= image_tag('border.png', :size =>'1100x5') %></div>
+<div class="top-img"><%= image_tag('concept.png', :size =>'1100x150') %></div>
+
+<div class="link_bar">
+  <%= link_to "top", root_path %>
+   <span>>></span>
+  <%= link_to "user", enduser_path(current_enduser_enduser) %>
+  <span>>></span>
+  <%= link_to "edit", edit_enduser_path(current_enduser_enduser) %>
+</div>
+
+<div class="enduser-profile edit">
+  <h2>User edit</h2>
+  <%= form_with model: @enduser, url: enduser_path(current_enduser_enduser.id), method: :patch, local: true do |f| %>
+    <!--エラー文-->
+    <% if @enduser.errors.any? %>
+      <div id=“error_explanation”>
+        <h5><%= @enduser.errors.count %>件のerrorが発生しました。</h5>
+          <ul>
+            <% @enduser.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+      </div>
+    <% end %>
+    <!-- 投稿フォーム-->
+    <div class="field">
+      <%= f.label :Name %><br />
+      <%= f.text_field :name %>
+    </div>
+    
+    <div class="field">
+      <%= f.label :Nickname %><br />
+      <%= f.text_field :nick_name %>
+    </div>
+    
+    <div class="field">
+      <%= f.label :Introduction %><br />
+      <%= f.text_field :introduction %>
+    </div>
+    
+    <div class="field">
+      <%= attachment_image_tag @enduser, :profile_image, fallback: 'no-image.jpg', onChange: "$('.img_field').change()", class: 'center-block enduser-profile-img img_prev'%><br />
+      <%= f.attachment_field :profile_image, class: 'img_field' %>
+    </div>
+    
+    <div class="actions">
+      <%= f.submit "Update User" %>
+    </div>
+  <% end %>
+</div>  
