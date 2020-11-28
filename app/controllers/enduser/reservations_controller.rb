@@ -7,11 +7,9 @@ class Enduser::ReservationsController < Enduser::Base
   end
 
   def create
-    @newreservation = Reservation.new
     @reservation = Reservation.new(reservation_params)
+    p @reservation
     @reservation.enduser_id = current_enduser_enduser.id
-    @reservation.enduser_id = current_enduser_enduser.id
-    @reservation.pet_id = @pet.id
     @reservation.save
     flash[:notice] = "予約しました"
     redirect_to "/"

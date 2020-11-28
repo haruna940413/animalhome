@@ -11,7 +11,7 @@
 
 <h2>見学の予約をする</h2>
 
-<%= form_with model: @reservation, url: enduser_pet_reservations_path(@pet), local: true do |f| %>
+<%= form_with model: @newreservation, url: enduser_pet_reservations_path(@pet), local: true do |f| %>
   <%= f.hidden_field :pet_id, value: @pet.id %>
   <div class="reservation-container">
     <!--予約(開始)-->
@@ -43,8 +43,11 @@
 <!--カレンダー押したら出てくる-->
 <script type="text/javascript">
   $(function () {
-    $('#datetimepicker6').datetimepicker();
+    $('#datetimepicker6').datetimepicker({
+      format:'Y/M/D HH:mm:ss'
+    });
     $('#datetimepicker7').datetimepicker({
+      format:'Y/M/D HH:mm:ss',
       useCurrent: false //Important! See issue #1075
     });
     $("#datetimepicker6").on("dp.change", function (e) {
