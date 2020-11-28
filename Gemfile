@@ -73,3 +73,12 @@ gem 'jp_prefecture'
 gem 'enum_help'
 gem 'rails-i18n', '~> 5.1'
 gem 'kaminari','~> 1.2.1'
+
+gem 'bootstrap3-datetimepicker-rails'
+gem 'momentjs-rails', '>= 2.9.0'
+
+
+gem 'dotenv-rails'
+group :production do
+  gem 'mysql2'
+end

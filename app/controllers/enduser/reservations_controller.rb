@@ -1,6 +1,29 @@
 class Enduser::ReservationsController < Enduser::Base
-  
-def new
-end
+  before_action :authenticate_enduser_enduser!
+  before_action :set_pet, only: [:new, :create, :edit, :update]
+
+  def new
+    @newreservation = Reservation.new
+  end
+
+  def create
+    @newreservation = Reservation.new
+    @reservation = Reservation.new(reservation_params)
+    @reservation.enduser_id = current_enduser_enduser.id
+    @reservation.enduser_id = current_enduser_enduser.id
+    @reservation.pet_id = @pet.id
+    @reservation.save
+    flash[:notice] = "予約しました"
+    redirect_to "/"
+  end
+
+private
+  def reservation_params
+    params.require(:reservation).permit(:start_date, :end_date, :pet_id)
+  end
+
+  def set_pet
+    @pet = Pet.find(params[:pet_id])
+  end
 
 end

@@ -9,7 +9,7 @@
   <%= link_to "ペット詳細", enduser_pet_path(@pet) %>
 </div>
 
-
+<!--ペットの詳細ページ-->
 <div class="enduser-pet-show">
   <h3>『<%= @pet.name%>』の詳細</h3>
     <div class="row">
@@ -49,7 +49,7 @@
           <li><%= @pet.pet_status_i18n %></li>
         </ul>
       </div>
-      <%= link_to "譲渡会を予約する", new_enduser_reservation_path %>
+      <%= link_to "譲渡会を予約する", new_enduser_pet_reservation_path(@pet) %>
       <div class="top-border"><%= image_tag('border.png', :size =>'1105x5') %></div>
     </div>
 </div>

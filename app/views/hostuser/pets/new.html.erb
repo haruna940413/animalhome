@@ -21,7 +21,7 @@
         </ul>
       </div>
     <% end %>
-    
+
   　<div class="row">
       <div class="field col-xl-4">
         <%= attachment_image_tag @pet, :animal_image, fallback: 'no-image.jpg', format: 'jpeg', size:'300x200', onChange: "$('.img_field').change()", class: 'center-block img_prev'%>
@@ -70,11 +70,11 @@
         </div>
         <div class="field col-xl-12">
           <%= f.label :都道府県, class:"col-xl-4" %>
-          <%= f.select :pet_status, Pet.pet_statuses_i18n.invert, {}, class: "col-xl-7" %>
+          <%= f.select :prefectures, Pet.prefectures_i18n.invert, {}, class: "col-xl-7" %>
         </div>
         <div class="field col-xl-12">
           <%= f.label :募集状況, class:"col-xl-4" %>
-          <%= f.select :prefectures, Pet.prefectures_i18n.invert, {}, class: "col-xl-7" %>
+          <%= f.select :pet_status, Pet.pet_statuses_i18n.invert, {}, class: "col-xl-7" %>
         </div>
         <div class="field col-xl-12">
           <%= f.label :備考欄, class: "col-xl-4" %>
@@ -84,9 +84,9 @@
       <div class="col-xl-2">
         <div class="actions col-xs-12">
           <%= f.submit "新規登録", class:"btn btn-dark" %>
-        </div>  
+        </div>
       </div>
-    </div>  
+    </div>
   <% end %>
   </div>
 </div>

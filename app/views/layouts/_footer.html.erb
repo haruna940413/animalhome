@@ -16,9 +16,6 @@
           <%= link_to "卒業犬・猫", posts_path %>
         </li>
         <li>
-          <%= link_to "譲渡会ご予約", destroy_enduser_enduser_session_path , method: :delete, "data-confirm" => "ログアウトしますか？" %>
-        </li>
-        <li>
           <%= link_to "問い合わせ", destroy_enduser_enduser_session_path , method: :delete, "data-confirm" => "ログアウトしますか？" %>
         </li>
       </ul>
@@ -48,5 +45,5 @@
       <% else%>
        <%= link_to "-ログイン(管理者)-", new_hostuser_hostuser_session_path , class: "" %>
       <% end %>
-    </div>  
+    </div>
 </footer>

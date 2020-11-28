@@ -9,7 +9,7 @@
 
 <div class="enduser-pet-index">
   <h2>登録ペット一覧</h2>
-  
+
   <!--検索機能-->
   <%= form_with url: search_path, method: :get, local: true do |f| %>
     <table class="search">
@@ -19,7 +19,7 @@
       </tr>
     </table>
   <% end %>
-  
+
   <!--ペット画像一覧-->
   <% @pets.each do |pet|%>
     <div class="row enduser-pet-index-now">
@@ -60,7 +60,7 @@
           <li><%= pet.pet_status_i18n %></li>
         </ul>
       </div>
-      <div class="reservation"><%= link_to "譲渡会を予約する", new_enduser_reservation_path  %></div>
+      <div class="reservation"><%= link_to "譲渡会を予約する", new_enduser_pet_reservation_path(pet)  %></div>
       <div class="top-border"><%= image_tag('border.png', :size =>'1105x5') %></div>
     </div>
     <% end %>

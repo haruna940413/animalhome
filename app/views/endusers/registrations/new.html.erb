@@ -1,14 +1,21 @@
-<h2>Sign up</h2>
+<div class="top-border"><%= image_tag('border.png', :size =>'1100x5') %></div>
+<div class="top-img"><%= image_tag('concept.png', :size =>'1100x150') %></div>
+
+<div class="link_bar">
+  <%= link_to "top", root_path %>
+   <span>>></span>
+  <%= link_to "sign up", new_enduser_enduser_registration_path %>
+</div>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "endusers/shared/error_messages", resource: resource %>
-  
+
   <div class="field form-group col-xs-12">
     <%= f.label :name %><br />
     <%= f.text_field :name, autofocus: true %>
   </div>
-  
-  
+
+
   <div class="field form-group col-xs-12">
     <%= f.label :"Nickname" %><br />
     <%= f.text_field :nick_name, autofocus: true %>
@@ -18,7 +25,7 @@
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %><br><br>
   </div>
-  
+
   <div class="field introduction-fileld">
     <%= f.label :"Introduction" %><br />
     <%= f.text_field :introduction , autofocus: true %><br /><br>
@@ -28,7 +35,7 @@
     <%= image_tag 'no-image.jpg', onChange: "$('.img_field').change()", class: 'center-block new-profile-img img_prev'%><br>
     <%= f.attachment_field :profile_image, class: 'img_field' %>
   </div>
-  
+
 
   <div class="field">
     <%= f.label :password %>
@@ -42,12 +49,12 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
-  
-  
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
+
+
+  <div class="actions enduser-action">
+    <%= f.submit "新規登録" %>
   </div>
 <% end %>
 
-<%= render "endusers/shared/links" %>
+<%#= render "endusers/shared/links" %>

@@ -1,26 +1,42 @@
+<div class="top-border"><%= image_tag('border.png', :size =>'1100x5') %></div>
+<div class="top-img"><%= image_tag('concept.png', :size =>'1100x150') %></div>
+
+<div class="link_bar">
+  <%= link_to "top", root_path %>
+   <span>>></span>
+  <%= link_to "login", new_enduser_enduser_session_path %>
+</div>
+
 <h2>Log in</h2>
+<div class="row">
+  <div class="col-xl-5">
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="field">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      <div class="field">
+        <%= f.label :password %><br />
+        <%= f.password_field :password, autocomplete: "current-password" %>
+      </div>
+
+      <% if devise_mapping.rememberable? %>
+        <div class="field">
+          <%= f.check_box :remember_me %>
+          <%= f.label :remember_me %>
+        </div>
+      <% end %>
+
+      <div class="actions enduser-action">
+        <%= f.submit "ログイン" %>
+      </div>
+    <% end %>
   </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
+  <div class="col-xl-5">
+    <%= image_tag('actibity01.png', :size =>'300x200') %>
   </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
+</div>
 
 <%= render "endusers/shared/links" %>
+</div>

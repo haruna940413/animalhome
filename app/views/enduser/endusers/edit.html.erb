@@ -28,24 +28,24 @@
       <%= f.label :Name %><br />
       <%= f.text_field :name %>
     </div>
-    
+
     <div class="field">
       <%= f.label :Nickname %><br />
       <%= f.text_field :nick_name %>
     </div>
-    
+
     <div class="field">
       <%= f.label :Introduction %><br />
       <%= f.text_field :introduction %>
     </div>
-    
+
     <div class="field">
-      <%= attachment_image_tag @enduser, :profile_image, fallback: 'no-image.jpg', onChange: "$('.img_field').change()", class: 'center-block enduser-profile-img img_prev'%><br />
+      <%= attachment_image_tag @enduser, :profile_image, fallback: 'no-image.jpg', onChange: "$('.img_field').change()", class: 'center-block enduser-edit-profile-img img_prev'%><br />
       <%= f.attachment_field :profile_image, class: 'img_field' %>
     </div>
-    
+
     <div class="actions">
       <%= f.submit "Update User" %>
     </div>
   <% end %>
-</div>  
+</div>

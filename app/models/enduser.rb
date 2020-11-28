@@ -16,6 +16,7 @@ class Enduser < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :reservations, dependent: :destroy
 
+  # フォローに関する記述
   has_many :follower, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy # フォロー取得(自分がフォローしてる人)
   has_many :followed, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy # フォロワー取得(自分をフォローしてる人)
   has_many :following_user, through: :follower, source: :followed # 自分がフォローしている人(の一覧)
