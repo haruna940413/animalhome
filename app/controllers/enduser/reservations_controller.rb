@@ -1,6 +1,6 @@
 class Enduser::ReservationsController < Enduser::Base
   before_action :authenticate_enduser_enduser!
-  before_action :set_pet, only: [:new, :create, :edit, :update]
+  before_action :set_pet, only: [:new, :show, :create, :edit, :update]
 
   def new
     @newreservation = Reservation.new
@@ -8,11 +8,14 @@ class Enduser::ReservationsController < Enduser::Base
 
   def create
     @reservation = Reservation.new(reservation_params)
-    p @reservation
     @reservation.enduser_id = current_enduser_enduser.id
     @reservation.save
     flash[:notice] = "予約しました"
     redirect_to "/"
+  end
+
+  def show
+    @reservation = Reservation.find(params[:id])
   end
 
 private

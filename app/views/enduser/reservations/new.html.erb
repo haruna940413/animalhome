@@ -6,7 +6,7 @@
   <span>>></span>
   <%= link_to "ペット一覧", enduser_pets_path %>
   <span>>></span>
-  <%= link_to "予約", new_enduser_pet_reservation_path(@pet) %>
+  <%= link_to "新規予約", new_enduser_pet_reservation_path(@pet) %>
 </div>
 
 <h2>見学の予約をする</h2>
@@ -44,10 +44,12 @@
 <script type="text/javascript">
   $(function () {
     $('#datetimepicker6').datetimepicker({
-      format:'Y/M/D HH:mm:ss'
+      format:'Y/M/D HH:mm'
+      // format:'Y/M/D HH:mm:ss'
     });
     $('#datetimepicker7').datetimepicker({
-      format:'Y/M/D HH:mm:ss',
+      // format:'Y/M/D HH:mm:ss',
+      format:'Y/M/D HH:mm',
       useCurrent: false //Important! See issue #1075
     });
     $("#datetimepicker6").on("dp.change", function (e) {

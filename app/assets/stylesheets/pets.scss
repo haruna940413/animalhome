@@ -4,12 +4,23 @@
 
 
 // enduser
-.enduser-pet-index-now > .col-xl-2{
+.enduser-pet-index-now > .col-xl-2 {
   margin-top: 30px;
+  margin-left: 15px;
 }
-.enduser-pet-index-now li {
- padding: 5px 0;
+
+.enduser-pet-index-now > .col-xl-1 {
+  margin-top: 358px;
 }
+
+.enduser-pet-index-now >.col-xl-1 a {
+  color: #BB925A
+}
+.enduser-pet-index-now >.col-xl-1 a:hover {
+  color: #BB925A
+}
+
+
 // hostuser
 .post i{
   margin-left: 65px;

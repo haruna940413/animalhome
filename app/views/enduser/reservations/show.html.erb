@@ -1,0 +1,37 @@
+<div class="top-border"><%= image_tag('border.png', :size =>'1100x5') %></div>
+<div class="top-img"><%= image_tag('concept.png', :size =>'1100x150') %></div>
+
+<div class="link_bar">
+  <%= link_to "top", root_path %>
+  <span>>></span>
+  <%= link_to "ペット一覧", enduser_pets_path %>
+  <span>>></span>
+  <%= link_to "新規予約", new_enduser_pet_reservation_path(@pet) %>
+  <span>>></span>
+  <%#= link_to "予約確認", enduser_pet_reservation_path(@pet,@reservation) %>
+</div>
+
+<h2>予約確認</h2>
+<% if @reservation.enduser == current_enduser_enduser %>
+  <div class="enduser-reservation-show">
+    <div class="row">
+      <div class="col-xl-3 reservation-show">
+        <ul>
+          <li>予約しているペット</li>
+          <li>予約開始時間</li>
+          <li>予約終了時間</li>
+        </ul>
+      </div>
+      <div class="col-xl-4 reservation-show">
+        <ul>
+          <li><%= @pet.name %></li>
+          <li><%= @reservation.start_date%></li>
+          <li><%= @reservation.end_date%></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+<% else %>
+ <p><%= current_enduser_enduser.nick_name %>さんの予約はありません</p>
+<% end %>
+

@@ -24,7 +24,7 @@
   <% @pets.each do |pet|%>
     <div class="row enduser-pet-index-now">
       <div class="top-border"><%= image_tag('border.png', :size =>'1105x5') %></div>
-      <div class="col-xl-7 col-xl-offset-1">
+      <div class="col-xl-6 col-xl-offset-1">
         <h3><%= pet.name %>(<%= pet.sex_i18n %>)</h3>
         <%= attachment_image_tag pet, :animal_image, fallback: 'no-image.jpg', format: 'jpeg', size:'600x400' %>
       </div>
@@ -60,7 +60,9 @@
           <li><%= pet.pet_status_i18n %></li>
         </ul>
       </div>
-      <div class="reservation"><%= link_to "譲渡会を予約する", new_enduser_pet_reservation_path(pet)  %></div>
+      <div class="reservation col-xl-1">
+        <%= link_to "譲渡会を予約する", new_enduser_pet_reservation_path(pet)  %>
+      </div>
       <div class="top-border"><%= image_tag('border.png', :size =>'1105x5') %></div>
     </div>
     <% end %>
