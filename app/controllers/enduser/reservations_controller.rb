@@ -1,30 +1,57 @@
 class Enduser::ReservationsController < Enduser::Base
-  before_action :authenticate_enduser_enduser!
-  before_action :set_pet, only: [:new, :show, :create, :edit, :update]
+  before_action :authenticate_enduser_enduser! , only: [:create, :update, :destroy]
 
-  def new
-    @newreservation = Reservation.new
+  def index
+    @reservations = Reservation.all
+    @reservation = Reservation.new
   end
+
 
   def create
     @reservation = Reservation.new(reservation_params)
     @reservation.enduser_id = current_enduser_enduser.id
-    @reservation.save
-    flash[:notice] = "予約しました"
-    redirect_to "/"
+    if @reservation.save
+      flash[:notice] = "予約しました"
+      redirect_to enduser_reservation_path(@reservation.id)
+    else
+      @reservations = Reservation.all
+      render "index"
+      flash[:notice] = "予約に失敗しました"
+    end
   end
 
   def show
     @reservation = Reservation.find(params[:id])
   end
 
-private
-  def reservation_params
-    params.require(:reservation).permit(:start_date, :end_date, :pet_id)
+  # def edit
+  #   @reservation = Reservation.find(params[:id])
+  # end
+
+  def update
+     @reservation = Reservation.find(params[:id])
+
+   if  @reservation.update(reservation_params)
+    flash[:notice] = "予約更新しました"
+    redirect_to enduser_reservations_path
+   else
+    render "edit"
+    flash[:notice] = "予約の更新に失敗しました"
+   end
+
   end
 
-  def set_pet
-    @pet = Pet.find(params[:pet_id])
+
+  def destroy
+    @reservation = Reservation.find_by(id: params[:id], enduser_id: current_enduser_enduser.id)
+    @reservation.destroy
+    redirect_to enduser_reservations_path
   end
+
+private
+  def reservation_params
+    params.require(:reservation).permit(:start_date, :end_date)
+  end
+
 
 end

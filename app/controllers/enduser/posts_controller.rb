@@ -37,6 +37,7 @@ class Enduser::PostsController < Enduser::Base
     redirect_to enduser_path(current_enduser_enduser.id)
    else
     render "edit"
+    flash[:notice] = "投稿の更新に失敗しました"
    end
 
   end

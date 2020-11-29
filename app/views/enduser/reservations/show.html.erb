@@ -6,32 +6,55 @@
   <span>>></span>
   <%= link_to "ペット一覧", enduser_pets_path %>
   <span>>></span>
-  <%= link_to "新規予約", new_enduser_pet_reservation_path(@pet) %>
+  <%= link_to "予約カレンダー", enduser_reservations_path %>
   <span>>></span>
-  <%#= link_to "予約確認", enduser_pet_reservation_path(@pet,@reservation) %>
+  <%= link_to "予約確認", enduser_reservation_path(@reservation) %>
 </div>
 
 <h2>予約確認</h2>
-<% if @reservation.enduser == current_enduser_enduser %>
-  <div class="enduser-reservation-show">
-    <div class="row">
-      <div class="col-xl-3 reservation-show">
-        <ul>
-          <li>予約しているペット</li>
-          <li>予約開始時間</li>
-          <li>予約終了時間</li>
-        </ul>
-      </div>
-      <div class="col-xl-4 reservation-show">
-        <ul>
-          <li><%= @pet.name %></li>
-          <li><%= @reservation.start_date%></li>
-          <li><%= @reservation.end_date%></li>
-        </ul>
+
+<%= form_with model: @reservation, url: enduser_reservation_path(@reservation), method: :patch, local: true do |f| %>
+
+　<!--エラー文-->
+  <% if @reservation.errors.any? %>
+    <div>
+      <h5><%= @reservation.errors.count %>件のerrorが発生しました。</h5>
+      <ul>
+        <% @reservation.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <!--予約-->
+  <div class="reservation-container">
+    <div class="col-xl-8">
+      <div class="form-group">
+        <div class="input-group" data-target-input="nearest">
+          <%= f.text_field :start_date, id: "start_created_at", class: "form-control datetimepicker6", data: { target: '#start_created_at'}, :placeholder => "希望開始時間" %>
+          <div class="input-group-append" data-target="#start_created_at" data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+          </div>
+        </div>
       </div>
     </div>
+    <%= f.submit "予約を更新する", class: "btn btn-outline-dark" %>
+    <%= link_to "destroy", enduser_reservation_path, method: :delete, "data-confirm" => "この予約を本当に消ますか？", class: "btn btn-outline-dark" %>
   </div>
-<% else %>
- <p><%= current_enduser_enduser.nick_name %>さんの予約はありません</p>
 <% end %>
+
+<!--カレンダー押したら出てくる-->
+<script type="text/javascript">
+  $(function () {
+    $('.datetimepicker6').datetimepicker({
+      format:'Y/M/D HH:00'
+    });
+    $(".datetimepicker6").on("dp.change", function (e) {
+      $('.datetimepicker7').data("DateTimePicker").minDate(e.date);
+    });
+  });
+</script>
+
+
 

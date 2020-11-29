@@ -23,9 +23,8 @@ Rails.application.routes.draw do
       :sessions => 'endusers/sessions', :registrations => 'endusers/registrations', :passwords => 'endusers/passwords'
     }
     resources :genres, only: [:show]
-    resources :pets, only: [:index, :show] do
-      resources :reservations, only: [:new, :show, :create, :edit, :update, :destroy]
-    end
+    resources :pets, only: [:index, :show]
+    resources :reservations, only: [:index, :show, :create, :update, :destroy]
   end
 
   #管理者側のルート
@@ -39,9 +38,8 @@ Rails.application.routes.draw do
       :sessions => 'hostusers/sessions'
      }
     resources :genres, only: [:index, :create, :edit, :update]
-    resources :pets, only: [:index, :new, :create, :show, :edit, :update] do
-       resources :reservation
-    end
+    resources :pets, only: [:index, :new, :create, :show, :edit, :update]
+    resources :reservation
   end
 
 

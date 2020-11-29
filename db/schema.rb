@@ -98,7 +98,6 @@ ActiveRecord::Schema.define(version: 2020_11_19_053545) do
 
   create_table "reservations", force: :cascade do |t|
     t.integer "enduser_id"
-    t.integer "pet_id"
     t.datetime "start_date"
     t.datetime "end_date"
     t.datetime "created_at", null: false
