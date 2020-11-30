@@ -21,12 +21,10 @@ class Enduser::ReservationsController < Enduser::Base
   end
 
   def show
+    @reservations = Reservation.all
     @reservation = Reservation.find(params[:id])
   end
 
-  # def edit
-  #   @reservation = Reservation.find(params[:id])
-  # end
 
   def update
      @reservation = Reservation.find(params[:id])

@@ -41,7 +41,7 @@ ja:
       castration_status:
         blank: --入力してください--
         before: 未
-        after:  済  
+        after:  済
       single_status:
         blank: --入力してください--
         ok: 可
@@ -49,7 +49,7 @@ ja:
       older_status:
         blank: --入力してください--
         ok: 可
-        ng:  不可  
+        ng:  不可
       pet_status:
         blank: --入力してください--
         invite: 募集中
@@ -104,4 +104,22 @@ ja:
         miyazaki: 宮崎
         kagoshima: 鹿児島
         okinawa: 沖縄
-      
+
+  activerecord:
+    models:
+      enduser: 会員様
+    attributes:
+      reservation:
+        start_date: この開始時間
+        created_at: 登録日時
+        updated_at: 更新日時
+
+  activerecord:
+    models:
+      post: 画像投稿
+    attributes:
+      post:
+        post_image: 画像
+        content: 本文
+        created_at: 登録日時
+        updated_at: 更新日時

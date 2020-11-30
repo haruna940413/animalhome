@@ -1,5 +1,5 @@
-<div class="top-border"><%= image_tag('border.png', :size =>'1100x5') %></div>
-<div class="top-img"><%= image_tag('concept.png', :size =>'1100x150') %></div>
+<div class="top-border"><%= image_tag('border.png', :size =>'1200x5') %></div>
+<div class="top-img"><%= image_tag('concept.png', :size =>'1200x150') %></div>
 
 <div class="link_bar">
   <%= link_to "top", root_path %>
@@ -27,7 +27,7 @@
 
   <div class="reservation-container">
 　　<!--予約(開始)-->
-    <div class="col-xl-8">
+    <div class="reservation-new">
       <div class="form-group">
         <div class="input-group" data-target-input="nearest">
           <%= f.text_field :start_date, id: "start_created_at", class: "form-control datetimepicker6", data: { target: '#start_created_at'}, :placeholder => "希望開始時間" %>
@@ -37,20 +37,30 @@
         </div>
       </div>
     </div>
-    <!--予約(終了)-->
-    <!--<div class="col-xl-8">-->
-    <!--  <div class="form-group">-->
-    <!--    <div class="input-group" data-target-input="nearest">-->
-    <!--      <%#= f.text_field :end_date, id: "end_created_at", class: "form-control datetimepicker7", data: { target: '#end_created_at'}, :placeholder => "希望終了時間" %>-->
-    <!--      <div class="input-group-append" data-target="#end_created_at" data-toggle="datetimepicker">-->
-    <!--        <div class="input-group-text"><i class="fa fa-calendar"></i></div>-->
-    <!--      </div>-->
-    <!--    </div>-->
-    <!--  </div>-->
-    <!--</div>-->
     <%= f.submit "この日程で予約する", class: "btn btn-outline-dark" %>
   </div>
 <% end %>
+
+
+<h2>現在の予約状況</h2>
+<div class="row enduser-reservation">
+  <div class="col-xl-8">
+    <div id="calendar"></div>
+  </div>
+  <div class="col-xl-4">
+  <% if enduser_enduser_signed_in? %>
+  <h3>現在の自分の予約状況</h3>
+  　<% @reservations.each do |reservation| %>
+      <% if reservation.enduser_id == current_enduser_enduser.id %>
+        <div>
+           <%= link_to "●", enduser_reservation_path(reservation), class: "circle" %>
+           <%= reservation.start_date.strftime("%Y/%m/%d %H:%M") %><span>(編集する)</span>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
+  </div>
+</div>
 
 <!--カレンダー押したら出てくる-->
 <script type="text/javascript">
@@ -58,39 +68,81 @@
     $('.datetimepicker6').datetimepicker({
       format:'Y/M/D HH:00'
     });
-    // $('.datetimepicker7').datetimepicker({
-    //   format:'Y/M/D HH:00',
-    //   useCurrent: false //Important! See issue #1075
-    // });
     $(".datetimepicker6").on("dp.change", function (e) {
       $('.datetimepicker7').data("DateTimePicker").minDate(e.date);
     });
-    // $(".datetimepicker7").on("dp.change", function (e) {
-    //   $('.datetimepicker6').data("DateTimePicker").maxDate(e.date);
-    // });
   });
+
+
+// フルカレンダー
+  $(function () {
+    // 画面遷移を検知
+    $(document).on('turbolinks:load', function () {
+      if ($('#calendar').length) {
+
+        function Calendar() {
+          return $('#calendar').fullCalendar({
+          });
+        }
+        function clearCalendar() {
+          $('#calendar').html('');
+        }
+
+        $(document).on('turbolinks:load', function () {
+          Calendar();
+        });
+        $(document).on('turbolinks:before-cache', clearCalendar);
+
+        //events: '/events.json', 以下に追加
+        $('#calendar').fullCalendar({
+            events: [
+              <% @reservations.each do |reservation|%>
+              {
+                id: '<%= reservation.id %>',
+                title: '×',
+                start: '<%= reservation.start_date.strftime("%Y/%m/%d %H:%M") %>'
+              },
+              <% end %>
+            ],
+
+        //カレンダー上部を年月で表示させる
+        titleFormat: 'YYYY年 M月',
+        //曜日を日本語表示
+        dayNamesShort: ['日', '月', '火', '水', '木', '金', '土'],
+        //ボタンのレイアウト
+        header: {
+            left: '',
+            center: 'title',
+            right: 'today prev,next'
+        },
+      //終了時刻がないイベントの表示間隔
+      defaultTimedEventDuration: '03:00:00',
+      buttonText: {
+          prev: '前',
+          next: '次',
+          prevYear: '前年',
+          nextYear: '翌年',
+          today: '今日',
+          month: '月',
+          week: '週',
+          day: '日'
+      },
+      // Drag & Drop & Resize
+      editable: true,
+      //イベントの時間表示を２４時間に(am,pmを表示しない)
+      timeFormat: "HH:mm",
+      minTime: 0,
+      maxTime: 24,
+      //イベントの色を変える
+      eventColor: '#87cefa',
+      //イベントの文字色を変える
+      eventTextColor: '#000000',
+      eventRender: function(event, element) {
+          element.css("font-size", "0.8em");
+          element.css("padding", "5px");
+      }
+          });
+        }
+    });
+　});
 </script>
-
-<div class="top-border"><%= image_tag('border.png', :size =>'1100x5') %></div>
-
-<h2>現在の予約状況</h2>
-<% @reservations.each do |reservation| %>
-  <% if enduser_enduser_signed_in? %>
-    <% if reservation.enduser_id == current_enduser_enduser.id %>
-      <div>
-         <%= link_to reservation.id, enduser_reservation_path(reservation) %>
-         <%= reservation.start_date.strftime("%Y/%m/%d %H:%M") %>
-      </div>
-    <% else %>
-      <div>
-         <%= reservation.id %>
-         <%= reservation.start_date.strftime("%Y/%m/%d %H:%M") %>
-      </div>
-    <% end %>
-  <% else%>
-    <div>
-       <%= reservation.id %>
-       <%= reservation.start_date.strftime("%Y/%m/%d %H:%M") %>
-    </div>
-  <% end %>
-<% end %>

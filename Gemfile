@@ -77,6 +77,8 @@ gem 'kaminari','~> 1.2.1'
 gem 'bootstrap4-datetime-picker-rails'
 gem 'momentjs-rails', '>= 2.9.0'
 
+gem 'fullcalendar-rails'
+
 
 gem 'dotenv-rails'
 group :production do

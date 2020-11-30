@@ -20,3 +20,23 @@
 
 //= require moment/ja.js
 //= require tempusdominus-bootstrap-4.js
+
+
+//= require fullcalendar
+
+
+
+// 画像スライダー(マウスオーバーで表示画像を変える)
+$(function() {
+  $('.a').slick({
+      dots: true,
+      autoplay: true,
+    　autoplaySpeed: 5000,
+  });
+/*
+  $('.slick-dots li').on('mouseover', function() {
+    $('.a').slick('goTo', $(this).index());
+  });
+  */
+});
+

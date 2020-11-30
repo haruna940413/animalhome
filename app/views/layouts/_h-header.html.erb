@@ -18,14 +18,14 @@
             <%= link_to "" , "#" , class: "fa fa-instagram" %>
           </li>
           <li>
-            <%= link_to "" , "#" , class: "far fa-calendar-alt" %>
+            <%= link_to "" , hostuser_reservations_path , class: "far fa-calendar-alt" %>
           </li>
           <li>
             <%= link_to "" , "#" , class: "fa fa-envelope-o" %>
           </li>
         </ul>
       </nav>
-    </div>  
+    </div>
     <!--listボタン-->
     <div class="header-bottom">
       <nav class="list">
@@ -40,10 +40,10 @@
             <%= link_to "ペットの一覧", hostuser_pets_path,data: {"turbolinks" => false} %>
           </li>
           <li>
-            <%= link_to "予約状況の確認", "#" %>
+            <%= link_to "予約確認(管理者)", "#" %>
           </li>
           <li>
-            <%= link_to "問い合せ確認", "#" %>
+            <%= link_to "問い合せ確認(管理者)", "#" %>
           </li>
         </ul>
       </nav>
@@ -67,7 +67,7 @@
             <%= link_to "" , "#" , class: "fa fa-instagram" %>
           </li>
           <li>
-            <%= link_to "" , "#" , class: "far fa-calendar-alt" %>
+            <%= link_to "" ,  enduser_reservations_path , class: "far fa-calendar-alt" %>
           </li>
           <li>
             <%= link_to "" , "#" , class: "fa fa-envelope-o" %>
@@ -78,7 +78,7 @@
     <div class="header-bottom">
       <!--listボタン-->
       <nav class="list">
-        <ul class="list-btn">   
+        <ul class="list-btn">
           <li>
             <%= link_to "当団体について", homes_about_path %>
           </li>
@@ -93,6 +93,6 @@
           </li>
         </ul>
       </nav>
-    </div>  
+    </div>
   <% end %>
 </header>

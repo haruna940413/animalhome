@@ -29,7 +29,7 @@
 
   <!--予約-->
   <div class="reservation-container">
-    <div class="col-xl-8">
+    <div class="reservation-edit">
       <div class="form-group">
         <div class="input-group" data-target-input="nearest">
           <%= f.text_field :start_date, id: "start_created_at", class: "form-control datetimepicker6", data: { target: '#start_created_at'}, :placeholder => "希望開始時間" %>
@@ -55,6 +55,91 @@
     });
   });
 </script>
+<h2>予約カレンダー</h2>
+<div id="calendar"></div>
 
 
+<!--カレンダー押したら出てくる-->
+<script type="text/javascript">
+  $(function () {
+    $('.datetimepicker6').datetimepicker({
+      format:'Y/M/D HH:00'
+    });
+    $(".datetimepicker6").on("dp.change", function (e) {
+      $('.datetimepicker7').data("DateTimePicker").minDate(e.date);
+    });
+  });
+
+
+// フルカレンダー
+  $(function () {
+    // 画面遷移を検知
+    $(document).on('turbolinks:load', function () {
+      if ($('#calendar').length) {
+
+        function Calendar() {
+          return $('#calendar').fullCalendar({
+          });
+        }
+        function clearCalendar() {
+          $('#calendar').html('');
+        }
+
+        $(document).on('turbolinks:load', function () {
+          Calendar();
+        });
+        $(document).on('turbolinks:before-cache', clearCalendar);
+
+        $('#calendar').fullCalendar({
+            events: [
+              <% @reservations.each do |reservation|%>
+              {
+                id: '<%= reservation.id %>',
+                title: '×',
+                start: '<%= reservation.start_date.strftime("%Y/%m/%d %H:%M") %>'
+              },
+              <% end %>
+            ],
+
+        //カレンダー上部を年月で表示させる
+        titleFormat: 'YYYY年 M月',
+        //曜日を日本語表示
+        dayNamesShort: ['日', '月', '火', '水', '木', '金', '土'],
+        //ボタンのレイアウト
+        header: {
+            left: '',
+            center: 'title',
+            right: 'today prev,next'
+        },
+      //終了時刻がないイベントの表示間隔
+      defaultTimedEventDuration: '03:00:00',
+      buttonText: {
+          prev: '前',
+          next: '次',
+          prevYear: '前年',
+          nextYear: '翌年',
+          today: '今日',
+          month: '月',
+          week: '週',
+          day: '日'
+      },
+      // Drag & Drop & Resize
+      editable: true,
+      //イベントの時間表示を２４時間に(am,pmを表示しない)
+      timeFormat: "HH:mm",
+      minTime: 0,
+      maxTime: 24,
+      //イベントの色を変える
+      eventColor: '#87cefa',
+      //イベントの文字色を変える
+      eventTextColor: '#000000',
+      eventRender: function(event, element) {
+          element.css("font-size", "0.8em");
+          element.css("padding", "5px");
+      }
+          });
+        }
+    });
+　});
+</script>
 
