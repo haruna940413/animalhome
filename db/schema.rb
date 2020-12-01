@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_19_053545) do
+ActiveRecord::Schema.define(version: 2020_11_30_223628) do
 
   create_table "comments", force: :cascade do |t|
     t.integer "enduser_id"
@@ -62,6 +62,14 @@ ActiveRecord::Schema.define(version: 2020_11_19_053545) do
     t.index ["reset_password_token"], name: "index_hostusers_on_reset_password_token", unique: true
   end
 
+  create_table "inquiries", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "pets", force: :cascade do |t|
     t.integer "genre_id"
     t.string "name"
@@ -99,7 +107,6 @@ ActiveRecord::Schema.define(version: 2020_11_19_053545) do
   create_table "reservations", force: :cascade do |t|
     t.integer "enduser_id"
     t.datetime "start_date"
-    t.datetime "end_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,0 +1,25 @@
+<div class="top-border"><%= image_tag('border.png', :size =>'1200x5') %></div>
+<div class="top-img"><%= image_tag('concept.png', :size =>'1200x150') %></div>
+
+<%= form_with model: @inquiry, url: enduser_inquiries_path, local: true do |f| %>
+
+  <div class="enduser-inquiry-new form-group-name">
+    <%= f.label :email, '返信先メールアドレス' %>
+    <%= f.text_field :email, class: 'form-control' %>
+  </div>
+
+  <div class="enduser-inquiry-new form-group-name">
+    <%= f.label :name, 'お名前' %>
+    <%= f.text_area :name, class: 'form-control' %>
+  </div>
+
+ <div class="enduser-inquiry-new form-group-inquiry">
+    <%= f.label :message, 'お問い合わせ内容' %>
+    <%= f.text_area :message, size: '10x10', class: 'form-control' %>
+ </div>
+
+ <div class="enduser-inquiry-new form-group-submit">
+    <%= f.submit '送信' %>
+ </div>
+
+<% end %>

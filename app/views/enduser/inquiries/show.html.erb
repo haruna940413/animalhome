@@ -1,0 +1,12 @@
+<div class="top-border"><%= image_tag('border.png', :size =>'1200x5') %></div>
+<div class="top-img"><%= image_tag('concept.png', :size =>'1200x150') %></div>
+
+<div class="thanks">
+  <%= image_tag('thanks.png', :size =>'400x50') %><br>
+  <p><%= @inquiry.name %> 様<br>
+  問い合わせありがとうございました。<br>
+  内容を確認次第返信させていただきますのでお待ちください。</p>
+  <p>ご返信先：<%= @inquiry.email %></p>
+  <p>内容：<%= @inquiry.message %></p>
+</div>
+

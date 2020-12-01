@@ -22,9 +22,9 @@ Rails.application.routes.draw do
     devise_for :endusers, :controllers => {
       :sessions => 'endusers/sessions', :registrations => 'endusers/registrations', :passwords => 'endusers/passwords'
     }
-    resources :genres, only: [:show]
     resources :pets, only: [:index, :show]
     resources :reservations, only: [:index, :show, :create, :update, :destroy]
+    resources :inquiries, only: [:new, :create, :show]
   end
 
   #管理者側のルート

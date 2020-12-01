@@ -1,6 +1,5 @@
 class Reservation < ApplicationRecord
   validates :start_date, {presence: true, uniqueness: true}
-  # validates :end_date, {presence: true, uniqueness: true }
   validate :start_check
   validate :start_cannot
 
