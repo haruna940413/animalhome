@@ -1,10 +1,22 @@
 class Hostuser::InquiriesController < Hostuser::Base
 
   def index
-    @inquiries = Inquiry.all
+    @inquiries = Inquiry.all.order("id DESC")
   end
 
-  def show
-    @inquirie = Inquiry.find(params[:id])
+  def update
+    @inquiry = Inquiry.find(params[:id])
+    if @inquiry.update(inquiry_params)
+        flash[:notice] = "返信済みに更新しました"
+        redirect_back fallback_location:  @inquiry
+    else
+      @inquiries = Inquiry.all
+      render :index
+    end
   end
+
+  def inquiry_params
+    params.require(:inquiry).permit(:email, :message, :name, :reply_status)
+  end
+
 end

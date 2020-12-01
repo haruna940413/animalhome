@@ -8,10 +8,10 @@
   <span>>></span>
   <%= link_to "予約カレンダー", enduser_reservations_path %>
   <span>>></span>
-  <%= link_to "予約確認", enduser_reservation_path(@reservation) %>
+  <%= link_to "予約確認・編集", enduser_reservation_path(@reservation) %>
 </div>
 
-<h2>予約確認</h2>
+<h2>予約確認・編集</h2>
 
 <%= form_with model: @reservation, url: enduser_reservation_path(@reservation), method: :patch, local: true do |f| %>
 

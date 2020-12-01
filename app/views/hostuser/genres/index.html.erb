@@ -1,5 +1,5 @@
-<div class="top-border"><%= image_tag('border.png', :size =>'1100x5') %></div>
-<div class="top-img"><%= image_tag('concept2.png', :size =>'1100x150') %></div>
+<div class="top-border"><%= image_tag('border.png', :size =>'1200x5') %></div>
+<div class="top-img"><%= image_tag('concept2.png', :size =>'1200x150') %></div>
 <div class="link_bar">
   <%= link_to "top", hostuser_homes_top_path %>
   <span>>></span>
@@ -9,16 +9,16 @@
 <div class="hostuser-genre-index">
   <h2>ジャンル一覧・追加</h2><br>
   <%= form_for @genre, :url => {:action => :create} do |f| %>
-    <div>
-      <%= f.text_field :name  %>　　
+    <div class="hostuser-genre-new">
+      <%= f.text_field :name  %>
       <%= f.radio_button :valid_flag, false %>
       <%= f.label :valid_flag, "有効", {value: :false, style: "display: inline-block;"} %>
       <%= f.radio_button :valid_flag, true %>
       <%= f.label :valid_flag, "無効", {value: :true, style: "display: inline-block;"} %>
-      <%= f.submit "追加", class: "btn btn-light" %>
+      <%= f.submit "追加", class: "btn btn-outline-dark" %>
     </div>
   <% end %>
-      
+
   <table class="table table-bordered">
     <thead>
       <tr>
@@ -36,9 +36,9 @@
           <% elsif genre.valid_flag == true %>
             <td><i class="fas fa-times"></i>無効</td>
           <% end %>
-          <td><%= link_to "編集する", edit_hostuser_genre_path(genre), class: "btn btn-light" %></td>
+          <td><%= link_to "編集する", edit_hostuser_genre_path(genre), class: "btn btn-outline-dark" %></td>
         </tr>
       <% end %>
     </tbody>
   </table>
-</div> 
+</div>

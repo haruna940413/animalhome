@@ -2,7 +2,7 @@
 <div class="top-img"><%= image_tag('concept.png', :size =>'1200x150') %></div>
 
 <div class="post-edit-wrapper">
-  
+
   <h2>post edit</h2>
   <%= form_with model: @post, url: post_path, method: :patch, local: true do |f|%>
     <!--エラー文-->
@@ -26,7 +26,7 @@
         <%= f.text_field :content, class: "content"%>
       </div>
       <div class="actions col-xl-4">
-        <%= f.submit "Update" %>
+        <%= f.submit "Update", class: "btn btn-outline-dark" %>
         <!--投稿削除-->
 　     <%= link_to "destroy", post_path, method: :delete ,"data-confirm" => "この投稿を削除しますか？" %>
       </div>

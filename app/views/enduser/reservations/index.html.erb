@@ -53,7 +53,7 @@
   　<% @reservations.each do |reservation| %>
       <% if reservation.enduser_id == current_enduser_enduser.id %>
         <div>
-           <%= link_to "●", enduser_reservation_path(reservation), class: "circle" %>
+           <%= link_to "", enduser_reservation_path(reservation), class: "fas fa-book-open" %>
            <%= reservation.start_date.strftime("%Y/%m/%d %H:%M") %><span>(編集する)</span>
         </div>
       <% end %>

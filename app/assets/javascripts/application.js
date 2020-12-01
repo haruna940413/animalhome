@@ -28,6 +28,7 @@
 
 // 画像スライダー(マウスオーバーで表示画像を変える)
 $(function() {
+  
   $('.a').slick({
       dots: true,
       autoplay: true,
@@ -38,5 +39,22 @@ $(function() {
     $('.a').slick('goTo', $(this).index());
   });
   */
+
+// ３枚を表示させるスライダー
+  $('.d').slick({
+    autoplay: true,
+    autoplaySpeed: 4000,
+    arrows: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+  });
 });
+
+
+
+
+//$('.button').on('click',function(){
+// var s = getdocumentbyId('#slider_id');
+//  alert(s.slick('slickGetOption','autoplay'));
+//});
 

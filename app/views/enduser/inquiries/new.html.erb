@@ -2,6 +2,7 @@
 <div class="top-img"><%= image_tag('concept.png', :size =>'1200x150') %></div>
 
 <%= form_with model: @inquiry, url: enduser_inquiries_path, local: true do |f| %>
+<%= f.hidden_field :reply_status, {value: :false} %>
 
   <div class="enduser-inquiry-new form-group-name">
     <%= f.label :email, '返信先メールアドレス' %>

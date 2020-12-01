@@ -22,7 +22,7 @@ class Enduser::InquiriesController < Enduser::Base
   private
 
   def inquiry_params
-    params.require(:inquiry).permit(:email, :message, :name)
+    params.require(:inquiry).permit(:email, :message, :name, :reply_status)
   end
 
 end

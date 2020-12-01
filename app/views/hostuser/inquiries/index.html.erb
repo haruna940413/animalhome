@@ -1,5 +1,5 @@
-<div class="top-border"><%= image_tag('border.png', :size =>'1100x5') %></div>
-<div class="top-img"><%= image_tag('concept2.png', :size =>'1100x150') %></div>
+<div class="top-border"><%= image_tag('border.png', :size =>'1200x5') %></div>
+<div class="top-img"><%= image_tag('concept2.png', :size =>'1200x150') %></div>
 
 
 <div class="hostuser-inquiry-index">
@@ -10,6 +10,7 @@
         <th>氏名</th>
         <th>アドレス</th>
         <th>問い合わせ内容</th>
+        <th>返信状況</th>
       </tr>
     </thead>
     <tbody>
@@ -19,6 +20,15 @@
         <td><%= inquiry.name %></td>
         <td><%= mail_to inquiry.email %></td>
         <td><%= inquiry.message %></td>
+        <td>
+          <%= form_with model: inquiry, url: hostuser_inquiry_path(inquiry), method: :PATCH, local: true do |f| %>
+          　<%= f.radio_button :reply_status, false %>
+            <%= f.label :reply_status, "返信未", {value: :false, style: "display: inline-block;"} %>
+            <%= f.radio_button :reply_status, true %>
+            <%= f.label :reply_status, "返信済", {value: :true, style: "display: inline-block;"} %>
+            <%= f.submit "更新", class: "btn btn-outline-dark" %>
+          <% end %>
+        </td>
       </tr>
       <% end %>
     </tbody>

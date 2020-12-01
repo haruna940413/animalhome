@@ -46,7 +46,7 @@ Rails.application.routes.draw do
     resources :genres, only: [:index, :create, :edit, :update]
     resources :pets, only: [:index, :new, :create, :show, :edit, :update]
     resources :reservations, only: [:index]
-    resources :inquiries, only: [:index, :show]
+    resources :inquiries, only: [:index, :update]
   end
 
 
