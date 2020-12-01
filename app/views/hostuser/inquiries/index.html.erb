@@ -1,0 +1,27 @@
+<div class="top-border"><%= image_tag('border.png', :size =>'1100x5') %></div>
+<div class="top-img"><%= image_tag('concept2.png', :size =>'1100x150') %></div>
+
+
+<div class="hostuser-inquiry-index">
+  <table class="table table-borderless">
+    <thead>
+      <tr>
+        <th>問い合わせID</th>
+        <th>氏名</th>
+        <th>アドレス</th>
+        <th>問い合わせ内容</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @inquiries.each do |inquiry| %>
+      <tr>
+        <td><%= inquiry.id%></td>
+        <td><%= inquiry.name %></td>
+        <td><%= mail_to inquiry.email %></td>
+        <td><%= inquiry.message %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</div>

@@ -1,0 +1,2 @@
+module Hostuser::InquiriesHelper
+end

@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  namespace :hostuser do
+    get 'inquiries/index'
+    get 'inquiries/show'
+  end
+  get 'inquiries/index'
+  get 'inquiries/show'
   #ユーザー側のルート
   scope module: :enduser do
     root to: 'homes#top'
@@ -40,6 +46,7 @@ Rails.application.routes.draw do
     resources :genres, only: [:index, :create, :edit, :update]
     resources :pets, only: [:index, :new, :create, :show, :edit, :update]
     resources :reservations, only: [:index]
+    resources :inquiries, only: [:index, :show]
   end
 
 

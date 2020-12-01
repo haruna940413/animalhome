@@ -21,7 +21,7 @@
             <%= link_to "" , hostuser_reservations_path , class: "far fa-calendar-alt" %>
           </li>
           <li>
-            <%= link_to "" , "#" , class: "fa fa-envelope-o" %>
+            <%= link_to "" , hostuser_inquiries_path , class: "fa fa-envelope-o" %>
           </li>
         </ul>
       </nav>
@@ -40,10 +40,10 @@
             <%= link_to "ペットの一覧", hostuser_pets_path,data: {"turbolinks" => false} %>
           </li>
           <li>
-            <%= link_to "予約確認(管理者)", "#" %>
+            <%= link_to "予約確認(管理者)",  hostuser_reservations_path %>
           </li>
           <li>
-            <%= link_to "問い合せ確認(管理者)", "#" %>
+            <%= link_to "問い合せ確認(管理者)", hostuser_inquiries_path %>
           </li>
         </ul>
       </nav>

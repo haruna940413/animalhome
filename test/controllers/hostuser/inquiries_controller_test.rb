@@ -1,13 +1,13 @@
 require 'test_helper'
 
-class InquiriesControllerTest < ActionDispatch::IntegrationTest
+class Hostuser::InquiriesControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
-    get inquiries_index_url
+    get hostuser_inquiries_index_url
     assert_response :success
   end
 
   test "should get show" do
-    get inquiries_show_url
+    get hostuser_inquiries_show_url
     assert_response :success
   end
 
