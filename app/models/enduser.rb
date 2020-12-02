@@ -37,4 +37,12 @@ class Enduser < ApplicationRecord
   def following?(enduser)
     following_user.include?(enduser)
   end
+  
+  # ゲストログイン機能
+  def self.guest
+    find_or_create_by!(email: 'guest@example.com') do |enduser|
+      enduser.password = SecureRandom.urlsafe_base64
+      # user.confirmed_at = Time.now  # Confirmable を使用している場合は必要
+    end
+  end
 end

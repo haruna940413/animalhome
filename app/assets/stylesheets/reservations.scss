@@ -5,42 +5,35 @@
 .input-group-addon {
  padding: 3px 15px;
 }
-.col-xl-8 {
- display: block;
- padding-left: 0;
-}
-
-.reservation-show {
- margin: 0 15px;
-}
-
-.enduser-reservation-show {
- height: 300px;
- width: 1200px;
- padding-top: 120px;
-}
-
 .reservation-container {
  margin-bottom: 100px;
 }
-#calendar {
- width: 100%;
- margin-bottom: 50px;
- // margin: 0 auto;
-}
-
 .reservation-new {
- width: 500px;
+ width: 600px;
 }
-.reservation-edit{
- width: 500px;
+#calendar {
+ margin-bottom: 50px;
+ margin: 0 auto;
 }
-
-
+.enduser-reservations {
+ margin-bottom: 30px;
+}
 .enduser-reservations-index {
  height: 300px;
- margin-top: 298px;
+ margin-top: 300px;
  padding: 15px 0;
  text-align: center;
  border: solid 1px #656565;
+}
+
+// 予約の詳細・編集ページ
+.reservation-show {
+ margin: 0 15px;
+}
+.reservation-edit{
+ width: 600px;
+}
+.enduser-reservation-show {
+ height: 300px;
+ padding-top: 120px;
 }

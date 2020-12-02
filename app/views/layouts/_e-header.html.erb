@@ -1,8 +1,8 @@
 <header>
-  <% if enduser_enduser_signed_in? %>
+  <% if enduser_signed_in? %>
     <!--エンドユーザーがログインしている時 -->
     <div class="header-top">
-      <%= link_to enduser_path(current_enduser_enduser.id) do %>
+      <%= link_to enduser_path(enduser_signed_in.id) do %>
        <%= image_tag('logo.png', :size =>'200x50') %>
       <% end %>
       <!--snsボタン-->
@@ -88,7 +88,7 @@
           <%= link_to "卒業犬・猫", posts_path %>
         </li>
         <li>
-          <%= link_to "ログイン", new_enduser_enduser_session_path %>
+          <%= link_to "ログイン", new_enduser_session_path %>
         </li>
       </ul>
     </nav>

@@ -2,6 +2,13 @@
 
 class Endusers::SessionsController < Devise::SessionsController
   layout 'enduser'
+  
+  def new_guest
+    @enduser = Enduser.guest
+    sign_in @enduser
+    redirect_to root_path, notice: 'ゲストユーザーとしてログインしました。'
+  end
+  
   # before_action :configure_sign_in_params, only: [:create]
 
   # GET /resource/sign_in

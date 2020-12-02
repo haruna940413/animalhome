@@ -1,5 +1,5 @@
 <div class="top-border"><%= image_tag('border.png', :size =>'1100x5') %></div>
-<div class="top-img"><%= image_tag('concept.png', :size =>'1100x150') %></div>
+<div class="top-img"><%= image_tag('concept3.jpg', :size =>'1200x150') %></div>
 
 <div class="link_bar">
   <%= link_to "top", root_path %>
@@ -55,9 +55,13 @@
     });
   });
 </script>
-<h2>予約カレンダー</h2>
-<div id="calendar"></div>
 
+<h2>予約カレンダー</h2>
+<div class="row enduser-reservations">
+  <div class="col-xl-8">
+    <div id="calendar"></div>
+  </div>
+</div>
 
 <!--カレンダー押したら出てくる-->
 <script type="text/javascript">

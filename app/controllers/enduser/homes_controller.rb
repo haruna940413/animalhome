@@ -9,4 +9,6 @@ class Enduser::HomesController < Enduser::Base
 
   def guide
   end
+  
+  
 end

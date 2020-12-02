@@ -28,11 +28,11 @@
 
 // 画像スライダー(マウスオーバーで表示画像を変える)
 $(function() {
-  
+
   $('.a').slick({
       dots: true,
       autoplay: true,
-    　autoplaySpeed: 5000,
+    　autoplaySpeed: 4000,
   });
 /*
   $('.slick-dots li').on('mouseover', function() {
@@ -42,6 +42,7 @@ $(function() {
 
 // ３枚を表示させるスライダー
   $('.d').slick({
+    dots: true,
     autoplay: true,
     autoplaySpeed: 4000,
     arrows: true,
