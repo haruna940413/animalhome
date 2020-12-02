@@ -2,7 +2,7 @@
   <% if enduser_signed_in? %>
     <!--エンドユーザーがログインしている時 -->
     <div class="header-top">
-      <%= link_to enduser_path(enduser_signed_in.id) do %>
+      <%= link_to enduser_path(current_enduser.id) do %>
        <%= image_tag('logo.png', :size =>'200x50') %>
       <% end %>
       <!--snsボタン-->
@@ -42,7 +42,7 @@
           <%= link_to "卒業犬・猫", posts_path %>
         </li>
         <li>
-          <%= link_to "ログアウト", destroy_enduser_enduser_session_path , method: :delete, "data-confirm" => "ログアウトしますか？" %>
+          <%= link_to "ログアウト", destroy_enduser_session_path , method: :delete, "data-confirm" => "ログアウトしますか？" %>
         </li>
       </ul>
     </nav>

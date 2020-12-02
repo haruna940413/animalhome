@@ -1,9 +1,17 @@
 <div class="top-border"><%= image_tag('border.png', :size =>'1200x5') %></div>
 <div class="top-img"><%= image_tag('concept3.jpg', :size =>'1200x150') %></div>
 
+<div class="link_bar">
+  <%= link_to "top", root_path %>
+  <span>>></span>
+  <%= link_to "user", enduser_path(@enduser) %>
+  <span>>></span>
+  <%= link_to "following", following_user_path(@enduser) %>
+</div>
+
 
 <div class="col-lg-12">
-  <h2>Follow Users</h2>
+  <h2>Following Users</h2>
   <table class="table table-borderless">
     <thead>
       <tr>

@@ -1,5 +1,5 @@
 class Enduser::ReservationsController < Enduser::Base
-  before_action :authenticate_enduser_enduser! , only: [:create, :update, :destroy]
+  before_action :authenticate_enduser! , only: [:create, :update, :destroy]
 
   def index
     @reservations = Reservation.all
@@ -9,7 +9,7 @@ class Enduser::ReservationsController < Enduser::Base
 
   def create
     @reservation = Reservation.new(reservation_params)
-    @reservation.enduser_id = current_enduser_enduser.id
+    @reservation.enduser_id = current_enduser.id
     if @reservation.save
       flash[:notice] = "予約しました"
       redirect_to enduser_reservation_path(@reservation.id)
@@ -41,7 +41,7 @@ class Enduser::ReservationsController < Enduser::Base
 
 
   def destroy
-    @reservation = Reservation.find_by(id: params[:id], enduser_id: current_enduser_enduser.id)
+    @reservation = Reservation.find_by(id: params[:id], enduser_id: current_enduser.id)
     @reservation.destroy
     redirect_to enduser_reservations_path
   end

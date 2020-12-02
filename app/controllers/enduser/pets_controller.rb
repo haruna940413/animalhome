@@ -1,5 +1,5 @@
 class Enduser::PetsController < Enduser::Base
-  before_action :authenticate_enduser_enduser!, only: [:show]
+  before_action :authenticate_enduser!, only: [:show]
 
   def index
     @pets = Pet.where(pet_status: "invite" )

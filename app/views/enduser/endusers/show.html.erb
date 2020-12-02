@@ -2,9 +2,9 @@
 
 <!--ページ上部のプロフィール-->
 <div class="row enduser-profile">
-  <% if enduser_enduser_signed_in? %>
+  <% if enduser_signed_in? %>
     <div class="introduction col-xl-3">
-      <%= link_to edit_enduser_path(current_enduser_enduser.id), data: {"turbolinks" => false} do %>
+      <%= link_to edit_enduser_path(current_enduser.id), data: {"turbolinks" => false} do %>
         <%= attachment_image_tag @enduser, :profile_image,  fallback: 'no-image.jpg', format: 'jpeg', class: "enduser-top-profile-img" %><br />
       <% end %>
       <p><%= @enduser.nick_name %></p>
@@ -30,11 +30,11 @@
 <div class="link_bar">
   <%= link_to "top", root_path %>
   <span>>></span>
-  <% if enduser_enduser_signed_in? %>
-    <% if current_enduser_enduser != @enduser %>
+  <% if enduser_signed_in? %>
+    <% if current_enduser != @enduser %>
     　<%= link_to "user", enduser_path(@enduser) %>
     <% else %>
-    　<%= link_to "user", enduser_path(current_enduser_enduser) %>
+    　<%= link_to "user", enduser_path(current_enduser) %>
     <% end %>
   <% else %>
     <%= link_to "user", enduser_path(@enduser) %>
@@ -42,7 +42,7 @@
 </div>
 
 <!--新規post投稿へのリンク-->
-<% if enduser_enduser_signed_in? %>
+<% if enduser_signed_in? %>
   <div> <%= link_to "" , new_post_path, data: {"turbolinks" => false}, class: "post-new fa fa-plus-square-o" %></div>
 <% else %>
   <br>
@@ -53,8 +53,8 @@
   <% @posts.each do |post| %>
     <div class="col-xl-4 enduser-post">
       <!--crrentuserの時は編集ページに写真がリンクする-->
-      <% if enduser_enduser_signed_in? %>
-        <% if current_enduser_enduser != @enduser %>
+      <% if enduser_signed_in? %>
+        <% if current_enduser != @enduser %>
           <%= attachment_image_tag post, :post_image, :fill, 300, 200, format: 'png', size:'300x200' %>
         <% else %>
           <%= link_to edit_post_path(post), data: {"turbolinks" => false} do %>

@@ -26,7 +26,7 @@
       <div class="flex-box">
         <%= attachment_image_tag post, :post_image, :fill, 600, 400, format: 'jpeg', size:'600x400', class: "post-image" %>
           <div class="flex-content"><%= post.content %></div>
-        <% if enduser_enduser_signed_in? %>
+        <% if enduser_signed_in? %>
           <div class="kari">
           <%# コメントフォーム %>
       　   <%= render "enduser/comments/comments-form", post: post, newcomment: @newcomment %>

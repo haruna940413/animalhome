@@ -1,5 +1,5 @@
 class Enduser::PostsController < Enduser::Base
-  before_action :authenticate_enduser_enduser! , only: [:new, :create, :edit, :update, :destroy]
+  before_action :authenticate_enduser! , only: [:new, :create, :edit, :update, :destroy]
 
   def index
     @posts = Post.all.reverse_order
@@ -12,12 +12,12 @@ class Enduser::PostsController < Enduser::Base
 
   def create
     @post = Post.new(post_params)
-    @post.enduser_id = current_enduser_enduser.id
+    @post.enduser_id = current_enduser.id
   if @post.save
     flash[:notice] = "投稿しました"
-    redirect_to enduser_path(current_enduser_enduser.id)
+    redirect_to enduser_path(current_enduser.id)
   else
-    @enduser = current_enduser_enduser
+    @enduser = current_enduser
     render "new"
   end
   end
@@ -34,7 +34,7 @@ class Enduser::PostsController < Enduser::Base
 
    if @post.update(post_params)
     flash[:notice] = "投稿を更新しました"
-    redirect_to enduser_path(current_enduser_enduser.id)
+    redirect_to enduser_path(current_enduser.id)
    else
     render "edit"
     flash[:notice] = "投稿の更新に失敗しました"
@@ -46,7 +46,7 @@ class Enduser::PostsController < Enduser::Base
    @post = Post.find(params[:id])
    @post.destroy
    redirect_to endusers_path
-   redirect_to enduser_path(current_enduser_enduser.id)
+   redirect_to enduser_path(current_enduser.id)
   end
 
   private

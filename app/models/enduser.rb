@@ -7,7 +7,7 @@ class Enduser < ApplicationRecord
   validates :name, {presence: true, length: {minimum: 2, maximum: 15}}
   validates :nick_name, {presence: true, length: {minimum: 2, maximum: 15}}
   validates :introduction, {presence: true, length:{maximum:30}}
-  validates :profile_image, {presence: true}
+  # validates :profile_image, {presence: true}
   validates :email, {presence: true}
 
 
@@ -40,7 +40,7 @@ class Enduser < ApplicationRecord
   
   # ゲストログイン機能
   def self.guest
-    find_or_create_by!(email: 'guest@example.com') do |enduser|
+    find_or_create_by!(name: "ゲストさん", nick_name: "ゲストさん", introduction: "よろしくお願いします。", email: 'guest@example.com') do |enduser|
       enduser.password = SecureRandom.urlsafe_base64
       # user.confirmed_at = Time.now  # Confirmable を使用している場合は必要
     end

@@ -17,9 +17,9 @@
 </div >
 
 <!--フォローするor外すボタン-->
-<% if enduser_enduser_signed_in? %>
-  <% if current_enduser_enduser != enduser %>
-    <% if current_enduser_enduser.following?(enduser) %>
+<% if enduser_signed_in? %>
+  <% if current_enduser != enduser %>
+    <% if current_enduser.following?(enduser) %>
       <%= link_to 'フォロー外す', enduser_relationship_path(enduser.id), method: :delete, class: "btn btn-secondary" %>
     <% else %>
       <%= link_to 'フォローする', enduser_relationships_path(enduser.id), method: :POST, class: ".btn btn-secondary" %>

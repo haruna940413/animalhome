@@ -52,10 +52,10 @@
   </div>
 
   <div class="enduser-reservations-index col-xl-4">
-    <% if enduser_enduser_signed_in? %>
+    <% if enduser_signed_in? %>
       <div>あなたの現在の予約状況</div>
     　<% @reservations.each do |reservation| %>
-        <% if reservation.enduser_id == current_enduser_enduser.id %>
+        <% if reservation.enduser_id == current_enduser.id %>
           <div>
              <%= link_to "", enduser_reservation_path(reservation), class: "fas fa-book-open" %>
              <%= reservation.start_date.strftime("%Y/%m/%d %H:%M") %><span>(編集する)</span>

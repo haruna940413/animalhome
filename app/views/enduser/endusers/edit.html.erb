@@ -4,14 +4,14 @@
 <div class="link_bar">
   <%= link_to "top", root_path %>
    <span>>></span>
-  <%= link_to "user", enduser_path(current_enduser_enduser) %>
+  <%= link_to "user", enduser_path(current_enduser) %>
   <span>>></span>
-  <%= link_to "edit", edit_enduser_path(current_enduser_enduser) %>
+  <%= link_to "edit", edit_enduser_path(current_enduser) %>
 </div>
 
 <div class="enduser-profile edit">
   <h2>User edit</h2>
-  <%= form_with model: @enduser, url: enduser_path(current_enduser_enduser.id), method: :patch, local: true do |f| %>
+  <%= form_with model: @enduser, url: enduser_path(current_enduser.id), method: :patch, local: true do |f| %>
     <!--エラー文-->
     <% if @enduser.errors.any? %>
       <div id=“error_explanation”>

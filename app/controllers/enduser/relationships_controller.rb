@@ -1,5 +1,5 @@
 class Enduser::RelationshipsController < Enduser::Base
- before_action :authenticate_enduser_enduser! , only: [:create, :destroy]
+ before_action :authenticate_enduser! , only: [:create, :destroy]
  
  def index_following_user 
    @enduser  = Enduser.find(params[:id])  
@@ -14,7 +14,7 @@ class Enduser::RelationshipsController < Enduser::Base
  def create
    @enduser = Enduser.find(params[:enduser_id])
    
-   following = current_enduser_enduser.follow(@enduser.id)
+   following = current_enduser.follow(@enduser.id)
    if following.save
      flash[:notice] = 'ユーザーをフォローしました'
      redirect_back fallback_location: @enduser
@@ -27,7 +27,7 @@ class Enduser::RelationshipsController < Enduser::Base
  def destroy
    @enduser = Enduser.find(params[:enduser_id])
    
-   following = current_enduser_enduser.unfollow(@enduser.id)
+   following = current_enduser.unfollow(@enduser.id)
    if following.destroy
      flash[:notice] = 'ユーザーのフォローを解除しました'
      redirect_back fallback_location: @enduser

@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-    
+
   before_action :configure_permitted_parameters, if: :devise_controller?
 
 #   #ログイン後にリンクするページの設定
@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
     when Hostuser
       hostuser_homes_top_path
     when Enduser
-      enduser_path(current_enduser_enduser.id)
+      enduser_path(current_enduser.id)
     end
   end
 
