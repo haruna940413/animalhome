@@ -13,7 +13,7 @@
 <div class="enduser-pet-show">
   <h3>『<%= @pet.name%>』の詳細</h3>
     <div class="row">
-      <div class="top-border"><%= image_tag('border.png', :size =>'1105x5') %></div>
+      <div class="top-border"><%= image_tag('border.png', :size =>'1200x5') %></div>
       <div class="col-xl-7 col-xl-offset-1">
         <%= attachment_image_tag @pet, :animal_image, fallback: 'no-image.jpg', format: 'jpeg', size:'600x400' %>
       </div>
@@ -50,6 +50,6 @@
         </ul>
       </div>
       <%= link_to "施設見学を予約する", enduser_reservations_path %>
-      <div class="top-border"><%= image_tag('border.png', :size =>'1105x5') %></div>
+      <div class="top-border"><%= image_tag('border.png', :size =>'1200x5') %></div>
     </div>
 </div>
