@@ -7,10 +7,10 @@
   color: #656565;
 }
 .top-img {
- margin-bottom: 30px;    
+ margin-bottom: 30px;
 }
 
-//indexページ 
+//indexページ
 .profile-img {
   border: 1px solid #656565;  /* 枠線(=円形でも記述は) */
   border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
@@ -41,40 +41,52 @@ h2 {
   display: flex;
   margin: 0;
 }
+// お気に入り
+.flex-favorite a {
+  width: 20px;
+  font-size: 20px;
+  position: relative;
+  top: 0;
+  right: 90px;
+}
+.flex-favorite {
+  width: 0;
+}
+// 投稿コンテント
 .flex-content {
-  width: 200px;
-  margin-left: 20px;
+  width: 300px;
+  margin:  0 20px;
+  border: 1px solid #656565;
+  padding: 5px 0;
 }
+
+// コメント
 .flex-comment {
- width: 250px;
+ width: 300px;
 }
-.flex-facorite {
- width: 100px;
- display: block;
- margin-top: 500px;
+.enduser-post-new-comment {
+  padding: 5px;
+  border: 1px solid #656565;
 }
-.post i {
- font-size: 40px;
- width: 45px;
+.enduser-post-new-comment form  {
+ position: relative;
+ top: 0;
 }
-.kari form {
-  margin-top: 0;
+.new-comment-btn {
+  margin: 10px 0;
 }
-
 // newとeditページ
-
 .content {
  height: 200px;
 }
 .post-edit-wrapper {
   height: 350px;
 }
-
 .prev input {
   height: 50px;
 }
 
-//画像プレビュー 
+//画像プレビュー
 .img_prev {
   height: 200px;
   // width: 300px;

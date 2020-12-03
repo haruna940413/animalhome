@@ -31,16 +31,14 @@ Rails.application.routes.draw do
     resources :reservations, only: [:index, :show, :create, :update, :destroy]
     resources :inquiries, only: [:new, :create, :show]
   end
-  # ゲストログイン機能
+  
   devise_for :endusers, path: :enduser, :controllers => {
       :sessions => 'endusers/sessions', :registrations => 'endusers/registrations', :passwords => 'endusers/passwords'
   }
-
+  # ゲストログイン機能
   devise_scope :enduser do
     post 'endusers/guest_sign_in', to: 'endusers/sessions#new_guest'
   end
-
-
 
   #管理者側のルート
   scope module: :hostuser do
