@@ -11,14 +11,27 @@
   <h2>登録ペット一覧</h2>
 
   <!--検索機能-->
+  <!--<%#= form_with url: search_path, method: :get, local: true do |f| %>-->
+  <!--  <table class="search">-->
+  <!--    <tr>-->
+  <!--      <th><%#= text_field_tag :search %></th>-->
+  <!--      <th ckass="seach-btn"><%#= submit_tag '検索', :name => nil %></th>-->
+  <!--    </tr>-->
+  <!--  </table>-->
+  <!--<%# end %>-->
+
+    <!--検索機能-->
   <%= form_with url: search_path, method: :get, local: true do |f| %>
-    <table class="search">
-      <tr>
-        <th><%= text_field_tag :search %></th>
-        <th><%= submit_tag '検索', :name => nil %></th>
-      </tr>
+    <div class="search">
+      <div class="row">
+        <div class="col-xl-2"><%= text_field_tag :search %></div>
+        <div ckass="col-xl-1"><%= submit_tag '検索', :name => nil %></div>
+      </div>
     </table>
   <% end %>
+
+
+
 
   <!--ペット画像一覧-->
   <% @pets.each do |pet|%>

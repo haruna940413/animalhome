@@ -62,15 +62,20 @@ h2 {
 
 // コメント
 .flex-comment {
- width: 300px;
+  position: absolute;
+  top: 160px;
+  width: 300px;
 }
 .enduser-post-new-comment {
+  position: relative;
+  min-width: 310px;
   padding: 5px;
   border: 1px solid #656565;
 }
 .enduser-post-new-comment form  {
- position: relative;
+ position: absolute;
  top: 0;
+ width: 270px;
 }
 .new-comment-btn {
   margin: 10px 0;
