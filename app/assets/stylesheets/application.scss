@@ -21,6 +21,7 @@
 @import "slick-theme";
 @import "slick";
 // color: #656565;
+// #BB925A
 
 * {
   margin: 0;
@@ -164,7 +165,7 @@ margin-bottom: 15px;
 footer {
  background-color: #9d896c;
  height: 150px;
- width: 100%;
+ // width: 100%;
  margin: 0 auto;
  text-align: center;
 }
@@ -196,10 +197,6 @@ font-size: 10px;
  border-right: solid 1px #FFF;
  border-left: solid 1px #FFF;
 }
-
-
-
-
 // sns ボタン
 .footer-sns-btn {
  background-color: #9d896c;

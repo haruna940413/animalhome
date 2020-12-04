@@ -3,6 +3,12 @@
 class Hostusers::SessionsController < Devise::SessionsController
   layout 'hostuser'
   
+  # ゲストログイン機能
+  def new_guest
+    @hostuser = Hostuser.guest
+    sign_in @hostuser
+    redirect_to hostuser_homes_top_path, notice: 'ゲストユーザーとしてログインしました。(管理者側)'
+  end
   
   # before_action :configure_sign_in_params, only: [:create]
 

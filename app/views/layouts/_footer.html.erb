@@ -40,10 +40,10 @@
       </nav>
     </div><br>
     <div class="hostuser-login-btn">
-    　<% if hostuser_hostuser_signed_in? %>
-       <%= link_to "-ログアウト(管理者)-", destroy_hostuser_hostuser_session_path , method: :delete %>
+    　<% if hostuser_signed_in? %>
+       <%= link_to "-ログアウト(管理者)-", destroy_hostuser_session_path , method: :delete %>
       <% else%>
-       <%= link_to "-ログイン(管理者)-", new_hostuser_hostuser_session_path , class: "" %>
+       <%= link_to "-ログイン(管理者)-", new_hostuser_session_path , class: "" %>
       <% end %>
     </div>
 </footer>

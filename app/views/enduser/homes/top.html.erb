@@ -35,4 +35,10 @@
   <% end %>
 </div>
 <div class="top-border"><%= image_tag('border.png', :size =>'1185x5') %></div>
-<%= link_to 'ゲストログイン（利用者側）',  endusers_guest_sign_in_path, method: :post, class: "enruser-gest" %>
+
+<div class="guest-login-btn">
+  <%= link_to image_tag("enduser-guest-login.jpg", class: "guest-btn enduser-gusest-login", :size =>'200x133'), endusers_guest_sign_in_path, method: :post %>
+  <%= link_to image_tag("admin-guest-login.jpg", class: "guest-btn", :size =>'200x133'), hostusers_guest_sign_in_path, method: :post %>
+  <%= link_to image_tag("enduser-guest-logout.jpg", class: "guest-btn", :size =>'200x133'), destroy_enduser_session_path , method: :delete, "data-confirm" => "エンドユーザーをログアウトしますか？" %>
+  <%= link_to image_tag("admin-guest-logout.jpg", class: "guest-btn", :size =>'200x133'), destroy_hostuser_session_path , method: :delete, "data-confirm" => "管理者をログアウトしますか？" %>
+</div>

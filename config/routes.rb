@@ -1,13 +1,5 @@
 Rails.application.routes.draw do
 
-
-  # namespace :hostuser do
-  #   get 'inquiries/index'
-  #   get 'inquiries/show'
-  # end
-  # get 'inquiries/index'
-  # get 'inquiries/show'
-  
   #ユーザー側のルート
   scope module: :enduser do
     root to: 'homes#top'
@@ -31,7 +23,7 @@ Rails.application.routes.draw do
     resources :reservations, only: [:index, :show, :create, :update, :destroy]
     resources :inquiries, only: [:new, :create, :show]
   end
-  
+
   devise_for :endusers, path: :enduser, :controllers => {
       :sessions => 'endusers/sessions', :registrations => 'endusers/registrations', :passwords => 'endusers/passwords'
   }
@@ -47,13 +39,21 @@ Rails.application.routes.draw do
   end
 
   namespace :hostuser do
-    devise_for :hostusers, :controllers => {
-      :sessions => 'hostusers/sessions'
-     }
+    # devise_for :hostusers, :controllers => {
+    #   :sessions => 'hostusers/sessions'
+    # }
     resources :genres, only: [:index, :create, :edit, :update]
     resources :pets, only: [:index, :new, :create, :show, :edit, :update]
     resources :reservations, only: [:index]
     resources :inquiries, only: [:index, :update]
+  end
+
+  # ゲストログイン機能(管理者側)
+  devise_for :hostusers,  path: :hostuser, :controllers => {
+    :sessions => 'hostusers/sessions', :registrations => 'hostusers/registrations', :passwords => 'hostusers/passwords'
+  }
+  devise_scope :hostuser do
+    post 'hostusers/guest_sign_in', to: 'hostusers/sessions#new_guest'
   end
 
 

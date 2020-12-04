@@ -1,5 +1,5 @@
 class Hostuser::GenresController < Hostuser::Base
-  before_action :authenticate_hostuser_hostuser!
+  before_action :authenticate_hostuser!
 
   def index
     @genre = Genre.new
