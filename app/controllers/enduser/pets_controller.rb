@@ -3,6 +3,7 @@ class Enduser::PetsController < Enduser::Base
 
   def index
     @pets = Pet.where(pet_status: "invite" )
+    @genres = Genre.where(valid_flag: false )
   end
 
   def show

@@ -7,8 +7,8 @@
   <%= link_to "ペット編集", hostuser_pets_path %>
 </div>
 
+<h2>ペットを編集する</h2>
 <div class="hostuser-pet-edit">
-  <h2>Pet edit</h2>
    <%= form_with model: @pet, url: hostuser_pet_path, method: :PATCH, local: true do |f| %>
     <!--エラー文-->
     <% if @pet.errors.any? %>
@@ -83,7 +83,7 @@
       </div>
       <div class="col-xl-2">
         <div class="actions col-xs-12">
-          <%= f.submit "新規登録", class:"btn btn-outline-dark" %>
+          <%= f.submit "更新する", class:"btn btn-outline-dark" %>
         </div>  
       </div>
     </div>  

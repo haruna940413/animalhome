@@ -8,35 +8,57 @@
 </div>
 
 <div class="enduser-pet-index">
-  <h2>登録ペット一覧</h2>
-
+  <h2>検索</h2>
   <!--検索機能-->
-  <!--<%#= form_with url: search_path, method: :get, local: true do |f| %>-->
-  <!--  <table class="search">-->
-  <!--    <tr>-->
-  <!--      <th><%#= text_field_tag :search %></th>-->
-  <!--      <th ckass="seach-btn"><%#= submit_tag '検索', :name => nil %></th>-->
-  <!--    </tr>-->
-  <!--  </table>-->
-  <!--<%# end %>-->
-
-    <!--検索機能-->
+  <!--ジャンルで絞り込む-->
+  <div class="genre-search">
+    <span>[ジャンル検索]</span>
+    <% @genres.each do |genre| %>
+      <%= link_to genre.name, enduser_genre_path(genre) %>
+    <% end %>
+  </div>
+  <!-- ワードで検索-->
   <%= form_with url: search_path, method: :get, local: true do |f| %>
     <div class="search">
-      <div class="row">
-        <div class="col-xl-2"><%= text_field_tag :search %></div>
-        <div ckass="col-xl-1"><%= submit_tag '検索', :name => nil %></div>
+      <div class="free-word-seach">
+         <span>[ワード検索]</span>
+        <%= text_field_tag :search %>
+      </div>
+      <div class="potion-word-seach">
+        <span>[条件検索]</span><br>
+        <span>年齢：</span>
+        <%= f.select :age, {"1歳"=> 1, "2歳" => 2, "3歳" => 3, "4歳" => 4, "5歳" => 5,"6歳"=> 6, "7歳" => 7, "8歳" => 8, "9歳" => 9, "10歳" => 10,"11歳"=> 11, "12歳" => 12, "13歳" => 13, "14歳" => 14, "5歳" => 15,"16歳"=> 16, "17歳" => 17, "18歳" => 18, "19歳" => 19, "20歳" => 20}, {:include_blank => ' --入力してください-- '} %>
+        <span>性別：</span>
+        <%= f.select :sex, {"オス♂"=> 1, "メス♀"=> 2}, {:include_blank => ' --入力してください-- '} %>
+        <span>サイズ：</span>
+        <%= f.select :size, {"小型"=> 1, "中型"=> 2, "大型"=> 3,  "猫"=> 4}, {:include_blank => ' --入力してください-- '} %>
+        <span>ワクチン：</span>
+        <%= f.select :vaccine_status, {"未処置"=> 1, "処置済み"=> 2}, {:include_blank => ' --入力してください-- '}, class: "vaccine_status-seach" %><br>
+        <span>避妊：</span>
+        <%= f.select :castration_status, {"未処置"=> 1, "処置済み"=> 2}, {:include_blank => ' --入力してください-- '} %>
+        <span>単身：</span>
+        <%= f.select :single_status, {"可"=> 1, "不可"=> 2}, {:include_blank => ' --入力してください-- '} %>
+        <span>高齢者：</span>
+        <%= f.select :older_status, {"可"=> 1, "不可"=> 2}, {:include_blank => ' --入力してください-- '} %>
+        <span>都道府県：</span>
+        <%= f.select :prefectures, {"北海道"=> 1, "青森県" => 2, "岩手県" => 3, "宮城県" => 4, "秋田県" => 5,"山形県"=> 6, "福島県" => 7, "茨城県" => 8, "栃木県" => 9, "群馬県" => 10,
+                            "埼玉県"=> 11, "千葉県" => 12, "東京都" => 13, "神奈川県" => 14, "新潟県" => 15,"富山県"=> 16, "石川県" => 17, "福井県" => 18, "山梨県" => 19, "長野県" => 20,
+                            "岐阜県"=> 21, "静岡県" => 22, "愛知県" => 23, "三重県" => 24, "滋賀県" => 25,"京都府"=> 26, "大阪府" => 27, "兵庫県" => 28, "奈良県" => 29, "和歌山県" => 30,
+                            "鳥取県"=> 31, "島根県" => 32, "岡山県" => 33, "広島県" => 34, "山口県" => 35,"徳島県"=> 36, "香川県" => 37, "愛媛県" => 38, "高知県" => 39, "福岡県" => 40,
+                            "佐賀県"=> 41, "長崎県" => 42, "熊本県" => 43, "大分県" => 44, "宮崎県" => 45,"鹿児島県"=> 46, "沖縄県" => 47
+                            }, {:include_blank => ' --入力してください-- '} %>
+        <%= submit_tag '検索', :name => nil %>
+      </div>
       </div>
     </div>
   <% end %>
 
-
-
-
   <!--ペット画像一覧-->
+  <%= image_tag('border.png', :size =>'1185x5') %>
+  <h2>ペット一覧</h2>
   <% @pets.each do |pet|%>
     <div class="row enduser-pet-index-now">
-      <div class="top-border"><%= image_tag('border.png', :size =>'1200x5') %></div>
+      <!--<div class="top-border"><%#= image_tag('border.png', :size =>'1200x5') %></div>-->
       <div class="col-xl-6 col-xl-offset-1">
         <h3><%= pet.name %>(<%= pet.sex_i18n %>)</h3>
         <%= attachment_image_tag pet, :animal_image, fallback: 'no-image.jpg', format: 'jpeg', size:'600x400' %>
@@ -76,7 +98,7 @@
       <div class="reservation col-xl-1">
         <%= link_to "予約", enduser_reservations_path  %>
       </div>
-      <div class="top-border"><%= image_tag('border.png', :size =>'1200x5') %></div>
+      <div class="top-border"><%= image_tag('border.png', :size =>'1185x5') %></div>
     </div>
     <% end %>
 </div>

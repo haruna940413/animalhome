@@ -9,13 +9,7 @@
   <%= link_to "ペット検索", search_path %>
 </div>
 
-<!--検索ワード-->
-<% if @word == true%>
- <h2>Pet search for 『<%= @word %>』</h2>
-<% elsif %>
- <h2>Pet search for 『×』</h2>
-<% end %>
-
+<h2>Pet search for 『<%= @genre.name %>』</h2>
 <div class="enduser-pet-search col-xl-12">
   <table class="table table-border">
     <thead>
@@ -28,15 +22,15 @@
         <td>サイズ</td>
         <td>都道府県</td>
         <td>ワクチン</td>
-        <td>去勢・避妊</td>
+        <td>避妊</td>
         <td>単身</td>
         <td>高齢</td>
-        <th>募集</th>
+        <th>募集状況</th>
         <th><i class="fas fa-paw"></i></th>
       </tr>
     </thead>
     <tbody>
-      <% @pets.each do |pet| %>
+      <% @genre.pets.each do |pet| %>
         <tr>
           <td><%= pet.genre.name %></td>
           <td>

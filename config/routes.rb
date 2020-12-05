@@ -20,12 +20,13 @@ Rails.application.routes.draw do
 
   namespace :enduser do
     resources :pets, only: [:index, :show]
+    resources :genres, only: [:show]
     resources :reservations, only: [:index, :show, :create, :update, :destroy]
     resources :inquiries, only: [:new, :create, :show]
   end
 
   devise_for :endusers, path: :enduser, :controllers => {
-      :sessions => 'endusers/sessions', :registrations => 'endusers/registrations', :passwords => 'endusers/passwords'
+    :sessions => 'endusers/sessions', :registrations => 'endusers/registrations', :passwords => 'endusers/passwords'
   }
   # ゲストログイン機能
   devise_scope :enduser do
