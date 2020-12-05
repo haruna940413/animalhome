@@ -7,13 +7,32 @@
   margin: 50px auto;
 }
 
-.thanks {
-  text-align: center;
-  width: 450px;
-  margin: 0 auto;
-}
 .inquiry-show {
-  background-image: image-url('background-img.png');
+  // background-image: image-url('background-img.png');
+  // background-size: contain;
+  // background-repeat: no-repeat;
+  width: 1200px;
+  height: 800px;
+  background-image: image-url('inquiry-background.jpg');
   background-size: contain;
   background-repeat: no-repeat;
 }
+
+.thanks {
+  width: 450px;
+  margin: 0 auto;
+  position: relative;
+  top: 150px;
+  right: 200px;
+  background-color: #fff;
+}
+
+.thanks p {
+  background-color: #fff;
+}
+
+.thanks img {
+  background-color: #fff;
+}
+
+

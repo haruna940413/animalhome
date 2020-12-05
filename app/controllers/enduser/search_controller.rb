@@ -6,4 +6,6 @@ class Enduser::SearchController < Enduser::Base
     @pets = @pets
   end
   
+  
+  
 end

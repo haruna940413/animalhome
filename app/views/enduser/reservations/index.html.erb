@@ -56,10 +56,12 @@
       <div>あなたの現在の予約状況</div>
     　<% @reservations.each do |reservation| %>
         <% if reservation.enduser_id == current_enduser.id %>
-          <div>
-             <%= link_to "", enduser_reservation_path(reservation), class: "fas fa-book-open" %>
-             <%= reservation.start_date.strftime("%Y/%m/%d %H:%M") %><span>(編集する)</span>
-          </div>
+            <div>
+              <% if reservation.present? && reservation.start_date > Date.today %>
+               <%= link_to "", enduser_reservation_path(reservation), class: "fas fa-book-open" %>
+               <%= reservation.start_date.strftime("%Y/%m/%d %H:%M") %><span>(編集する)</span>
+              <% end %>
+            </div>
         <% end %>
       <% end %>
     <% else %>
