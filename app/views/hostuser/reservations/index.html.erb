@@ -1,11 +1,27 @@
-<div class="top-border"><%= image_tag('border.png', :size =>'1100x5') %></div>
-<div class="top-img"><%= image_tag('concept2.png', :size =>'1100x150') %></div>
+<div class="top-border"><%= image_tag('border.png', :size =>'1200x5') %></div>
+<div class="top-img"><%= image_tag('concept2.png', :size =>'1200x150') %></div>
+
 <div class="link_bar">
   <%= link_to "top", hostuser_homes_top_path %>
   <span>>></span>
   <%= link_to "予約カレンダー(管理者)",hostuser_reservations_path %>
 </div>
-<div id="calendar"></div>
+
+<div class="hostuser-reservation-index row">
+  <div class="col-xl-8" id="calendar"></div>
+  <div class="col-xl-4">
+    <p>–現在入っている予約–</p>
+      <% @reservations.each do |reservation| %>
+        <div class="hostuser-reservation-book">
+          <% if reservation.present? && reservation.start_date > Date.today %>
+           <%= reservation.start_date.strftime("%Y/%m/%d %H:%M") %>
+           <%= reservation.enduser.name %>
+          <% end %>
+        </div>
+      <% end %>
+  </div>
+</div>
+
 
 
 <!--js-->

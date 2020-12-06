@@ -1,5 +1,5 @@
-<div class="top-border"><%= image_tag('border.png', :size =>'1100x5') %></div>
-<div class="top-img"><%= image_tag('concept2.png', :size =>'1100x150') %></div>
+<div class="top-border"><%= image_tag('border.png', :size =>'1200x5') %></div>
+<div class="top-img"><%= image_tag('concept2.png', :size =>'1200x150') %></div>
 
 <div class="link_bar">
   <%= link_to "top", hostuser_homes_top_path %>
@@ -11,7 +11,9 @@
 <div class="hostuser-pet-index">
   <h2>登録ペット一覧</h2>
   <table class="table table-borderless">
-    <div> <%= link_to "" , new_hostuser_pet_path, data: {"turbolinks" => false}, class: "post-new fa fa-plus-square-o" %></div>
+    <div class="hostuser-pet-new">
+      <%= link_to "" , new_hostuser_pet_path, data: {"turbolinks" => false}, class: "fa fa-plus-square-o" %>
+    </div>
     <thead>
       <tr>
         <th>id</th>

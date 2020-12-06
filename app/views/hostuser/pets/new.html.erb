@@ -1,5 +1,5 @@
-<div class="top-border"><%= image_tag('border.png', :size =>'1100x5') %></div>
-<div class="top-img"><%= image_tag('concept2.png', :size =>'1100x150') %></div>
+<div class="top-border"><%= image_tag('border.png', :size =>'1200x5') %></div>
+<div class="top-img"><%= image_tag('concept2.png', :size =>'1200x150') %></div>
 
 <div class="link_bar">
   <%= link_to "top", hostuser_homes_top_path %>
@@ -66,7 +66,7 @@
         </div>
         <div class="field col-xl-12">
           <%= f.label :高齢者の応募, class:"col-xl-4" %>
-          <%= f.select :older_status, Pet.single_statuses_i18n.invert, {}, class: "col-xl-7" %>
+          <%= f.select :older_status, Pet.older_statuses_i18n.invert, {}, class: "col-xl-7" %>
         </div>
         <div class="field col-xl-12">
           <%= f.label :都道府県, class:"col-xl-4" %>
