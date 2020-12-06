@@ -38,8 +38,15 @@
  padding-top: 120px;
 }
 
-.fa-book-open {
- color: #656565;
+.enduser-reservation-book a {
+ color: #BB925A;
  font-size: 25px;
  opacity: 0.9;
+}
+
+.enduser-reservation-book a:hover{
+ color: #BB925A;
+ font-size: 25px;
+ opacity: 0.6;
+ transition: all 0.8s;
 }

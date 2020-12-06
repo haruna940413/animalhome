@@ -25,10 +25,17 @@
 .enduser-show-post {
   text-align: center;
 }
-
 .kari {
   margin-right: 0;
 }
+.post-new a {
+  color: #BB925A;
+}
+.post-new a:hover {
+  color: #BB925A;
+  opacity: 0.6;
+}
+
 // edit
 .enduser-profile input {
   height: 40px;

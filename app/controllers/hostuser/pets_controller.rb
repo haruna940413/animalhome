@@ -1,6 +1,6 @@
 class Hostuser::PetsController < Hostuser::Base
   before_action :authenticate_hostuser!
-  
+
   def index
     @pets = Pet.all.page(params[:page]).per(10)
   end
@@ -47,5 +47,5 @@ class Hostuser::PetsController < Hostuser::Base
     params.require(:pet).permit(:genre_id, :name, :kind, :age, :sex, :size, :animal_image, :vaccine_status, :castration_status,
                                 :single_status, :older_status, :pet_status, :prefectures, :detail)
   end
-  
+
 end

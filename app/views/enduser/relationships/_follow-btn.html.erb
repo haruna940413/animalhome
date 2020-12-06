@@ -13,16 +13,16 @@
   <div class="follower-count col-xl-4">
     <p><%= link_to enduser.follower_user.count, follower_user_path(enduser) %></p>
     <p>follower</p>
-  </div>  
+  </div>
 </div >
 
 <!--フォローするor外すボタン-->
 <% if enduser_signed_in? %>
   <% if current_enduser != enduser %>
     <% if current_enduser.following?(enduser) %>
-      <%= link_to 'フォロー外す', enduser_relationship_path(enduser.id), method: :delete, class: "btn btn-secondary" %>
+      <%= link_to 'フォロー外す', enduser_relationship_path(enduser.id), method: :delete, class: "btn btn-outline-dark" %>
     <% else %>
-      <%= link_to 'フォローする', enduser_relationships_path(enduser.id), method: :POST, class: ".btn btn-secondary" %>
+      <%= link_to 'フォローする', enduser_relationships_path(enduser.id), method: :POST, class: "btn btn-outline-dark" %>
     <% end %>
   <% end %>
 <% end %>

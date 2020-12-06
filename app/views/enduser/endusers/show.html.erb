@@ -26,7 +26,7 @@
 </div>
 
 <!--トップ下のページリンク-->
-<div class="top-border"><%= image_tag('border.png', :size =>'1100x5') %></div>
+<div class="top-border"><%= image_tag('border.png', :size =>'1200x5') %></div>
 <div class="link_bar">
   <%= link_to "top", root_path %>
   <span>>></span>
@@ -43,7 +43,7 @@
 
 <!--新規post投稿へのリンク-->
 <% if enduser_signed_in? %>
-  <div> <%= link_to "" , new_post_path, data: {"turbolinks" => false}, class: "post-new fa fa-plus-square-o" %></div>
+  <div class="post-new"><%= link_to "" , new_post_path, data: {"turbolinks" => false}, class: "post-new fa fa-plus-square-o" %></div>
 <% else %>
   <br>
 <% end %>

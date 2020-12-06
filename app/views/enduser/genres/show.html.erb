@@ -10,7 +10,7 @@
 </div>
 
 <h2>Pet search for 『<%= @genre.name %>』</h2>
-<div class="enduser-pet-search col-xl-12">
+<div class="enduser-genre-index col-xl-12">
   <table class="table table-border">
     <thead>
       <tr>
@@ -47,7 +47,7 @@
           <td><%= pet.single_status_i18n %></td>
           <td><%= pet.older_status_i18n %></td>
           <td><%= pet.pet_status_i18n %></td>
-          <td><%= link_to "詳細" ,enduser_pet_path(pet) %></td>
+          <td class="enduser-genre-index-show"><%= link_to "詳細" ,enduser_pet_path(pet) %></td>
         </tr>
       <% end %>
     </tbody>

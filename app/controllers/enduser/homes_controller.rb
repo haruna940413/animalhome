@@ -1,5 +1,5 @@
 class Enduser::HomesController < Enduser::Base
-  
+
   def top
     @pets = Pet.where(pet_status: "invite" )
   end
@@ -9,6 +9,6 @@ class Enduser::HomesController < Enduser::Base
 
   def guide
   end
-  
-  
+
+
 end

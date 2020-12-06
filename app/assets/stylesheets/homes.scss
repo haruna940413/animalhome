@@ -5,31 +5,30 @@
 * {
   color: #656565;
 }
-
 h2 {
   padding-left: 10px;
   margin-top: 30px;
   border-left : solid 3px #656565;
 }
-
 .about p {
  margin: 15px 0 60px 0;
 }
-
 .guide p{
  margin: 15px 0 60px 0;
 }
-
 .d img:hover {
   opacity: 0.7;
   transition: all 0.5s;
 }
-
 .guest-btn {
   margin: 0 30px;
-  
 }
 .guest-login-btn {
   margin: 15px 0 15px 50px;
   background-color: #fbfaf5;
+}
+
+// ショップガイド
+.shop-guide-img {
+  margin-right: 20px;
 }

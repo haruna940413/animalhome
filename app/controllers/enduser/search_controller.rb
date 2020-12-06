@@ -34,7 +34,7 @@ class Enduser::SearchController < Enduser::Base
     if params[:older_status].present?
       @pets = Pet.where("older_status like ?", params[:older_status])
     end
-    
+
     if params[:prefectures].present?
       @pets = Pet.where("prefectures like ?", params[:prefectures])
     end

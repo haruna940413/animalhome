@@ -1,4 +1,5 @@
 class Hostuser::InquiriesController < Hostuser::Base
+  before_action :authenticate_hostuser!
 
   def index
     @inquiries = Inquiry.all.order("id DESC")

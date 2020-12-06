@@ -2,6 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+// 利用者側
+.enduser-genre-index-show >a {
+  color: #BB925A;
+}
+.enduser-genre-index-show > a:hover {
+  color: #BB925A;
+  opacity: 0.7;
+}
+
+// 管理者側
 .hostuser-genre-index {
   margin: 30px 0;
 }

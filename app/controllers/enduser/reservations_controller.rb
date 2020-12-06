@@ -1,5 +1,5 @@
 class Enduser::ReservationsController < Enduser::Base
-  before_action :authenticate_enduser! , only: [:create, :update, :destroy]
+  before_action :authenticate_enduser! , only: [:create, :show, :update, :destroy]
 
   def index
     @reservations = Reservation.all

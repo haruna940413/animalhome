@@ -9,5 +9,5 @@ class Enduser::PetsController < Enduser::Base
   def show
     @pet = Pet.find(params[:id])
   end
-  
+
 end
