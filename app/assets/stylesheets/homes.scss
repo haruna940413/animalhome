@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+// 全体
 * {
   color: #656565;
 }
@@ -10,25 +12,30 @@ h2 {
   margin-top: 30px;
   border-left : solid 3px #656565;
 }
-.about p {
- margin: 15px 0 60px 0;
-}
-.guide p{
- margin: 15px 0 60px 0;
-}
+
+// トップページ
 .d img:hover {
   opacity: 0.7;
   transition: all 0.5s;
 }
+
+// アバウトページ
+.about p {
+ margin: 15px 0 60px 0;
+}
+
+// ショップガイド
+.shop-guide-img {
+  margin-right: 20px;
+}
+.guide p {
+ margin: 15px 0 60px 0;
+}
+// ゲストログイン機能
 .guest-btn {
   margin: 0 30px;
 }
 .guest-login-btn {
   margin: 15px 0 15px 50px;
   background-color: #fbfaf5;
-}
-
-// ショップガイド
-.shop-guide-img {
-  margin-right: 20px;
 }

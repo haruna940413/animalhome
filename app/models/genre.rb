@@ -1,4 +1,4 @@
 class Genre < ApplicationRecord
-  has_many :pets
   validates :name, presence: true
+  has_many :pets
 end

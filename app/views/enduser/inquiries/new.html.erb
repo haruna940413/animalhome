@@ -9,7 +9,19 @@
 
 
 <%= form_with model: @inquiry, url: enduser_inquiries_path, local: true do |f| %>
-<%= f.hidden_field :reply_status, {value: :false} %>
+  <%= f.hidden_field :reply_status, {value: :false} %>
+
+  <!--エラー文-->
+  <% if @inquiry.errors.any? %>
+    <div class=“error_explanation”>
+      <h5 class="text-danger"><%= @inquiry.errors.count %>件のerrorが発生しました。</h5>
+      <ul>
+        <% @inquiry.errors.full_messages.each do |message| %>
+          <li class="text-danger">●<%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 
   <div class="enduser-inquiry-new form-group-name">
     <%= f.label :email, '返信先メールアドレス' %>

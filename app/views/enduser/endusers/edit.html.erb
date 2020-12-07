@@ -12,6 +12,7 @@
 <div class="enduser-profile edit">
   <h2>User edit</h2>
   <%= form_with model: @enduser, url: enduser_path(current_enduser.id), method: :patch, local: true do |f| %>
+  
     <!--エラー文-->
     <% if @enduser.errors.any? %>
       <div id=“error_explanation”>
@@ -23,6 +24,7 @@
           </ul>
       </div>
     <% end %>
+    
     <!-- 投稿フォーム-->
     <div class="field">
       <%= f.label :Name %><br />

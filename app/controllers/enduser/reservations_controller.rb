@@ -27,16 +27,15 @@ class Enduser::ReservationsController < Enduser::Base
 
 
   def update
-     @reservation = Reservation.find(params[:id])
+    @reservation = Reservation.find(params[:id])
 
-   if  @reservation.update(reservation_params)
-    flash[:notice] = "予約更新しました"
-    redirect_to enduser_reservations_path
-   else
-    render "edit"
-    flash[:notice] = "予約の更新に失敗しました"
-   end
-
+    if  @reservation.update(reservation_params)
+      flash[:notice] = "予約更新しました"
+      redirect_to enduser_reservations_path
+    else
+      render "edit"
+      flash[:notice] = "予約の更新に失敗しました"
+    end
   end
 
 
@@ -50,6 +49,5 @@ private
   def reservation_params
     params.require(:reservation).permit(:start_date, :end_date)
   end
-
 
 end

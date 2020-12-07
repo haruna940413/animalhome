@@ -25,8 +25,8 @@ class Hostuser::GenresController < Hostuser::Base
   def update
     @genre = Genre.find(params[:id])
     if @genre.update(genre_params)
-        flash[:notice] = "ジャンルを変更しました"
-        redirect_to hostuser_genres_path
+      flash[:notice] = "ジャンルを変更しました"
+      redirect_to hostuser_genres_path
     else
       render :edit
     end

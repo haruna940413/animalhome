@@ -1,21 +1,31 @@
 <div class="top-border"><%= image_tag('border.png', :size =>'1200x5') %></div>
 <div class="top-img"><%= image_tag('concept3.jpg', :size =>'1200x150') %></div>
 
-<div class="post-edit-wrapper">
+<div class="link_bar">
+  <%= link_to "top", root_path %>
+  <span>>></span>
+  <%= link_to "user", enduser_path(current_enduser) %>
+  <span>>></span>
+  <%= link_to "post edit", edit_post_path(@post) %>
+</div>
 
+
+<div class="post-edit-wrapper">
   <h2>post edit</h2>
   <%= form_with model: @post, url: post_path, method: :patch, local: true do |f|%>
+
     <!--エラー文-->
     <% if @post.errors.any? %>
-      <div>
-        <h5><%= @post.errors.count %>件のerrorが発生しました。</h5>
+      <div class=“error_explanation”>
+        <h5 class="text-danger"><%= @post.errors.count %>件のerrorが発生しました。</h5>
         <ul>
           <% @post.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
+            <li class="text-danger">●<%= message %></li>
           <% end %>
         </ul>
       </div>
     <% end %>
+
     <!--投稿の編集フォーム-->
     <div class="row">
       <div class="field col-xl-4 prev">
@@ -28,9 +38,10 @@
       <div class="actions col-xl-4">
         <%= f.submit "Update", class: "btn btn-outline-dark" %>
         <!--投稿削除-->
-　     <%= link_to "destroy", post_path, method: :delete ,"data-confirm" => "この投稿を削除しますか？" %>
+　     <%= link_to "destroy", post_path, method: :delete ,"data-confirm" => "この投稿を削除しますか？", class: "btn btn-outline-dark" %>
       </div>
     </div>
+    
   <% end %>
 
 </div>

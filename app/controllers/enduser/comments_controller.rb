@@ -26,10 +26,10 @@ class Enduser::CommentsController < Enduser::Base
   end
 
  def correct_enduser
-   @comment = Comment.find(params[:id])
-   if current_enduser.id != @comment.enduser_id
-    redirect_to posts_path
-   end
+    @comment = Comment.find(params[:id])
+    if current_enduser.id != @comment.enduser_id
+      redirect_to posts_path
+    end
  end
 
   def set_post

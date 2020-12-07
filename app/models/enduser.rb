@@ -7,10 +7,7 @@ class Enduser < ApplicationRecord
   validates :name, {presence: true, length: {minimum: 2, maximum: 15}}
   validates :nick_name, {presence: true, length: {minimum: 2, maximum: 15}}
   validates :introduction, {presence: true, length:{maximum:30}}
-  # validates :profile_image, {presence: true}
   validates :email, {presence: true}
-
-
 
   attachment :profile_image
 

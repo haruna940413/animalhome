@@ -25,7 +25,7 @@ class Enduser::EndusersController < Enduser::Base
 
   private
   def enduser_params
-   params.require(:enduser).permit(:name, :email, :profile_image,:introduction)
+    params.require(:enduser).permit(:name, :email, :profile_image,:introduction)
   end
 
 end

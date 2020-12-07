@@ -47,7 +47,7 @@
           <td><%= pet.single_status_i18n %></td>
           <td><%= pet.older_status_i18n %></td>
           <td><%= pet.pet_status_i18n %></td>
-          <td class="enduser-genre-index-show"><%= link_to "詳細" ,enduser_pet_path(pet) %></td>
+          <td class="enduser-genre-index-show"><%= link_to "詳細" ,enduser_pet_path(pet), class: "btn btn-outline-dark" %></td>
         </tr>
       <% end %>
     </tbody>

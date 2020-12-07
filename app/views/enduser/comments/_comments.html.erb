@@ -1,12 +1,12 @@
-  <div class="post-comment">
-    <% comments.each do |comment| %>
-      <%= attachment_image_tag comment.enduser, :profile_image, :fill, 40, 40, fallback: "no-image.jpg", class: "comment-profile-img" %>
+<div class="post-comment">
+  <% comments.each do |comment| %>
+    <%= attachment_image_tag comment.enduser, :profile_image, :fill, 40, 40, fallback: "no-image.jpg", class: "comment-profile-img" %>
     ー<%= comment.enduser.nick_name %>
-      <%= comment.comment %>
-      <% if enduser_signed_in? && comment.enduser_id == current_enduser.id %>
-        <%= link_to "" , post_comment_path(post.id, comment.id), method: :delete, class: "far fa-trash-alt", remote: true %><br>
-      <% else %>
-       <br>
-      <% end %>
-   <% end %>
-  </div>
+    <%= comment.comment %>
+    <% if enduser_signed_in? && comment.enduser_id == current_enduser.id %>
+      <%= link_to "" , post_comment_path(post.id, comment.id), method: :delete, class: "far fa-trash-alt", remote: true %><br>
+    <% else %>
+     <br>
+    <% end %>
+  <% end %>
+</div>

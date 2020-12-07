@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com
 
+
+// ゲストログイン部分
 #pets-index {
   background-color: #fbfaf5;
   margin: 0 auto;
@@ -18,40 +20,39 @@
 #pets-new {
   background-color: #fbfaf5;
 }
-// enduser
+// 利用者側
 .enduser-pet-index-now > .col-xl-2 {
   margin-top: 30px;
   margin-left: 15px;
 }
 
 .enduser-pet-index-now > .col-xl-1 {
-  margin-top: 358px;
+  margin-top: 400px;
 }
 
-.enduser-pet-index-now >.col-xl-1 a {
-  color: #BB925A;
-}
-.enduser-pet-index-now >.col-xl-1 a:hover {
-  color: #BB925A;
-  opacity: 0.7;
+.enduser-pet-show-reservation-btn a {
+  margin-top: 350px;
 }
 
 // 検索機能
-.potion-word-seach select {
-  margin-right: 10px;
+.genre-search > a {
+  margin: 5px;
+}
+.free-word-seach {
+  margin: 15px 0;
+}
+.option-word-seach-span {
+  display: block;
+  margin-bottom: 8px;
+}
+.option-word-seach > select {
+  margin-right: 5px;
 }
 .vaccine_status-seach {
-  margin-bottom: 10px;
-}
-.genre-search  a {
-  color: #BB925A;
-}
-.genre-search  a:hover {
-  color: #BB925A;
-  opacity: 0.7;
+  margin-bottom: 8px;
 }
 
-// hostuser
+// 管理者側
 .post i{
   margin-left: 65px;
 }

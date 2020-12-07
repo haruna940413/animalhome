@@ -1,8 +1,7 @@
 class ApplicationController < ActionController::Base
-
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-#   #ログイン後にリンクするページの設定
+  #ログイン後にリンクするページの設定
   def after_sign_in_path_for(resource)
     case resource
     when Hostuser
@@ -12,11 +11,10 @@ class ApplicationController < ActionController::Base
     end
   end
 
-#   #ログアウト後にリンクするページの設定
+  #ログアウト後にリンクするページの設定
   def after_sign_out_path_for(resource_or_scope)
-      root_path
+    root_path
   end
-
 
   private
   def configure_permitted_parameters

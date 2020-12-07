@@ -1,18 +1,19 @@
 class Enduser::FavoritesController < Enduser::Base
-  before_action :authenticate_enduser!
-  before_action :set_post
+ before_action :authenticate_enduser!
+ before_action :set_post
 
-  def create
-   @favorite = Favorite.create(enduser_id: current_enduser.id, post_id: @post.id)
-  end
+ def create
+    @favorite = Favorite.create(enduser_id: current_enduser.id, post_id: @post.id)
+ end
 
-  def destroy
-   @favorite = Favorite.find_by(enduser_id: current_enduser.id, post_id: @post.id)
-   @favorite.destroy
-  end
+ def destroy
+    @favorite = Favorite.find_by(enduser_id: current_enduser.id, post_id: @post.id)
+    @favorite.destroy
+ end
 
-  private
-  def set_post
-   @post = Post.find(params[:post_id])
-  end
+ private
+ def set_post
+    @post = Post.find(params[:post_id])
+ end
+
 end

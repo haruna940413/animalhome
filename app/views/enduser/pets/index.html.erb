@@ -14,52 +14,40 @@
   <div class="genre-search">
     <span>[ジャンル検索]</span>
     <% @genres.each do |genre| %>
-      <%= link_to genre.name, enduser_genre_path(genre) %>
+      <%= link_to genre.name, enduser_genre_path(genre), class: "btn btn-outline-dark" %>
     <% end %>
   </div>
   <!-- ワードで検索-->
-  <%= form_with url: search_path, method: :get, local: true do |f| %>
-    <div class="search">
+  <div class="search">
+    <%= form_with url: search_path, method: :get, local: true do |f| %>
       <div class="free-word-seach">
          <span>[ワード検索]</span>
         <%= text_field_tag :search %>
       </div>
-      <div class="potion-word-seach">
-        <span>[条件検索]</span><br>
+      <div class="option-word-seach">
+        <span class="option-word-seach-span">[条件検索]</span>
         <span>年齢：</span>
         <%= f.select :age, Pet.ages_i18n.invert, {} %>
-        <%#= f.select :age, {"1歳"=> 1, "2歳" => 2, "3歳" => 3, "4歳" => 4, "5歳" => 5,"6歳"=> 6, "7歳" => 7, "8歳" => 8, "9歳" => 9, "10歳" => 10,"11歳"=> 11, "12歳" => 12, "13歳" => 13, "14歳" => 14, "5歳" => 15,"16歳"=> 16, "17歳" => 17, "18歳" => 18, "19歳" => 19, "20歳" => 20}, {:include_blank => ' --入力してください-- '} %>
         <span>性別：</span>
         <%= f.select :sex, Pet.sexes_i18n.invert, {} %>
-        <%#= f.select :sex, {"オス♂"=> 1, "メス♀"=> 2}, {:include_blank => ' --入力してください-- '} %>
         <span>サイズ：</span>
         <%= f.select :size, Pet.sizes_i18n.invert, {} %>
-        <%#= f.select :size, {"小型"=> 1, "中型"=> 2, "大型"=> 3,  "猫"=> 4}, {:include_blank => ' --入力してください-- '} %>
         <span>ワクチン：</span>
-        <%= f.select :vaccine_status, Pet.vaccine_statuses_i18n.invert, {} %><br>
-        <%#= f.select :vaccine_status, {"未処置"=> 1, "処置済み"=> 2}, {:include_blank => ' --入力してください-- '}, class: "vaccine_status-seach" %>
+        <%= f.select :vaccine_status, Pet.vaccine_statuses_i18n.invert, {}, class: "vaccine_status-seach" %><br>
         <span>避妊：</span>
         <%= f.select :castration_status, Pet.castration_statuses_i18n.invert, {} %>
-        <%#= f.select :castration_status, {"未処置"=> 1, "処置済み"=> 2}, {:include_blank => ' --入力してください-- '} %>
         <span>単身：</span>
         <%= f.select :single_status, Pet.single_statuses_i18n.invert, {} %>
-        <%#= f.select :single_status, {"可"=> 1, "不可"=> 2}, {:include_blank => ' --入力してください-- '} %>
         <span>高齢者：</span>
         <%= f.select :older_status, Pet.older_statuses_i18n.invert, {} %>
-        <%#= f.select :older_status, {"可"=> 1, "不可"=> 2}, {:include_blank => ' --入力してください-- '} %>
         <span>都道府県：</span>
         <%= f.select :prefectures, Pet.prefectures_i18n.invert, {} %>
-        <!--<%#= f.select :prefectures, {"北海道"=> 1, "青森県" => 2, "岩手県" => 3, "宮城県" => 4, "秋田県" => 5,"山形県"=> 6, "福島県" => 7, "茨城県" => 8, "栃木県" => 9, "群馬県" => 10,-->
-        <!--                    "埼玉県"=> 11, "千葉県" => 12, "東京都" => 13, "神奈川県" => 14, "新潟県" => 15,"富山県"=> 16, "石川県" => 17, "福井県" => 18, "山梨県" => 19, "長野県" => 20,-->
-        <!--                    "岐阜県"=> 21, "静岡県" => 22, "愛知県" => 23, "三重県" => 24, "滋賀県" => 25,"京都府"=> 26, "大阪府" => 27, "兵庫県" => 28, "奈良県" => 'nara', "和歌山県" => 30,-->
-        <!--                    "鳥取県"=> 31, "島根県" => 32, "岡山県" => 33, "広島県" => 34, "山口県" => 35,"徳島県"=> 36, "香川県" => 37, "愛媛県" => 38, "高知県" => 39, "福岡県" => 40,-->
-        <!--                    "佐賀県"=> 41, "長崎県" => 42, "熊本県" => 43, "大分県" => 44, "宮崎県" => 45,"鹿児島県"=> 46, "沖縄県" => 47-->
-        <!--                    }, {:include_blank => ' --入力してください-- '} %>-->
         <%= submit_tag '検索', :name => nil %>
       </div>
-      </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
+</div>
+
 
   <!--ペット画像一覧-->
   <%= image_tag('border.png', :size =>'1185x5') %>
@@ -105,8 +93,8 @@
           <li><%= pet.pet_status_i18n %></li>
         </ul>
       </div>
-      <div class="reservation col-xl-1">
-        <%= link_to "予約", enduser_reservations_path  %>
+      <div class="enduser-pet-index-reservation-btn col-xl-1">
+        <%= link_to "予約する", enduser_reservations_path, class: "btn btn-outline-dark"  %>
       </div>
       <div class="top-border"><%= image_tag('border.png', :size =>'1185x5') %></div>
     </div>
