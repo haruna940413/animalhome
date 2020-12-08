@@ -32,7 +32,7 @@
     </nav>
   </div>
   <div class="footer-middle">
-    <p>〒103-0028 東京都〇〇区XXX町3町目２−１△△△△△ビル１階　　　☎︎ 03 - 1234 -5678</p>
+    <p>〒103-0028 東京都〇〇区XXX町3町目２−１△△△△△ビル１階☎︎ 03 - 1234 -5678</p>
   </div>
   <div class="footer-bottom">
       <!--snsボタン-->
@@ -50,7 +50,7 @@
       </nav>
     </div><br>
     <div class="hostuser-login-btn">
-    　<% if hostuser_signed_in? %>
+      <% if hostuser_signed_in? %>
        <%= link_to "-ログアウト(管理者)-", destroy_hostuser_session_path , method: :delete %>
       <% else%>
        <%= link_to "-ログイン(管理者)-", new_hostuser_session_path , class: "" %>

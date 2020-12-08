@@ -15,7 +15,7 @@
 
 <%= form_with model: @reservation, url: enduser_reservation_path(@reservation), method: :patch, local: true do |f| %>
 
-　<!--エラー文-->
+  <!--エラー文-->
   <% if @reservation.errors.any? %>
     <div>
       <h5><%= @reservation.errors.count %>件のerrorが発生しました。</h5>
@@ -144,6 +144,6 @@
           });
         }
     });
-　});
+  });
 </script>
 

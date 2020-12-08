@@ -40,7 +40,7 @@
         <tr>
           <td><%= pet.genre.name %></td>
           <td>
-            <%= attachment_image_tag pet, :animal_image, :fill, 40, 40, format: 'png', size:'40x40' %>
+            <%= attachment_image_tag pet, :animal_image, size: '40x40' %>
             <%= pet.name %>
           </td>
           <td><%= pet.kind %></td>

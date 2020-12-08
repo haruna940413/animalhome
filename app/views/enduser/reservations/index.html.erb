@@ -14,7 +14,7 @@
 <div class="enduser-reservation">
   <%= form_with model: @reservation, url: enduser_reservations_path, local: true do |f| %>
 
-  　<!--エラー文-->
+    <!--エラー文-->
     <% if @reservation.errors.any? %>
       <div>
         <h5><%= @reservation.errors.count %>件のerrorが発生しました。</h5>
@@ -27,7 +27,7 @@
     <% end %>
 
     <div class="reservation-container">
-  　　<!--予約(開始)-->
+      <!--予約(開始)-->
       <div class="reservation-new">
         <div class="form-group">
           <div class="input-group" data-target-input="nearest">
@@ -54,7 +54,7 @@
   <div class="enduser-reservations-index col-xl-4">
     <% if enduser_signed_in? %>
       <div>あなたの現在の予約状況</div>
-    　<% @reservations.each do |reservation| %>
+      <% @reservations.each do |reservation| %>
         <% if reservation.enduser_id == current_enduser.id %>
             <div class="enduser-reservation-book">
               <% if reservation.present? && reservation.start_date > Date.today %>
@@ -154,5 +154,5 @@
           });
         }
     });
-　});
+  });
 </script>

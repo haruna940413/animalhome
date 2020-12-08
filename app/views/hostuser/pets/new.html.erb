@@ -21,8 +21,8 @@
         </ul>
       </div>
     <% end %>
-
-  　<div class="row">
+    <!--ペット新規登録フォーム-->
+    <div class="row">
       <div class="field col-xl-4">
         <%= attachment_image_tag @pet, :animal_image, fallback: 'no-image.jpg', format: 'jpeg', size:'300x200', onChange: "$('.img_field').change()", class: 'center-block img_prev'%>
         <%= f.attachment_field :animal_image, class: 'img_field' %><br>
@@ -83,7 +83,7 @@
       </div>
       <div class="col-xl-2">
         <div class="actions col-xs-12">
-          <%= f.submit "新規登録", class:"btn btn-outline-dark" %>
+          <%= f.submit "新規登録", class: "btn btn-outline-dark" %>
         </div>
       </div>
     </div>

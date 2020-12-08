@@ -22,7 +22,7 @@
         <td><%= inquiry.message %></td>
         <td>
           <%= form_with model: inquiry, url: hostuser_inquiry_path(inquiry), method: :PATCH, local: true do |f| %>
-          　<%= f.radio_button :reply_status, false %>
+            <%= f.radio_button :reply_status, false %>
             <%= f.label :reply_status, "返信未", {value: :false, style: "display: inline-block;"} %>
             <%= f.radio_button :reply_status, true %>
             <%= f.label :reply_status, "返信済", {value: :true, style: "display: inline-block;"} %>

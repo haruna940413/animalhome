@@ -10,6 +10,20 @@
 <div class="hostuser-genre-index">
   <h2>ジャンル一覧・追加</h2><br>
   <%= form_for @genre, :url => {:action => :create} do |f| %>
+
+    <!--エラー文-->
+    <% if @genre.errors.any? %>
+      <div class=“error_explanation”>
+        <h5 class="text-danger"><%= @genre.errors.count %>件のerrorが発生しました。</h5>
+        <ul>
+          <% @genre.errors.full_messages.each do |message| %>
+            <li class="text-danger">●<%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <!--ジャンル一覧-->
     <div class="hostuser-genre-new">
       <%= f.text_field :name  %>
       <%= f.radio_button :valid_flag, false %>

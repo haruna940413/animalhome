@@ -1,6 +1,6 @@
 <div class="post-comment">
   <% comments.each do |comment| %>
-    <%= attachment_image_tag comment.enduser, :profile_image, :fill, 40, 40, fallback: "no-image.jpg", class: "comment-profile-img" %>
+    <%= attachment_image_tag comment.enduser, :profile_image, size: '40x40', fallback: "no-image.jpg", class: "comment-profile-img" %>
     ー<%= comment.enduser.nick_name %>
     <%= comment.comment %>
     <% if enduser_signed_in? && comment.enduser_id == current_enduser.id %>
