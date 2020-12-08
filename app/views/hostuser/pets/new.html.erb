@@ -9,7 +9,10 @@
 
 <div class="hostuser-pet-new">
   <h2>Pet new</h2>
+
+
    <%= form_with model: @pet, url: hostuser_pets_path, local: true do |f| %>
+
     <!--エラー文-->
     <% if @pet.errors.any? %>
      <div class=“error_explanation”>
@@ -21,10 +24,11 @@
         </ul>
       </div>
     <% end %>
+
     <!--ペット新規登録フォーム-->
     <div class="row">
       <div class="field col-xl-4">
-        <%= attachment_image_tag @pet, :animal_image, fallback: 'no-image.jpg', format: 'jpeg', size:'300x200', onChange: "$('.img_field').change()", class: 'center-block img_prev'%>
+        <%= attachment_image_tag @pet, :animal_image, fallback: 'no-image.jpg', size: '300x200', onChange: "$('.img_field').change()", class: 'center-block img_prev'%>
         <%= f.attachment_field :animal_image, class: 'img_field' %><br>
       </div>
       <div class="col-xl-5">
@@ -82,7 +86,7 @@
         </div>
       </div>
       <div class="col-xl-2">
-        <div class="actions col-xs-12">
+        <div class="actions col-xl-12">
           <%= f.submit "新規登録", class: "btn btn-outline-dark" %>
         </div>
       </div>

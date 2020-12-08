@@ -12,19 +12,19 @@
 <div class="enduser-profile edit">
   <h2>User edit</h2>
   <%= form_with model: @enduser, url: enduser_path(current_enduser.id), method: :patch, local: true do |f| %>
-  
+
     <!--エラー文-->
     <% if @enduser.errors.any? %>
-      <div id=“error_explanation”>
-        <h5><%= @enduser.errors.count %>件のerrorが発生しました。</h5>
-          <ul>
-            <% @enduser.errors.full_messages.each do |message| %>
-              <li><%= message %></li>
-            <% end %>
-          </ul>
+     <div class=“error_explanation”>
+     <h5 class="text-danger"><%= @enduser.errors.count %>件のerrorが発生しました。</h5>
+     <ul>
+      <% @enduser.errors.full_messages.each do |message| %>
+        <li class="text-danger">●<%= message %></li>
+      <% end %>
+        </ul>
       </div>
     <% end %>
-    
+
     <!-- 投稿フォーム-->
     <div class="field">
       <%= f.label :Name %><br />

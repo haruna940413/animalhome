@@ -16,12 +16,12 @@
 
     <!--エラー文-->
     <% if @reservation.errors.any? %>
-      <div>
-        <h5><%= @reservation.errors.count %>件のerrorが発生しました。</h5>
-        <ul>
-          <% @reservation.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
+     <div class=“error_explanation”>
+     <h5 class="text-danger"><%= @reservation.errors.count %>件のerrorが発生しました。</h5>
+     <ul>
+      <% @reservation.errors.full_messages.each do |message| %>
+        <li class="text-danger">●<%= message %></li>
+      <% end %>
         </ul>
       </div>
     <% end %>

@@ -22,7 +22,7 @@
       <% @endusers.each do |enduser| %>
         <tr>
           <td><%= enduser.id %></td>
-          <td><%= attachment_image_tag enduser, :profile_image, fallback: 'no-image.jpg', format: 'jpeg', size:'40x40', class: "enduser-profile-img" %></td>
+          <td><%= attachment_image_tag enduser, :profile_image, fallback: 'no-image.jpg', size: '40x40', class: "hostusers-enduser-profile-img" %></td>
           <td><%= enduser.name %></td>
           <td><%= mail_to enduser.email %></td>
         </tr>

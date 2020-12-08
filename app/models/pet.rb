@@ -28,14 +28,14 @@ class Pet < ApplicationRecord
   validates :kind, presence: true
   validates :detail, presence: true
 
-  validates :age, inclusion: {in: Pet.ages.keys }
-  validates :sex, inclusion: {in: Pet.sexes.keys }
-  validates :size, inclusion: {in: Pet.sizes.keys }
-  validates :vaccine_status, inclusion: {in: Pet.vaccine_statuses.keys }
-  validates :castration_status, inclusion: {in: Pet.castration_statuses.keys }
-  validates :single_status, inclusion: {in: Pet.single_statuses.keys }
-  validates :older_status, inclusion: {in: Pet.older_statuses.keys }
-  validates :prefectures, inclusion: {in: Pet.prefectures.keys }
-  validates :pet_status, inclusion: {in: Pet.pet_statuses.keys }
+  validates :age, inclusion: {in: Pet.ages.keys[1..-1] }
+  validates :sex, inclusion: {in: Pet.sexes.keys[1..-1] }
+  validates :size, inclusion: {in: Pet.sizes.keys[1..-1] }
+  validates :vaccine_status, inclusion: {in: Pet.vaccine_statuses.keys[1..-1] }
+  validates :castration_status, inclusion: {in: Pet.castration_statuses.keys[1..-1] }
+  validates :single_status, inclusion: {in: Pet.single_statuses.keys[1..-1] }
+  validates :older_status, inclusion: {in: Pet.older_statuses.keys[1..-1] }
+  validates :prefectures, inclusion: {in: Pet.prefectures.keys[1..-1] }
+  validates :pet_status, inclusion: {in: Pet.pet_statuses.keys[1..-1] }
 
 end

@@ -29,51 +29,51 @@
       </div>
       <div class="col-xl-5">
         <div class="field col-xl-12">
-          <%= f.label :ジャンル, class:"col-xl-4" %>
+          <%= f.label :ジャンル, class: "col-xl-4" %>
           <%= f.collection_select(:genre_id, @genres, :id, :name, {prompt: "-- 入力してください --"}, {class: "col-xl-7"}) %>
         </div>
         <div class="field col-xl-12">
-          <%= f.label :名前, class:"col-xl-4" %>
+          <%= f.label :名前, class: "col-xl-4" %>
           <%= f.text_field :name, class: "col-xl-7" %>
         </div>
         <div class="field col-xl-12 item">
-          <%= f.label :種類, class:"col-xl-4" %>
+          <%= f.label :種類, class: "col-xl-4" %>
           <%= f.text_area :kind, rows: 1, class: "col-xl-7" %>
         </div>
         <div class="field col-xl-12">
-          <%= f.label :年齢, class:"col-xl-4" %>
+          <%= f.label :年齢, class: "col-xl-4" %>
           <%= f.select :age, Pet.ages_i18n.invert, {}, class: "col-xl-7" %>
         </div>
         <div class="field col-xl-12">
-          <%= f.label :性別, class:"col-xl-4" %>
+          <%= f.label :性別, class: "col-xl-4" %>
           <%= f.select :sex, Pet.sexes_i18n.invert, {}, class: "col-xl-7" %>
         </div>
         <div class="field col-xl-12">
-          <%= f.label :サイズ, class:"col-xl-4" %>
+          <%= f.label :サイズ, class: "col-xl-4" %>
           <%= f.select :size, Pet.sizes_i18n.invert, {}, class: "col-xl-7" %>
         </div>
         <div class="field col-xl-12">
-          <%= f.label :ワクチン, class:"col-xl-4" %>
+          <%= f.label :ワクチン, class: "col-xl-4" %>
           <%= f.select :vaccine_status, Pet.vaccine_statuses_i18n.invert, {}, class: "col-xl-7" %>
         </div>
         <div class="field col-xl-12">
-          <%= f.label :去勢・避妊, class:"col-xl-4" %>
+          <%= f.label :去勢・避妊, class: "col-xl-4" %>
           <%= f.select :castration_status, Pet.castration_statuses_i18n.invert, {}, class: "col-xl-7" %>
         </div>
         <div class="field col-xl-12">
-          <%= f.label :単身者の応募, class:"col-xl-4" %>
+          <%= f.label :単身者の応募, class: "col-xl-4" %>
           <%= f.select :single_status, Pet.single_statuses_i18n.invert, {}, class: "col-xl-7" %>
         </div>
         <div class="field col-xl-12">
-          <%= f.label :高齢者の応募, class:"col-xl-4" %>
+          <%= f.label :高齢者の応募, class: "col-xl-4" %>
           <%= f.select :older_status, Pet.single_statuses_i18n.invert, {}, class: "col-xl-7" %>
         </div>
         <div class="field col-xl-12">
-          <%= f.label :都道府県, class:"col-xl-4" %>
+          <%= f.label :都道府県, class: "col-xl-4" %>
           <%= f.select :pet_status, Pet.pet_statuses_i18n.invert, {}, class: "col-xl-7" %>
         </div>
         <div class="field col-xl-12">
-          <%= f.label :募集状況, class:"col-xl-4" %>
+          <%= f.label :募集状況, class: "col-xl-4" %>
           <%= f.select :prefectures, Pet.prefectures_i18n.invert, {}, class: "col-xl-7" %>
         </div>
         <div class="field col-xl-12">
@@ -82,8 +82,8 @@
         </div>
       </div>
       <div class="col-xl-2">
-        <div class="actions col-xs-12">
-          <%= f.submit "更新する", class:"btn btn-outline-dark" %>
+        <div class="hostuser-pet-edit-btn actions col-xl-12">
+          <%= f.submit "更新する", class: "btn btn-outline-dark" %>
         </div>  
       </div>
     </div>  

@@ -21,7 +21,7 @@
     <div class="post">
       <div><%= image_tag('border.png', :size =>'1200x5') %></div>
       <%= link_to enduser_path(post.enduser_id) do %>
-        <%= attachment_image_tag post.enduser, :profile_image, size: '60x60',class: "profile-img" %>
+        <%= attachment_image_tag post.enduser, :profile_image, fallback: 'no-image.jpg', size: '60x60',class: "profile-img" %>
       <% end %>
       <span>現在の里親の</span><%= post.enduser.nick_name %>
       <div class="flex-box">
