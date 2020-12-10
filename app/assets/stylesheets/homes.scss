@@ -1,6 +1,6 @@
-// Place all the styles related to the homes controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// // Place all the styles related to the homes controller here.
+// // They will automatically be included in application.css.
+// // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
 // 全体
@@ -18,10 +18,13 @@ h2 {
   opacity: 0.7;
   transition: all 0.5s;
 }
+.top > p {
+  margin: 35px 0;
+}
 
 // アバウトページ
 .about p {
-  margin: 15px 0 60px 0;
+  padding: 15px 0 60px 0;
 }
 
 // ショップガイド
@@ -72,5 +75,34 @@ h2 {
 }
 
 @media screen and (max-width:425px) {
-  
+.dog-nukukyuu {
+  display: none;
+}
+.d {
+  font-size: 11px;
+}
+.guest-btn {
+  margin: 10px 0;
+}
+
+.guest-login-btn {
+width: 350px;
+margin: 0;
+}
+.enduser-gusest-login {
+  margin: 0;
+}
+footer {
+  width: 350px;
+}
+
+.cat-saboten  {
+  display: none;
+}
+.nikukyuu {
+  display: none;
+}
+.shop-guide-img {
+  margin: 15px 0;
+}
 }

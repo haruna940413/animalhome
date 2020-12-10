@@ -3,23 +3,23 @@
 <!--ページ上部のプロフィール-->
 <div class="row enduser-profile">
   <% if enduser_signed_in? %>
-    <div class="introduction col-xl-3">
+    <div class="introduction col-xl-3 col-md-3 col-3">
       <%= link_to edit_enduser_path(current_enduser.id), data: {"turbolinks" => false} do %>
-        <%= attachment_image_tag @enduser, :profile_image,  fallback: 'no-image.jpg', format: 'jpeg', class: "enduser-top-profile-img" %><br />
+        <%= attachment_image_tag @enduser, :profile_image,  fallback: 'no-image.jpg', class: "enduser-top-profile-img" %><br />
       <% end %>
       <p><%= @enduser.nick_name %></p>
       <p><%= @enduser.introduction %></p>
     </div>
-    <div class="relationship col-xl-9">
+    <div class="relationship col-xl-9 col-md-9 col-9">
       <%= render "enduser/relationships/follow-btn", enduser: @enduser %>
     </div>
   <% else %>
-    <div class="introduction col-xl-3">
-      <%= attachment_image_tag @enduser, :profile_image,  fallback: 'no-image.jpg', format: 'jpeg', size:'300x200', class: "enduser-profile-img" %><br />
+    <div class="introduction col-xl-3 col-md-3 col-3">
+      <%= attachment_image_tag @enduser, :profile_image,  fallback: 'no-image.jpg', size: '300x200', class: "enduser-profile-img" %><br />
       <p><%= @enduser.nick_name %></p>
       <p><%= @enduser.introduction %></p>
     </div>
-    <div class="relationship col-xl-9">
+    <div class="relationship col-xl-9 col-md-3 col-3">
       <%= render "enduser/relationships/follow-btn", enduser: @enduser %>
     </div>
   <% end %>
@@ -51,14 +51,14 @@
 <!--ページ下部の画像表示部分-->
 <div class="row enduser-show-post">
   <% @posts.each do |post| %>
-    <div class="col-xl-4 enduser-post">
+    <div class="col-xl-4 col-md-4 col-4 enduser-post">
       <!--crrentuserの時は編集ページに写真がリンクする-->
       <% if enduser_signed_in? %>
         <% if current_enduser != @enduser %>
-          <%= attachment_image_tag post, :post_image, size: '300x200' %>
+          <%= attachment_image_tag post, :post_image, class: "enduser-show-post-img" %>
         <% else %>
           <%= link_to edit_post_path(post), data: {"turbolinks" => false} do %>
-            <%= attachment_image_tag post, :post_image, size: '300x200' %>
+            <%= attachment_image_tag post, :post_image,  class: "enduser-show-post-img" %>
           <% end %>
         <% end %>
       <% end %>

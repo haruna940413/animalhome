@@ -27,7 +27,7 @@
     <!--投稿のフォーム-->
     <div class="row">
       <div class="field col-xl-4">
-        <%= attachment_image_tag @post, :post_image, fallback: 'no-image.jpg', format: 'jpeg', size: '300x200', onChange: "$('.img_field').change()", class: 'center-block img_prev'%>
+        <%= attachment_image_tag @post, :post_image, fallback: 'no-image.jpg', size: '300x200', onChange: "$('.img_field').change()", class: 'center-block img_prev'%>
 
         <%= f.attachment_field :post_image, class: 'img_field' %>
       </div>

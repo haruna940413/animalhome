@@ -24,7 +24,7 @@
     <!--ペット更新フォーム-->
     <div class="row">
       <div class="field col-xl-4">
-        <%= attachment_image_tag @pet, :animal_image, fallback: 'no-image.jpg', format: 'jpeg', size:'300x200', onChange: "$('.img_field').change()", class: 'center-block img_prev'%>
+        <%= attachment_image_tag @pet, :animal_image, fallback: 'no-image.jpg', size: '300x200', onChange: "$('.img_field').change()", class: 'center-block img_prev'%>
         <%= f.attachment_field :animal_image, class: 'img_field' %><br>
       </div>
       <div class="col-xl-5">

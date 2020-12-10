@@ -1,16 +1,16 @@
 <!--投稿数とフォロワー数の表示-->
 <div class="enduser-count row">
-  <div class="post-count col-xl-4">
+  <div class="post-count col-xl-4 col-md-4 col-4">
     <p><%= enduser.posts.count %></p>
     <p>投稿数</p>
   </div>
   <!--フォロー-->
-  <div class="following-count col-xl-4">
+  <div class="following-count col-xl-4 col-md-4 col-4">
     <p><%= link_to enduser.following_user.count, following_user_path(enduser) %></p>
     <p>follow</p>
   </div>
   <!--フォロワー-->
-  <div class="follower-count col-xl-4">
+  <div class="follower-count col-xl-4 col-md-4 col-4">
     <p><%= link_to enduser.follower_user.count, follower_user_path(enduser) %></p>
     <p>follower</p>
   </div>

@@ -13,7 +13,7 @@
   <h2><%= @pet.name %></h2>
   <div class="row">
     <div class="col-xl-7 col-xl-offset-1">
-      <%= attachment_image_tag @pet, :animal_image, fallback: 'no-image.jpg', format: 'jpeg', size:'600x400' %>
+      <%= attachment_image_tag @pet, :animal_image, fallback: 'no-image.jpg', size: '600x400' %>
     </div>
     <div class="col-xl-2">
         <ul>

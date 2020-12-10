@@ -34,7 +34,7 @@
           <td><%= pet.genre.name %></td>
           <td><%= pet.kind %></td>
           <td><%= pet.name %></td>
-          <td><%= attachment_image_tag pet, :animal_image, fallback: 'no-image.jpg', format: 'jpeg', size:'40x40'%></td>
+          <td><%= attachment_image_tag pet, :animal_image, fallback: 'no-image.jpg', size: '40x40'%></td>
           <td><%= pet.sex_i18n %></td>
           <td><%= pet.pet_status_i18n %></td>
           <td><%= link_to "詳細", hostuser_pet_path(pet), class: "btn btn-outline-dark" %></td>

@@ -1,19 +1,19 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- *= require fullcalendar
- */
+// /*
+// * This is a manifest file that'll be compiled into application.css, which will include all the files
+// * listed below.
+// *
+// * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+// * vendor/assets/stylesheets directory can be referenced here using a relative path.
+// *
+// * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+// * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+// * files in this directory. Styles in this file should be added after the last require_* statement.
+// * It is generally better to create a new file per style scope.
+// *
+// *= require_tree .
+// *= require_self
+// *= require fullcalendar
+// */
 
 
 @import "bootstrap";
@@ -34,25 +34,25 @@
 * a {
   text-decoration: none;
   cursor: pointer;
- }
+}
 * a:hover {
   text-decoration: none;
- }
+}
 
 * ul {
   list-style: none;
- }
+}
 .container-fluid {
   padding: 10px 50px;
 }
 .link_bar a {
- color: #656565;
+color: #656565;
 }
 .link_bar a:hover {
- opacity: 0.7;
+opacity: 0.7;
 }
 .link_bar span {
- color: #BB925A;
+color: #BB925A;
 }
 
 
@@ -61,7 +61,7 @@
   height: 50px;
 }
 .img-input img {
- margin-bottom: 10px;
+margin-bottom: 10px;
 }
 .new-profile-img {
   border: 2px solid #656565;  /* 枠線(=円形でも記述は) */
@@ -73,44 +73,44 @@
   margin-bottom: 10px;
 }
 .enduser-action input {
- padding: 0 5px;
- margin: 10px 0;
+padding: 0 5px;
+margin: 10px 0;
 }
 .enduser-new{
- color: #BB925A;
- padding: 5px 0;
+color: #BB925A;
+padding: 5px 0;
 }
 .enduser-new:hover{
- color: #BB925A;
- opacity: 0.7;
+color: #BB925A;
+opacity: 0.7;
 }
 
 //ヘッダー
 header {
- width: 100%;
- height: 180px;
- margin: 0;
+width: 100%;
+height: 180px;
+margin: 0;
 }
 header a {
- color: #BB925A;
+color: #BB925A;
 }
 header a:hover {
- color: #BB925A;
- opacity: 0.7;
+color: #BB925A;
+opacity: 0.7;
 }
 .header-top {
- display: flex;
+display: flex;
 }
 .site-title {
- display: inline-block;
+display: inline-block;
 }
 // sns ボタン
 .sns-btn {
- display: flex;
- position: absolute;
- right: 100px;
- padding-top: 10px;
- margin: 0;
+display: flex;
+position: absolute;
+right: 100px;
+padding-top: 10px;
+margin: 0;
 }
 .sns-btn  li {
 font-size: 18px;
@@ -118,8 +118,8 @@ padding: 0 20px;
 }
 // listボタン
 .list-btn {
- margin: 0;
- display: flex;
+margin: 0;
+display: flex;
 }
 .list-btn  li {
 text-align: center;
@@ -127,12 +127,12 @@ width: 100%;
 font-size: 20px;
 }
 .list-btn a {
- display: inline-block;
- margin-top: 50px;
- padding-bottom: 20px;
+display: inline-block;
+margin-top: 50px;
+padding-bottom: 20px;
 }
 .list-btn a:hover {
- border-bottom: solid 5px #8fbc8f;
+border-bottom: solid 5px #8fbc8f;
 }
 
 // 各ページのトップにある
@@ -147,23 +147,23 @@ margin-bottom: 15px;
 // フッター
 footer {
 // width: 1200px;
- background-color: #9d896c;
- height: 140px;
- margin: 0 auto;
- text-align: center;
+background-color: #9d896c;
+height: 140px;
+margin: 0 auto;
+text-align: center;
 }
 footer a {
- color: #fff;
- opacity: 0.8;
+color: #fff;
+opacity: 0.8;
 }
 footer a:hover {
- color: #fff;
- opacity: 0.5;
+color: #fff;
+opacity: 0.5;
 }
 // listボタン
 .footer-list-btn {
- margin: 0;
- display: flex;
+margin: 0;
+display: flex;
 }
 .footer-list-btn  li {
 background-color: #9d896c;
@@ -172,52 +172,52 @@ width: 100%;
 font-size: 10px;
 }
 .footer-list-btn a {
- display: inline-block;
- padding: 0 10px;
- margin-top: 15px;
- border-right: solid 1px #FFF;
- border-left: solid 1px #FFF;
+display: inline-block;
+padding: 0 10px;
+margin-top: 15px;
+border-right: solid 1px #FFF;
+border-left: solid 1px #FFF;
 }
 // sns ボタン
 .footer-sns-btn {
- background-color: #9d896c;
- display: flex;
- position: absolute;
- right: 555px;
- margin: 0;
+background-color: #9d896c;
+display: flex;
+position: absolute;
+right: 555px;
+margin: 0;
 }
 .footer-sns-btn  li {
- background-color: #9d896c;
- font-size: 18px;
- padding: 0 20px;
+background-color: #9d896c;
+font-size: 18px;
+padding: 0 20px;
 }
 .footer-middle p{
- margin-top: 10px;
- background-color: #9d896c;
- color: #fff;
+margin-top: 10px;
+background-color: #9d896c;
+color: #fff;
 }
 .footer-middle {
- marign: 0;
+marign: 0;
 }
 .footer-middle > p {
- font-size: 13px;
- margin-bottom: 3px;
+font-size: 13px;
+margin-bottom: 3px;
 }
 .footer-sns-btn > li {
- font-size: 15px;
- margin-bottom: 3px;
+font-size: 15px;
+margin-bottom: 3px;
 }
 .copy-right > p {
- font-size: 10.5px;
- margin: 3px 0;
+font-size: 10.5px;
+margin: 3px 0;
 }
 .hostuser-login-btn {
- background-color: #9d896c;
- font-size: 11px;
- margin-top: 7px;
+background-color: #9d896c;
+font-size: 11px;
+margin-top: 7px;
 }
 .guest-login-btn a:hover {
- opacity: 0.7;
+opacity: 0.7;
 }
 
 
@@ -238,16 +238,16 @@ font-size: 10px;
 
 // ログイン時のゲストログイン
 #sessions-new {
- background-color: #fbfaf5;
- margin: 0 auto;
+background-color: #fbfaf5;
+margin: 0 auto;
 }
 #sessions-new > .bottom-border {
- margin-left: 30px;
+margin-left: 30px;
 }
 
 .hostuser-login {
- color: #BB925A;
- margin-bottom: 10px;
+color: #BB925A;
+margin-bottom: 10px;
 }
 .hostuser-login:hover {
   color: #BB925A;
@@ -435,16 +435,16 @@ nav.globalMenuSp.active {
 }
 @media screen and (max-width:425px) {
   a {
-    font-size: 9px;
+    font-size: 8px;
   }
   p {
-    font-size: 9px;
+    font-size: 8px;
   }
   h2 {
     font-size: 13px;
   }
   header {
-    height: 100px;
+    height: 50px;
     width: 100%;
   }
   .hamburger {
@@ -473,5 +473,12 @@ nav.globalMenuSp.active {
   // footer {
   //   width: 350px;
   // }
+  .link_bar {
+    font-size: 11px;
+  }
+  .shelter-room-pet {
+    width: 80px;
+    height: 60px;
+  }
 }
 

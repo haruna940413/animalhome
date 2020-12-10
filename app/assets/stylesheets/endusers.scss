@@ -35,6 +35,10 @@
   color: #BB925A;
   opacity: 0.6;
 }
+.enduser-show-post-img {
+  width: 300px;
+  height: 200px;
+}
 
 // 編集
 .enduser-profile input {
@@ -62,4 +66,34 @@
 .enduser-count p {
   font-size: 30px;
   text-align: center;
+}
+
+@media screen and (max-width:768px) {
+  .enduser-top-profile-img {
+    border: 1px solid #656565;  /* 枠線(=円形でも記述は同じ) */
+    border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
+    width: 60px;  /* 縦横を同じ値にする */
+    height: 60px;  /* 縦横を同じ値にする */
+    object-fit: cover; /* 縦横比固定したまま上2つの縦横の範囲内に収まるように配置する */
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+  .enduser-count > p {
+    font-size: 13px;
+  }
+  .enduser-show-post-img {
+    max-width: 200px;
+    max-height: 140px;
+  }
+}
+
+@media screen and (max-width:425px) {
+ .enduser-count p {
+  font-size: 8px;
+  text-align: center;
+}
+.enduser-show-post-img {
+    max-width: 95px;
+    max-height: 68px;
+  }
 }
