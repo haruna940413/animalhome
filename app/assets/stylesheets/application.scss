@@ -146,7 +146,7 @@ margin-bottom: 15px;
 
 // フッター
 footer {
-// width: 1200px;
+width: 1200px;
 background-color: #9d896c;
 height: 140px;
 margin: 0 auto;
@@ -313,6 +313,7 @@ margin-bottom: 10px;
 }
 
 nav.globalMenuSp {
+  pointer-events: none;
   position: fixed;
   z-index : 2;
   top  : 0;
@@ -359,6 +360,7 @@ nav.globalMenuSp.active {
   opacity: 100;
 
 }
+
 @media screen and (max-width:768px) {
   // 全体
   .top-img > img {
@@ -425,14 +427,16 @@ nav.globalMenuSp.active {
     height: 80px;
     margin-right: 20px;
   }
+
   footer {
-    // width: 100%;
+    width: 100%;
     background-color: #9d896c;
     height: 120px;
     margin: 0 auto;
     text-align: center;
   }
 }
+
 @media screen and (max-width:425px) {
   a {
     font-size: 8px;
@@ -455,9 +459,11 @@ nav.globalMenuSp.active {
   }
   .sns-btn {
     display: none;
+    pointer-events: none;
   }
   .list-btn {
     display: none;
+    pointer-events: none;
   }
   .c {
     width: 100%;
@@ -479,6 +485,9 @@ nav.globalMenuSp.active {
   .shelter-room-pet {
     width: 80px;
     height: 60px;
+  }
+  .globalMenuSp {
+  pointer-events: auto;
   }
 }
 
