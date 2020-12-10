@@ -146,7 +146,7 @@ margin-bottom: 15px;
 
 // フッター
 footer {
- width: 1200px;
+// width: 1200px;
  background-color: #9d896c;
  height: 140px;
  margin: 0 auto;
@@ -254,5 +254,224 @@ font-size: 10px;
   opacity: 0.7;
 }
 .hostuser-login-new-btn {
- padding: 0 10px;
+  padding: 0 10px;
 }
+
+/*ハンバーガーボタン*/
+.hamburger {
+  // display : block;
+  display : none;
+  position: fixed;
+  z-index : 3;
+  right : 13px;
+  top   : 12px;
+  width : 42px;
+  height: 42px;
+  cursor: pointer;
+  text-align: center;
+}
+.hamburger span {
+  display : block;
+  position: absolute;
+  width   : 30px;
+  height  : 2px ;
+  left    : 6px;
+  background : #555;
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition   : 0.3s ease-in-out;
+  transition        : 0.3s ease-in-out;
+}
+.hamburger span:nth-child(1) {
+  top: 10px;
+}
+.hamburger span:nth-child(2) {
+  top: 20px;
+}
+.hamburger span:nth-child(3) {
+  top: 30px;
+}
+
+/* ナビ開いてる時のボタン */
+.hamburger.active span{
+  background :#656565;
+}
+.hamburger.active span:nth-child(1) {
+  -webkit-transform: translateY(6px);
+  -moz-transform   : translateY(6px);
+  transform        : translateY(6px);
+}
+.hamburger.active span:nth-child(2){
+-webkit-transform: translateY(-4px);
+  -moz-transform   : translateY(-4px);
+  transform        : translateY(-4px);
+}
+
+.hamburger.active span:nth-child(3) {
+  -webkit-transform: translateY(-14px);
+  -moz-transform   : translateY(-14px);
+  transform        : translateY(-14px);
+}
+
+nav.globalMenuSp {
+  position: fixed;
+  z-index : 2;
+  top  : 0;
+  left : 0;
+  color: #656565;
+  background: rgba(0,0,0,0.7);
+  text-align: center;
+  // width: 100%;
+  width: 350px;
+  opacity: 0;
+  transition: opacity .6s ease, visibility .6s ease;
+}
+
+nav.globalMenuSp ul {
+  margin: 0 auto;
+  padding: 0;
+  // width: 100%;
+  width: 350px;
+}
+
+nav.globalMenuSp ul li {
+  list-style-type: none;
+  padding: 0;
+  // width: 100%;
+  width: 350px;
+  transition: .4s all;
+}
+nav.globalMenuSp ul li:last-child {
+  padding-bottom: 0;
+}
+nav.globalMenuSp ul li:hover{
+  background :#ddd;
+}
+
+nav.globalMenuSp ul li a {
+  display: block;
+  color: #656565;
+  padding: 1em 0;
+  text-decoration :none;
+}
+
+/* このクラスを、jQueryで付与・削除する */
+nav.globalMenuSp.active {
+  opacity: 100;
+
+}
+@media screen and (max-width:768px) {
+  // 全体
+  .top-img > img {
+    width: 670px;
+    height: 100px;
+  }
+  .link_bar > a {
+    font-size: 13px;
+  }
+  // ヘッダー
+  header {
+    width: 100%;
+    height: 125px;
+    margin: 0;
+  }
+  .top-border > img {
+    width: 670px;
+  }
+  h2 {
+    font-size: 20px;
+  }
+  p {
+    font-size: 13px;
+  }
+  // sns ボタン
+  .sns-btn {
+    display: flex;
+    position: absolute;
+    right: 45px;
+    padding-top: 10px;
+    margin: 0;
+  }
+  .sns-btn  li {
+    font-size: 13px;
+    padding: 0 15px;
+  }
+  // listボタン
+  .list-btn {
+    margin: 0;
+    display: flex;
+  }
+  .list-btn  li {
+    text-align: center;
+    width: 100%;
+    font-size: 13px;
+  }
+  .list-btn a {
+    display: inline-block;
+    margin-top: 30px;
+    padding-bottom: 10px;
+  }
+  .list-btn a:hover {
+    border-bottom: solid 5px #8fbc8f;
+  }
+  .bottom-border > img {
+    width: 100%;
+  }
+  // ゲストログイン
+  .guest-login-btn {
+    margin-left: 20px;
+  }
+  .guest-btn  {
+    width: 100px;
+    height: 80px;
+    margin-right: 20px;
+  }
+  footer {
+    // width: 100%;
+    background-color: #9d896c;
+    height: 120px;
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+@media screen and (max-width:425px) {
+  a {
+    font-size: 9px;
+  }
+  p {
+    font-size: 9px;
+  }
+  h2 {
+    font-size: 13px;
+  }
+  header {
+    height: 100px;
+    width: 100%;
+  }
+  .hamburger {
+    display: block;
+    position: relative;
+    top: 0;
+    left: 30px;
+  }
+  .sns-btn {
+    display: none;
+  }
+  .list-btn {
+    display: none;
+  }
+  .c {
+    width: 100%;
+    height: 100px;
+  }
+  .top-border > img {
+    width: 280px;
+  }
+  .top-img > img {
+    width: 280px;
+    height: 50px;
+  }
+  // footer {
+  //   width: 350px;
+  // }
+}
+

@@ -16,7 +16,7 @@
     <!--エラー文-->
     <% if @enduser.errors.any? %>
      <div class=“error_explanation”>
-     <h5 class="text-danger"><%= @enduser.errors.count %>件のerrorが発生しました。</h5>
+     <h5 class="text-danger"><%= @enduser.errors.count %>件のエラーが発生しました。</h5>
      <ul>
       <% @enduser.errors.full_messages.each do |message| %>
         <li class="text-danger">●<%= message %></li>

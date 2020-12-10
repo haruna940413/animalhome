@@ -103,5 +103,7 @@ Rails.application.configure do
     authentication:       'plain',
     enable_starttls_auto:  true
   }
+  # メール設定
+  config.action_mailer.default_url_options = { protocol: 'https', host: 'https://eb88168bcc174837822ba03c20fcdd47.vfs.cloud9.us-east-1.amazonaws.com' }
 
 end

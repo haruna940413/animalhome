@@ -87,3 +87,15 @@
 .hostuser-pet-edit-btn > input {
   margin-top: 380px;
 }
+@media screen and (max-width:768px) {
+.enduser-pet-index-img {
+  height: 180px;
+  width: 260px;
+}
+li {
+  font-size: 11px;
+}
+.btn-outline-dark {
+  font-size: 9px;
+}
+}

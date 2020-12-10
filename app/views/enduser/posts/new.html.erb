@@ -15,7 +15,7 @@
     <!--エラー文-->
     <% if @post.errors.any? %>
       <div class=“error_explanation”>
-        <h5 class="text-danger"><%= @post.errors.count %>件のerrorが発生しました。</h5>
+        <h5 class="text-danger"><%= @post.errors.count %>件のエラーが発生しました。</h5>
         <ul>
           <% @post.errors.full_messages.each do |message| %>
             <li class="text-danger">●<%= message %></li>
@@ -28,7 +28,7 @@
     <div class="row">
       <div class="field col-xl-4">
         <%= attachment_image_tag @post, :post_image, fallback: 'no-image.jpg', format: 'jpeg', size: '300x200', onChange: "$('.img_field').change()", class: 'center-block img_prev'%>
-        
+
         <%= f.attachment_field :post_image, class: 'img_field' %>
       </div>
       <div class="field col-xl-4">

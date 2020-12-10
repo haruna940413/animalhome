@@ -105,3 +105,44 @@ h2 {
 }
 
 
+@media screen and (max-width:768px) {
+  .border-img {
+    width: 670px;
+  }
+  .flex-box {
+    eidth: 700px;
+  }
+  .post_image {
+    width: 300px;
+    height: 200px;
+  }
+  .flex-content {
+    width: 200px;
+  }
+  .enduser-post-new-comment {
+  position: relative;
+  min-width: 200px;
+  padding: 5px;
+  border: 1px solid #656565;
+}
+.enduser-post-new-comment > form {
+  width: 140px;
+  height: 140px;
+  font-size: 11px;
+}
+form > input {
+  font-size: 11px;
+}
+.post-comment  {
+  width: 150px;
+  font-size: 11px;
+  margin: 0;
+}
+.flex-comment {
+  width: 140px;
+}
+summary {
+  font-size: 11px;
+}
+
+}

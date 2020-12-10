@@ -1,8 +1,8 @@
 <%= form_with(model:[post, newcomment], remote: true) do |f| %>
 
   <!--投稿フォーム-->
-  
-  <%= f.text_area :comment, rows: '3', class: "form-control new-comment-form",placeholder: "コメントをここに" %>
+
+  <%= f.text_area :comment, rows: '2', class: "form-control new-comment-form",placeholder: "コメントここ" %>
   <%= f.submit "送信する", class: "btn btn-outline-dark new-comment-btn" %>
 
 <% end %>

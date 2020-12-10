@@ -17,7 +17,7 @@
     <!--エラー文-->
     <% if @reservation.errors.any? %>
      <div class=“error_explanation”>
-     <h5 class="text-danger"><%= @reservation.errors.count %>件のerrorが発生しました。</h5>
+     <h5 class="text-danger"><%= @reservation.errors.count %>件のエラーが発生しました。</h5>
      <ul>
       <% @reservation.errors.full_messages.each do |message| %>
         <li class="text-danger">●<%= message %></li>

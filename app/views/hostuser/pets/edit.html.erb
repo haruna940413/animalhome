@@ -13,7 +13,7 @@
     <!--エラー文-->
     <% if @pet.errors.any? %>
      <div class=“error_explanation”>
-     <h5 class="text-danger"><%= @pet.errors.count %>件のerrorが発生しました。</h5>
+     <h5 class="text-danger"><%= @pet.errors.count %>件のエラーが発生しました。</h5>
      <ul>
       <% @pet.errors.full_messages.each do |message| %>
         <li class="text-danger">●<%= message %></li>
@@ -84,9 +84,9 @@
       <div class="col-xl-2">
         <div class="hostuser-pet-edit-btn actions col-xl-12">
           <%= f.submit "更新する", class: "btn btn-outline-dark" %>
-        </div>  
+        </div>
       </div>
-    </div>  
+    </div>
   <% end %>
   </div>
 </div>

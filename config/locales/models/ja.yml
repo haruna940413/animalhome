@@ -105,21 +105,49 @@ ja:
         kagoshima: 鹿児島
         okinawa: 沖縄
 
+
+  # エラー文の日本語化
   activerecord:
     models:
+      genre: ジャンル
+      reservation: 予約
+      post: 画像投稿
       enduser: 会員様
     attributes:
-      reservation:
-        start_date: この開始時間
+      genre:
+        name: ジャンル名
         created_at: 登録日時
         updated_at: 更新日時
-
-  activerecord:
-    models:
-      post: 画像投稿
-    attributes:
+      reservation:
+        start_date: 開始時間
+        created_at: 登録日時
+        updated_at: 更新日時
+      pet:
+        name: ペットの名前
+        animal_image: 画像
+        kind: 種類
+        detail: 詳細
+        age: 年齢
+        sex: 性別
+        size: サイズ
+        prefectures: 都道府県
+        vaccine_status: ワクチン
+        castration_status: 避妊・去勢
+        ingle_status: 単身者の応募
+        older_status: 高齢者の応募
+        pet_status: 現在の募集状況
+        created_at: 登録日時
+        updated_at: 更新日時
       post:
-        post_image: 画像
+        post_image: 投稿画像
         content: 本文
+        created_at: 登録日時
+        updated_at: 更新日時
+      enduser:
+        email: メールアドレス
+        name: お名前
+        nick_name: ニックネーム
+        introduction: 自己紹介文
+        profile_image: プロフィール画像
         created_at: 登録日時
         updated_at: 更新日時
