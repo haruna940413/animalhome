@@ -11,7 +11,7 @@
 <div class="post-index-top">
   <h2>卒業犬・猫</h2>
   <p>
-    animalhomeのシェルターにいた時からの成長を是非ご覧ください<br><br>
+    animalhomeを卒業した子の成長を是非ご覧ください<br><br>
   </p>
 </div>
 
@@ -23,7 +23,7 @@
       <%= link_to enduser_path(post.enduser_id) do %>
         <%= attachment_image_tag post.enduser, :profile_image, fallback: 'no-image.jpg', size: '60x60',class: "profile-img" %>
       <% end %>
-      <span>現在の里親の</span><%= post.enduser.nick_name %>
+      <span>里親の</span><%= post.enduser.nick_name %><span>さん</span>
       <div class="flex-box">
         <%= attachment_image_tag post, :post_image,  size: '600x400', class: "post-image" %>
         <% if enduser_signed_in? %>

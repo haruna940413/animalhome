@@ -57,6 +57,10 @@
 .vaccine_status-seach {
   margin-bottom: 8px;
 }
+.option-word-seach-maedia428 {
+  display: none;
+  pointer-events: none;
+}
 
 // 管理者側
 .post i{
@@ -88,14 +92,63 @@
   margin-top: 380px;
 }
 @media screen and (max-width:768px) {
-.enduser-pet-index-img {
-  height: 180px;
-  width: 260px;
+  .enduser-pet-index-img {
+    height: 180px;
+    width: 260px;
+  }
+  li {
+    font-size: 11px;
+  }
+  .btn-outline-dark {
+    font-size: 9px;
+  }
+  .search {
+      font-size: 10px;
+  }
+  .genre-search > a  {
+    font-size: 10px;
+  }
+  .enduser-pet-index-reservation-btn > a {
+    font-size: 10px;
+  }
+  .enduser-pet--show-img {
+    width: 300px;
+    height: 200px;
+  }
+  .enduser-pet-show-reservation-btn a {
+    margin-top: 260px;
+    font-size: 13px;
+  }
+  .enduser-pet-index-now > .col-xl-1 {
+    margin-top: 300px;
+  }
 }
-li {
-  font-size: 11px;
+@media screen and (max-width:425px) {
+.enduser-pet-index-reservation-btn > a {
+  margin: 0;
 }
-.btn-outline-dark {
-  font-size: 9px;
+.option-word-seach-maedia428 {
+  display: block;
+  pointer-events: auto;
+}
+.option-word-seach {
+  display: none;
+  pointer-events: none;
+}
+select {
+  width: 100px;
+}
+.vaccine_status-seach-br {
+  margin-bottom: 8px;
+}
+.pet-border {
+  margin-left: 20px;
+}
+.border-img {
+  margin-left: 20px;
+}
+#pets-index > footer {
+  width: 330px;
+  margin: 0 auto;
 }
 }

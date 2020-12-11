@@ -36,7 +36,6 @@ h2 {
   margin-top: 30px;
   border-left : solid 3px #656565;
 }
-
 .flex-box {
   display: flex;
   margin: 0;
@@ -124,25 +123,62 @@ h2 {
   min-width: 200px;
   padding: 5px;
   border: 1px solid #656565;
-}
-.enduser-post-new-comment > form {
-  width: 140px;
-  height: 140px;
-  font-size: 11px;
-}
-form > input {
-  font-size: 11px;
-}
-.post-comment  {
-  width: 150px;
-  font-size: 11px;
-  margin: 0;
-}
-.flex-comment {
-  width: 140px;
-}
-summary {
-  font-size: 11px;
-}
+  }
+  .enduser-post-new-comment > form {
+    width: 140px;
+    height: 140px;
+    font-size: 11px;
+  }
+  form > input {
+    font-size: 11px;
+  }
+  .post-comment  {
+    width: 150px;
+    font-size: 11px;
+    margin: 0;
+  }
+  .flex-comment {
+    width: 140px;
+  }
+  summary {
+    font-size: 11px;
+  }
+  .flex-box {
+    height: 350px;
+  }
 
+}
+@media screen and (max-width:425px) {
+  #posts-index {
+    max-width: 330px;
+  }
+  .border-img {
+    width: 280px;
+  }
+  .post-image {
+    width: 280px;
+    height: 190px;
+  }
+  .flex-box {
+    height: 600px;
+    display: block;
+  }
+  .enduser-post-new-comment {
+    min-width: 280px;
+    border: 1px solid #656565;
+    height: 300px;
+    margin-top: 10px;
+  }
+  .flex-content {
+    width: 280px;
+    height: 100px;
+    margin: 0;
+  }
+  .flex-favorite a {
+    width: 20px;
+    font-size: 20px;
+    position: relative;
+    top: 0;
+    left: 190px;
+  }
 }

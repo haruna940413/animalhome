@@ -44,6 +44,27 @@
         <%= f.select :prefectures, Pet.prefectures_i18n.invert, {} %>
         <%= submit_tag '検索', :name => nil %>
       </div>
+      <!--ここからはメディアクエリ428以下の時-->
+      <div class="option-word-seach-maedia428">
+        <span class="option-word-seach-span">[条件検索]</span>
+        <span>年  齢：</span>
+        <%= f.select :age, Pet.ages_i18n.invert, {} %>
+        <span>性    別：</span>
+        <%= f.select :sex, Pet.sexes_i18n.invert, {}, class: "vaccine_status-seach-br"%><br>
+        <span>サイズ：</span>
+        <%= f.select :size, Pet.sizes_i18n.invert, {} %>
+        <span>ワクチン：</span>
+        <%= f.select :vaccine_status, Pet.vaccine_statuses_i18n.invert, {}, class: "vaccine_status-seach-br" %><br>
+        <span>避 妊：</span>
+        <%= f.select :castration_status, Pet.castration_statuses_i18n.invert, {} %>
+        <span>単 身：</span>
+        <%= f.select :single_status, Pet.single_statuses_i18n.invert, {}, class: "vaccine_status-seach-br" %><br>
+        <span>高齢者：</span>
+        <%= f.select :older_status, Pet.older_statuses_i18n.invert, {} %>
+        <span>都道府県：</span>
+        <%= f.select :prefectures, Pet.prefectures_i18n.invert, {} %>
+        <%= submit_tag '検索', :name => nil %>
+      </div>
     <% end %>
   </div>
 </div>
@@ -54,7 +75,6 @@
   <h2>ペット一覧</h2>
   <% @pets.each do |pet|%>
     <div class="row enduser-pet-index-now">
-      <!--<div class="top-border"><%#= image_tag('border.png', :size =>'1200x5') %></div>-->
       <div class="col-xl-6 col-xl-offset-1 col-md-5">
         <h3><%= pet.name %>(<%= pet.sex_i18n %>)</h3>
         <%= attachment_image_tag pet, :animal_image, fallback: 'no-image.jpg', size: '600x400', class: "enduser-pet-index-img" %>
@@ -96,7 +116,7 @@
       <div class="enduser-pet-index-reservation-btn col-xl-1 col-md-1">
         <%= link_to "予約する", enduser_reservations_path, class: "btn btn-outline-dark"  %>
       </div>
-      <div class="top-border"><%= image_tag('border.png', :size =>'1185x5', class: "border-img") %></div>
+      <div class="top-border pet-bo"><%= image_tag('border.png', :size =>'1185x5', class: "border-img") %></div>
     </div>
     <% end %>
 </div>

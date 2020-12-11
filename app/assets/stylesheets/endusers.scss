@@ -88,12 +88,19 @@
 }
 
 @media screen and (max-width:425px) {
- .enduser-count p {
-  font-size: 8px;
-  text-align: center;
-}
-.enduser-show-post-img {
+  .enduser-count p {
+    font-size: 8px;
+    text-align: center;
+  }
+  .enduser-show-post-img {
     max-width: 95px;
     max-height: 68px;
+  }
+  .enduser-edit-profile-img {
+    max-width: 90px;
+    max-height: 90px;
+  }
+  #enduser-edit {
+    font-size: 10px;
   }
 }

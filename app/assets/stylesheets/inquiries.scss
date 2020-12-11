@@ -8,9 +8,6 @@
 }
 
 .inquiry-show {
-  // background-image: image-url('background-img.png');
-  // background-size: contain;
-  // background-repeat: no-repeat;
   width: 1200px;
   height: 800px;
   background-image: image-url('inquiry-background.jpg');
@@ -35,4 +32,49 @@
   background-color: #fff;
 }
 
+@media screen and (max-width:768px) {
+  .inquiry-show {
+    width: 700px;
+    height: 400px;
+    background-image: image-url('inquiry-background.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .thanks > img {
+    width: 400px;
+    height: 50px;
+    margin: 0 auto;
+  }
+  .thanks {
+    width: 400px;
+    margin: 0 auto;
+    position: relative;
+    top: 100px;
+    right: 130px;
+    background-color: #fff;
+  }
+}
 
+@media screen and (max-width:425px) {
+  .form-group-name-top {
+    margin-top: 10px;
+  }
+  .inquiry-show {
+    max-width: 300px;
+    max-height: 250px;
+    background-image: none;
+  }
+  .thanks {
+  width: 300px;
+  margin: 0 auto;
+  position: relative;
+  top: 10px;
+  left: 10px;
+  background-color: #fff;
+  }
+  .thanks > img {
+    width: 300px;
+    height: 30px;
+    margin: 0 auto;
+  }
+}

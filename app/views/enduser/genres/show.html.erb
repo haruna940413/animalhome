@@ -11,20 +11,20 @@
 
 <h2>Pet search for 『<%= @genre.name %>』</h2>
 <div class="enduser-genre-index col-xl-12">
-  <table class="table table-border">
+  <table class="table table-border table-width-big428">
     <thead>
       <tr>
         <th>ジャンル</th>
         <th>名前</th>
         <th>種類</th>
-        <td>性別</td>
-        <td>歳</td>
-        <td>サイズ</td>
-        <td>都道府県</td>
-        <td>ワクチン</td>
-        <td>避妊</td>
-        <td>単身</td>
-        <td>高齢</td>
+        <th>性別</th>
+        <th>歳</th>
+        <th>サイズ</th>
+        <th>都道府県</th>
+        <th>ワクチン</th>
+        <th>避妊</th>
+        <th>単身</th>
+        <th>高齢</th>
         <th>募集状況</th>
         <th><i class="fas fa-paw"></i></th>
       </tr>
@@ -46,6 +46,33 @@
           <td><%= pet.castration_status_i18n %></td>
           <td><%= pet.single_status_i18n %></td>
           <td><%= pet.older_status_i18n %></td>
+          <td><%= pet.pet_status_i18n %></td>
+          <td class="enduser-genre-index-show"><%= link_to "詳細" ,enduser_pet_path(pet), class: "btn btn-outline-dark" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <table class="table table-border table-width-small428">
+    <thead>
+      <tr>
+        <th>名前</th>
+        <th>種類</th>
+        <th>性別</th>
+        <th>歳</th>
+        <th>募集状況</th>
+        <th><i class="fas fa-paw"></i></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @genre.pets.each do |pet| %>
+        <tr>
+          <td>
+            <%= attachment_image_tag pet, :animal_image, size: '40x40' %>
+            <%= pet.name %>
+          </td>
+          <td><%= pet.kind %></td>
+          <td><%= pet.sex_i18n %></td>
+          <td><%= pet.age_i18n %></td>
           <td><%= pet.pet_status_i18n %></td>
           <td class="enduser-genre-index-show"><%= link_to "詳細" ,enduser_pet_path(pet), class: "btn btn-outline-dark" %></td>
         </tr>

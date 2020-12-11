@@ -47,11 +47,11 @@
 <h2>現在の予約状況</h2>
 <div class="row enduser-reservations">
 
-  <div class="col-xl-8">
+  <div class="col-xl-8 col-md-8">
     <div id="calendar"></div>
   </div>
 
-  <div class="enduser-reservations-index col-xl-4">
+  <div class="enduser-reservations-index col-xl-4 col-md-4">
     <% if enduser_signed_in? %>
       <div>あなたの現在の予約状況</div>
       <% @reservations.each do |reservation| %>
