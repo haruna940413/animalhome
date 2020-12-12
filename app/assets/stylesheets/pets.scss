@@ -57,11 +57,6 @@
 .vaccine_status-seach {
   margin-bottom: 8px;
 }
-.option-word-seach-maedia428 {
-  display: none;
-  pointer-events: none;
-}
-
 // 管理者側
 .post i{
   margin-left: 65px;
@@ -91,6 +86,13 @@
 .hostuser-pet-edit-btn > input {
   margin-top: 380px;
 }
+.table-borderless-pet-index-media-small428 {
+  display: none;
+}
+.hostuser-pet-show-media-small428 {
+  display: none;
+}
+
 @media screen and (max-width:768px) {
   .enduser-pet-index-img {
     height: 180px;
@@ -111,7 +113,7 @@
   .enduser-pet-index-reservation-btn > a {
     font-size: 10px;
   }
-  .enduser-pet--show-img {
+  .enduser-pet-show-img {
     width: 300px;
     height: 200px;
   }
@@ -122,18 +124,24 @@
   .enduser-pet-index-now > .col-xl-1 {
     margin-top: 300px;
   }
+  .col-md-4 > img {
+    width: 280px;
+    height: 190px;
+  }
+  .hostuser-pet-edit {
+    height: 450px;
+    font-size: 10px;
+  }
+  #pets-edit {
+    max-width: 750px;
+  }
+  .hostuser-pet-edit-btn > input {
+  margin-top: 300px;
+  }
 }
 @media screen and (max-width:425px) {
 .enduser-pet-index-reservation-btn > a {
   margin: 0;
-}
-.option-word-seach-maedia428 {
-  display: block;
-  pointer-events: auto;
-}
-.option-word-seach {
-  display: none;
-  pointer-events: none;
 }
 select {
   width: 100px;
@@ -151,4 +159,35 @@ select {
   width: 330px;
   margin: 0 auto;
 }
+.table-borderless-pet-index-media-big428 {
+  display: none;
+}
+.table-borderless-pet-index-media-small428 {
+  display: block;
+}
+.hostuser-pet-show-media-small428 {
+  display: block;
+}
+.hostuser-pet-show-media-big428 {
+  display: none;
+}
+.hostuser-pet-show-media-small428-img > img {
+  width: 300px;
+  height: 200px;
+}
+.pet-show-btn {
+  margin-top: 100px;
+}
+.hostuser-pet-edit {
+  height: 650px;
+}
+#pets-edit {
+ margin-left: 20px;
+}
+#pet_animal_image {
+  height: 30px;
+}
+ .hostuser-pet-edit-btn > input {
+  margin-top: 10px;
+  }
 }

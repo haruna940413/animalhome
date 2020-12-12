@@ -9,13 +9,13 @@
   <%= link_to "ペット詳細", hostuser_pet_path %>
 </div>
 
-<div class="hostuser-pet-show">
+<div class="hostuser-pet-show hostuser-pet-show-media-big428">
   <h2><%= @pet.name %></h2>
   <div class="row">
-    <div class="col-xl-7 col-xl-offset-1">
+    <div class="col-xl-7 col-xl-offset-1 col-md-4 ">
       <%= attachment_image_tag @pet, :animal_image, fallback: 'no-image.jpg', size: '600x400' %>
     </div>
-    <div class="col-xl-2">
+    <div class="col-xl-2 col-md-1">
         <ul>
           <li>ジャンル：</li>
           <li>名前：</li>
@@ -31,7 +31,7 @@
           <li>現在の募集状況：</li>
         </ul>
       </div>
-      <div class="col-xl-2">
+      <div class="col-xl-2 col-md-2">
         <ul>
           <li><%= @pet.genre.name %></li>
           <li><%= @pet.name %></li>
@@ -48,6 +48,50 @@
         </ul>
       </div>
     <div class="pet-show-btn">
+      <%= link_to "編集", edit_hostuser_pet_path(@pet) ,data: {"turbolinks" => false}, class: "btn btn-outline-dark"%>
+    </div>
+  </div>
+</div>
+<!--メディア-->
+<div class="hostuser-pet-show-media-small428">
+  <h2><%= @pet.name %></h2>
+  <div class="hostuser-pet-show-media-small428-img">
+    <%= attachment_image_tag @pet, :animal_image, fallback: 'no-image.jpg', size: '600x400' %>
+  </div>
+  <div class="row">
+    <div class="col-4">
+      <ul>
+        <li>ジャンル：</li>
+        <li>名前：</li>
+        <li>性別：</li>
+        <li>年齢</li>
+        <li>種類：</li>
+        <li>サイズ：</li>
+        <li>都道府県</li>
+        <li>去勢・避妊</li>
+        <li>単身者応募：</li>
+        <li>高齢者応募：</li>
+        <li>備考:</li>
+        <li>現在の募集状況：</li>
+      </ul>
+    </div>
+    <div class="col-4">
+      <ul>
+        <li><%= @pet.genre.name %></li>
+        <li><%= @pet.name %></li>
+        <li><%= @pet.sex_i18n %></li>
+        <li><%= @pet.age_i18n%></li>
+        <li><%= @pet.kind %></li>
+        <li><%= @pet.size_i18n %></li>
+        <li><%= @pet.prefectures_i18n %></li>
+        <li><%= @pet.castration_status_i18n %></li>
+        <li><%= @pet.single_status_i18n %></li>
+        <li><%= @pet.older_status_i18n %></li>
+        <li><%= @pet.detail %></li>
+        <li><%= @pet.pet_status_i18n %></li>
+      </ul>
+    </div>
+    <div class="pet-show-btn col-1">
       <%= link_to "編集", edit_hostuser_pet_path(@pet) ,data: {"turbolinks" => false}, class: "btn btn-outline-dark"%>
     </div>
   </div>

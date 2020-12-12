@@ -4,7 +4,11 @@
 <div class="link_bar">
   <%= link_to "top", hostuser_homes_top_path %>
   <span>>></span>
-  <%= link_to "ペット編集", hostuser_pets_path %>
+  <%= link_to "ペット一覧", hostuser_pets_path %>
+  <span>>></span>
+  <%= link_to "ペット詳細", hostuser_pet_path(@pet) %>
+  <span>>></span>
+  <%= link_to "ペット編集", edit_hostuser_pet_path(@pet) ,data: {"turbolinks" => false} %>
 </div>
 
 <h2>ペットを編集する</h2>
@@ -23,66 +27,66 @@
     <% end %>
     <!--ペット更新フォーム-->
     <div class="row">
-      <div class="field col-xl-4">
+      <div class="field col-xl-4 col-md-3 col-3">
         <%= attachment_image_tag @pet, :animal_image, fallback: 'no-image.jpg', size: '300x200', onChange: "$('.img_field').change()", class: 'center-block img_prev'%>
         <%= f.attachment_field :animal_image, class: 'img_field' %><br>
       </div>
-      <div class="col-xl-5">
-        <div class="field col-xl-12">
-          <%= f.label :ジャンル, class: "col-xl-4" %>
-          <%= f.collection_select(:genre_id, @genres, :id, :name, {prompt: "-- 入力してください --"}, {class: "col-xl-7"}) %>
+      <div class="col-xl-5 col-md-3">
+        <div class="field col-xl-12 col-md-12 col-12">
+          <%= f.label :ジャンル, class: "col-xl-4 col-md-5 col-1" %>
+          <%= f.collection_select(:genre_id, @genres, :id, :name, {prompt: "-- 入力してください --"}, {class: "col-xl-7 col-md-5 col-2"}) %>
         </div>
-        <div class="field col-xl-12">
-          <%= f.label :名前, class: "col-xl-4" %>
-          <%= f.text_field :name, class: "col-xl-7" %>
+        <div class="field col-xl-12 col-md-12 col-12">
+          <%= f.label :名前, class: "col-xl-4 col-md-5 col-1" %>
+          <%= f.text_field :name, class: "col-xl-7 col-md-5 col-2" %>
         </div>
-        <div class="field col-xl-12 item">
-          <%= f.label :種類, class: "col-xl-4" %>
-          <%= f.text_area :kind, rows: 1, class: "col-xl-7" %>
+        <div class="field col-xl-12 col-md-12 col-12 item">
+          <%= f.label :種類, class: "col-xl-4 col-md-5 col-1" %>
+          <%= f.text_area :kind, rows: 1, class: "col-xl-7 col-md-5 col-2" %>
         </div>
-        <div class="field col-xl-12">
-          <%= f.label :年齢, class: "col-xl-4" %>
-          <%= f.select :age, Pet.ages_i18n.invert, {}, class: "col-xl-7" %>
+        <div class="field col-xl-12 col-md-12 col-12">
+          <%= f.label :年齢, class: "col-xl-4 col-md-5 col-1" %>
+          <%= f.select :age, Pet.ages_i18n.invert, {}, class: "col-xl-7 col-md-5 col-2" %>
         </div>
-        <div class="field col-xl-12">
-          <%= f.label :性別, class: "col-xl-4" %>
-          <%= f.select :sex, Pet.sexes_i18n.invert, {}, class: "col-xl-7" %>
+        <div class="field col-xl-12 col-md-12 col-12">
+          <%= f.label :性別, class: "col-xl-4 col-md-5 col-1" %>
+          <%= f.select :sex, Pet.sexes_i18n.invert, {}, class: "col-xl-7 col-md-5 col-2" %>
         </div>
-        <div class="field col-xl-12">
-          <%= f.label :サイズ, class: "col-xl-4" %>
-          <%= f.select :size, Pet.sizes_i18n.invert, {}, class: "col-xl-7" %>
+        <div class="field col-xl-12 col-md-12 col-12">
+          <%= f.label :サイズ, class: "col-xl-4 col-md-5 col-1" %>
+          <%= f.select :size, Pet.sizes_i18n.invert, {}, class: "col-xl-7 col-md-5 col-2" %>
         </div>
-        <div class="field col-xl-12">
-          <%= f.label :ワクチン, class: "col-xl-4" %>
-          <%= f.select :vaccine_status, Pet.vaccine_statuses_i18n.invert, {}, class: "col-xl-7" %>
+        <div class="field col-xl-12 col-md-12 col-12">
+          <%= f.label :ワクチン, class: "col-xl-4 col-md-5 col-1" %>
+          <%= f.select :vaccine_status, Pet.vaccine_statuses_i18n.invert, {}, class: "col-xl-7 col-md-5 col-2" %>
         </div>
-        <div class="field col-xl-12">
-          <%= f.label :去勢・避妊, class: "col-xl-4" %>
-          <%= f.select :castration_status, Pet.castration_statuses_i18n.invert, {}, class: "col-xl-7" %>
+        <div class="field col-xl-12 col-md-12 col-12">
+          <%= f.label :去勢・避妊, class: "col-xl-4 col-md-5 col-1" %>
+          <%= f.select :castration_status, Pet.castration_statuses_i18n.invert, {}, class: "col-xl-7 col-md-5 col-2" %>
         </div>
-        <div class="field col-xl-12">
-          <%= f.label :単身者の応募, class: "col-xl-4" %>
-          <%= f.select :single_status, Pet.single_statuses_i18n.invert, {}, class: "col-xl-7" %>
+        <div class="field col-xl-12 col-md-12 col-12">
+          <%= f.label :単身者の応募, class: "col-xl-4 col-md-5 col-1" %>
+          <%= f.select :single_status, Pet.single_statuses_i18n.invert, {}, class: "col-xl-7 col-md-5 col-2" %>
         </div>
-        <div class="field col-xl-12">
-          <%= f.label :高齢者の応募, class: "col-xl-4" %>
-          <%= f.select :older_status, Pet.single_statuses_i18n.invert, {}, class: "col-xl-7" %>
+        <div class="field col-xl-12 col-md-12 col-12">
+          <%= f.label :高齢者の応募, class: "col-xl-4 col-md-5 col-1" %>
+          <%= f.select :older_status, Pet.single_statuses_i18n.invert, {}, class: "col-xl-7 col-md-5 col-2" %>
         </div>
-        <div class="field col-xl-12">
-          <%= f.label :都道府県, class: "col-xl-4" %>
-          <%= f.select :pet_status, Pet.pet_statuses_i18n.invert, {}, class: "col-xl-7" %>
+        <div class="field col-xl-12 col-md-12 col-12">
+          <%= f.label :都道府県, class: "col-xl-4 col-md-5 col-1" %>
+          <%= f.select :pet_status, Pet.pet_statuses_i18n.invert, {}, class: "col-xl-7 col-md-5 col-2" %>
         </div>
-        <div class="field col-xl-12">
-          <%= f.label :募集状況, class: "col-xl-4" %>
-          <%= f.select :prefectures, Pet.prefectures_i18n.invert, {}, class: "col-xl-7" %>
+        <div class="field col-xl-12 col-md-12 col-12">
+          <%= f.label :募集状況, class: "col-xl-4 col-md-5 col-1" %>
+          <%= f.select :prefectures, Pet.prefectures_i18n.invert, {}, class: "col-xl-7 col-md-5 col-2" %>
         </div>
-        <div class="field col-xl-12">
-          <%= f.label :備考欄, class: "col-xl-4" %>
-          <%= f.text_field :detail , class: "col-xl-7" %>
+        <div class="field col-xl-12 col-md-12 col-12">
+          <%= f.label :備考欄, class: "col-xl-4 col-md-5 col-1" %>
+          <%= f.text_field :detail , class: "col-xl-7 col-md-5 col-2" %>
         </div>
       </div>
-      <div class="col-xl-2">
-        <div class="hostuser-pet-edit-btn actions col-xl-12">
+      <div class="col-xl-2 col-md-3">
+        <div class="hostuser-pet-edit-btn actions col-xl-12 col-md-4">
           <%= f.submit "更新する", class: "btn btn-outline-dark" %>
         </div>
       </div>

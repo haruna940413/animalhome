@@ -10,7 +10,7 @@
 
 <div class="hostuser-pet-index">
   <h2>登録ペット一覧</h2>
-  <table class="table table-borderless">
+  <table class="table table-borderless table-borderless-pet-index-media-big428">
     <div class="hostuser-pet-new">
       <%= link_to "" , new_hostuser_pet_path, data: {"turbolinks" => false}, class: "fa fa-plus-square-o" %>
     </div>
@@ -36,6 +36,32 @@
           <td><%= pet.name %></td>
           <td><%= attachment_image_tag pet, :animal_image, fallback: 'no-image.jpg', size: '40x40'%></td>
           <td><%= pet.sex_i18n %></td>
+          <td><%= pet.pet_status_i18n %></td>
+          <td><%= link_to "詳細", hostuser_pet_path(pet), class: "btn btn-outline-dark" %></td>
+          <td><%= link_to "編集", edit_hostuser_pet_path(pet) ,data: {"turbolinks" => false}, class: "btn btn-outline-dark" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <!--メディア-->
+  <table class="table table-borderless table-borderless-pet-index-media-small428">
+    <!--<div class="hostuser-pet-new">-->
+    <!--  <%#= link_to "" , new_hostuser_pet_path, data: {"turbolinks" => false}, class: "fa fa-plus-square-o" %>-->
+    <!--</div>-->
+    <thead>
+      <tr>
+        <th>genre</th>
+        <th>name</th>
+        <th>pet_status</th>
+        <th><i class="fas fa-paw"></i></th>
+        <th><i class="fas fa-wrench"></i></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @pets.each do |pet| %>
+        <tr>
+          <td><%= pet.genre.name %></td>
+          <td><%= pet.name %></td>
           <td><%= pet.pet_status_i18n %></td>
           <td><%= link_to "詳細", hostuser_pet_path(pet), class: "btn btn-outline-dark" %></td>
           <td><%= link_to "編集", edit_hostuser_pet_path(pet) ,data: {"turbolinks" => false}, class: "btn btn-outline-dark" %></td>

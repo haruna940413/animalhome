@@ -31,6 +31,9 @@
 .thanks img {
   background-color: #fff;
 }
+.hostuser-inquiry-index-media-small428 {
+  display: none;
+}
 
 @media screen and (max-width:768px) {
   .inquiry-show {
@@ -76,5 +79,15 @@
     width: 300px;
     height: 30px;
     margin: 0 auto;
+  }
+  .hostuser-inquiry-index-media-big428 {
+    display: none;
+  }
+  .hostuser-inquiry-index-media-small428 {
+    display: block;
+  }
+  .btn-outline-dark {
+    font-size: 10px;
+    padding: 4px;
   }
 }

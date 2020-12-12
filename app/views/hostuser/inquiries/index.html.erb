@@ -3,7 +3,7 @@
 
 
 <div class="hostuser-inquiry-index">
-  <table class="table table-borderless">
+  <table class="table table-borderless hostuser-inquiry-index-media-big428">
     <thead>
       <tr>
         <th>問い合わせID</th>
@@ -19,6 +19,33 @@
         <td><%= inquiry.id%></td>
         <td><%= inquiry.name %></td>
         <td><%= mail_to inquiry.email %></td>
+        <td><%= inquiry.message %></td>
+        <td>
+          <%= form_with model: inquiry, url: hostuser_inquiry_path(inquiry), method: :PATCH, local: true do |f| %>
+            <%= f.radio_button :reply_status, false %>
+            <%= f.label :reply_status, "返信未", {value: :false, style: "display: inline-block;"} %>
+            <%= f.radio_button :reply_status, true %>
+            <%= f.label :reply_status, "返信済", {value: :true, style: "display: inline-block;"} %>
+            <%= f.submit "更新", class: "btn btn-outline-dark" %>
+          <% end %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <!--メディアクエリ-->
+  <table class="table table-borderless hostuser-inquiry-index-media-small428">
+    <thead>
+      <tr>
+        <th>氏名</th>
+        <th>問い合わせ内容</th>
+        <th>返信状況</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @inquiries.each do |inquiry| %>
+      <tr>
+        <td><%= inquiry.name %></td>
         <td><%= inquiry.message %></td>
         <td>
           <%= form_with model: inquiry, url: hostuser_inquiry_path(inquiry), method: :PATCH, local: true do |f| %>
