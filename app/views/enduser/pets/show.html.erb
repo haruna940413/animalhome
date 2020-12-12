@@ -15,9 +15,9 @@
     <div class="row">
       <div class="top-border"><%= image_tag('border.png', :size =>'1200x5') %></div>
       <div class="col-xl-6 col-xl-offset-1 col-md-6 col-md-offset-1">
-        <%= attachment_image_tag @pet, :animal_image, fallback: 'no-image.jpg', size: '600x400', class: "enduser-pet--show-img" %>
+        <%= attachment_image_tag @pet, :animal_image, fallback: 'no-image.jpg', size: '600x400', class: "enduser-pet-show-img" %>
       </div>
-      <div class="col-xl-2  col-md-2 enduser">
+      <div class="col-xl-2  col-md-2 col-4 enduser">
         <ul>
           <li>ジャンル：</li>
           <li>名前：</li>
@@ -33,7 +33,7 @@
           <li>現在の募集状況：</li>
         </ul>
       </div>
-      <div class="col-xl-2 col-md-2">
+      <div class="col-xl-2 col-md-2 col-4">
         <ul>
           <li><%= @pet.genre.name %></li>
           <li><%= @pet.name %></li>
@@ -49,7 +49,7 @@
           <li><%= @pet.pet_status_i18n %></li>
         </ul>
       </div>
-      <div class="col-xl-1 col-md-2 enduser-pet-show-reservation-btn">
+      <div class="col-xl-1 col-md-2 col-1 enduser-pet-show-reservation-btn">
         <%= link_to "予約する", enduser_reservations_path, class: "btn btn-outline-dark enduser-pet-show-reservation-btn-dark" %>
       </div>
 

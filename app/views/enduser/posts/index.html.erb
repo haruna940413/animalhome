@@ -18,7 +18,7 @@
 <div class="posts-index">
   <!--投稿-->
   <% @posts.each do |post| %>
-    <div class="post">
+    <div class="post one-post">
       <div><%= image_tag('border.png', :size =>'1200x5', class: "border-img") %></div>
       <%= link_to enduser_path(post.enduser_id) do %>
         <%= attachment_image_tag post.enduser, :profile_image, fallback: 'no-image.jpg', size: '60x60',class: "profile-img" %>
