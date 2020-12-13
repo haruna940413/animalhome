@@ -30,7 +30,7 @@
         <%= f.select :age, Pet.ages_i18n.invert, {} %>
         <span>性別：</span>
         <%= f.select :sex, Pet.sexes_i18n.invert, {} %>
-        <span>サイズ：</span>
+        <span class="br">サイズ：</span>
         <%= f.select :size, Pet.sizes_i18n.invert, {} %>
         <span>ワクチン：</span>
         <%= f.select :vaccine_status, Pet.vaccine_statuses_i18n.invert, {}, class: "vaccine_status-seach" %><br>
@@ -38,7 +38,7 @@
         <%= f.select :castration_status, Pet.castration_statuses_i18n.invert, {} %>
         <span>単身：</span>
         <%= f.select :single_status, Pet.single_statuses_i18n.invert, {} %>
-        <span>高齢者：</span>
+        <span class="br">高齢者：</span>
         <%= f.select :older_status, Pet.older_statuses_i18n.invert, {} %>
         <span>都道府県：</span>
         <%= f.select :prefectures, Pet.prefectures_i18n.invert, {} %>
@@ -59,7 +59,7 @@
         <h3><%= pet.name %>(<%= pet.sex_i18n %>)</h3>
         <%= attachment_image_tag pet, :animal_image, fallback: 'no-image.jpg', size: '600x400', class: "enduser-pet-index-img" %>
       </div>
-      <div class="col-xl-2 col-md-2">
+      <div class="col-xl-2 col-md-2 col-4">
         <ul>
           <li>ジャンル：</li>
           <li>名前：</li>
@@ -76,7 +76,7 @@
           <li>現在の募集状況：</li>
         </ul>
       </div>
-      <div class="col-xl-2 col-md-3">
+      <div class="col-xl-2 col-md-3 col-4">
         <ul>
           <li><%= pet.genre.name %></li>
           <li><%= pet.name %></li>
@@ -93,7 +93,7 @@
           <li><%= pet.pet_status_i18n %></li>
         </ul>
       </div>
-      <div class="enduser-pet-index-reservation-btn col-xl-1 col-md-1">
+      <div class="enduser-pet-index-reservation-btn col-xl-1 col-md-1 col-1">
         <%= link_to "予約する", enduser_reservations_path, class: "btn btn-outline-dark"  %>
       </div>
       <div class="top-border pet-border"><%= image_tag('border.png', :size =>'1185x5', class: "border-img") %></div>

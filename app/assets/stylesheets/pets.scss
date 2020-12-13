@@ -193,4 +193,14 @@
   .enduser-pet-show > h3 {
     font-size: 13px;
   }
+  .br::before {
+  	content: "\A" ;
+  	white-space: pre ;
+  }
+  #sex {
+    margin-bottom: 7px;
+  }
+  #single_status {
+    margin-bottom: 7px;
+  }
 }

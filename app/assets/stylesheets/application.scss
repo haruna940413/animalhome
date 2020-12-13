@@ -508,7 +508,7 @@ nav.globalMenuSp.active {
   footer {
     width: 100%;
   }
-  .link_bar {
+  .link_bar > a {
     font-size: 11px;
   }
   .shelter-room-pet {
@@ -575,12 +575,12 @@ nav.globalMenuSp.active {
   }
   .footer-sns-btn {
   display: none;
-}
-.footer-media-small428 {
-  margin-left: 30px;
-}
-.guest-login-btn {
-  margin-left: 50px;
-}
+  }
+  .footer-media-small428 {
+    margin-left: 30px;
+  }
+  .guest-login-btn {
+    margin-left: 50px;
+  }
 }
 

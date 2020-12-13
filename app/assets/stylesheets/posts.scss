@@ -108,9 +108,9 @@ h2 {
   .border-img {
     width: 670px;
   }
-  .flex-box {
-    eidth: 700px;
-  }
+  // .flex-box {
+  //   eidth: 700px;
+  // }
   .post_image {
     width: 300px;
     height: 200px;
@@ -171,13 +171,13 @@ h2 {
     height: 190px;
   }
   .flex-box {
-    height: 600px;
+    height: 610px;
     display: block;
   }
   .enduser-post-new-comment {
     min-width: 280px;
     border: 1px solid #656565;
-    height: 290px;
+    height: 300px;
     margin-top: 10px;
   }
   .flex-content {
@@ -201,5 +201,16 @@ h2 {
   #post_content {
     width: 300px;
     margin-bottom: 20px;
+  }
+  .post-comment  {
+    width: 270px;
+    font-size: 10px;
+    margin: 0;
+  }
+  #comment_comment {
+    height: 50px;
+  }
+  .border-img {
+    margin: 5px 0;
   }
 }
