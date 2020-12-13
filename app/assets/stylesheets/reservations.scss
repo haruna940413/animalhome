@@ -76,6 +76,12 @@
 }
 
 @media screen and (max-width:425px) {
+  .reservation-new {
+    width: 320px;
+  }
+  .reservation-edit {
+    width: 320px;
+  }
   .link_bar > a {
     font-size: 10px;
   }
@@ -90,7 +96,7 @@
     max-width: 250px;
   }
   .hostuser-reservation-index > .col-xl-4 {
-    width: 320px;
+    width: 100%;
     height: 300px;
     margin: 0 auto;
   }
