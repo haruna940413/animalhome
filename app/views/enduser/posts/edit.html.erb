@@ -26,6 +26,12 @@
       </div>
     <% end %>
 
+    <% flash.each do |message_type, messages| %>
+      <% messages.each do |message| %>
+        <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <% end %>
+   <% end %>
+
     <!--投稿の編集フォーム-->
     <div class="row">
       <div class="field col-xl-4 col-md-6 prev">

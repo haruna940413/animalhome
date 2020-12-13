@@ -22,8 +22,8 @@ class Enduser::PostsController < Enduser::Base
     end
   end
 
-  def show
-  end
+  # def show
+  # end
 
   def edit
     @post = Post.find(params[:id])
@@ -35,8 +35,10 @@ class Enduser::PostsController < Enduser::Base
       flash[:notice] = "投稿を更新しました"
       redirect_to enduser_path(current_enduser.id)
     else
-      render "edit"
-      flash[:notice] = "投稿の更新に失敗しました"
+      # render "edit"
+      # flash[:notice] = "投稿の更新に失敗しました"
+      flash[:danger] = @post.errors.full_messages
+      redirect_to edit_post_path(@post)
     end
   end
 
