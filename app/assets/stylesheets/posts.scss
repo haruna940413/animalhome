@@ -147,10 +147,18 @@ h2 {
     height: 350px;
   }
   #post_content {
-    width: 400px;
+    width: 300px;
     margin-bottom: 20px;
+    margin-lrft: 100px;
   }
-}
+
+  #posts-edit > img {
+    height: 300px;
+  }
+  .actions.col-md-4 {
+    margin-top: 40px;
+  }
+ }
 @media screen and (max-width:425px) {
   #posts-index {
     max-width: 330px;

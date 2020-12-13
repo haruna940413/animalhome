@@ -28,14 +28,14 @@
 
     <!--投稿の編集フォーム-->
     <div class="row">
-      <div class="field col-xl-4 prev">
+      <div class="field col-xl-4 col-md-6 prev">
         <%= attachment_image_tag @post, :post_image, fallback: 'no-image.jpg', onChange: "$('.img_field').()", class: 'center-block img_prev'%>
         <%= f.attachment_field :post_image, class: 'img_field' %>
       </div>
-      <div class="field col-xl-4">
+      <div class="field col-xl-4 col-md-4">
         <%= f.text_field :content, class: "content"%>
       </div>
-      <div class="actions col-xl-4">
+      <div class="actions col-xl-4 col-md-4">
         <%= f.submit "Update", class: "btn btn-outline-dark" %>
         <!--投稿削除-->
         <%= link_to "destroy", post_path, method: :delete ,"data-confirm" => "この投稿を削除しますか？", class: "btn btn-outline-dark" %>

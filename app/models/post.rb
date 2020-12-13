@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-  validates :content, {presence: true, length: {minimum: 2, maximum: 15}}
+  validates :content, {presence: true, length: {minimum: 2, maximum: 40}}
   validates :post_image, {presence: true}
 
   attachment :post_image
