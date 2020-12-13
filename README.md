@@ -1,5 +1,6 @@
 # サイト名
 　『animal home』
+  <img width="1280" alt="スクリーンショット 2020-12-13 17 30 35" src="https://user-images.githubusercontent.com/67226779/102007253-c839f000-3d6a-11eb-9eb0-fa6a60cad553.png">
 
 ## サイト概要
    - 保護犬や保護猫の里親を募集するサイト
