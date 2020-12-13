@@ -2,7 +2,7 @@ class Hostuser::PetsController < Hostuser::Base
   before_action :authenticate_hostuser!
 
   def index
-    @pets = Pet.all.page(params[:page]).per(10)
+    @pets = Pet.all
   end
 
   def new
